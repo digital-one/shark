@@ -1,0 +1,465 @@
+.row{
+	display:block;
+	width:100%;
+	position:relative;
+	@extend .clearfix;
+	height:61.24%;
+	&.height-60-pct{
+		.fixed &{
+			@media screen and (max-width: $break-small){
+				height:220px;
+			}	
+		}
+		
+	}
+	&.height-40-pct{
+		height:38.76%;
+	}
+	&.height-45-pct{
+		height:45%;
+	}
+	&.height-50-pct{
+		height:50%;
+	}
+	&.height-55-pct{
+		height:55%;
+	}
+	&.height-one-third{
+		height:33.33%;
+	}
+	&.height-two-thirds{
+		height:66.66%;
+	}
+	&.twice-height{
+		height:auto;
+		@media screen and (max-width: $break-small){
+			width:50%;
+
+		}
+		&:before{
+			padding-top:calc(200% + #{$gutter});
+			@media screen and (max-width: $break-small){
+				padding-top:100%;
+				display: block;
+				content:"";
+			}
+		}
+	}
+	&.blue{
+		background-color: $blue;
+	}
+	&.green{
+		background-color: $green;
+	}
+	&.orange{
+		background-color: $orange;
+	}
+	&.pink{
+		background-color: $pink;
+	}
+	&.logo{
+		text-align: center;
+		overflow:hidden;
+		img{
+			@include fit-grid(height);
+			display: inline-block;
+			margin:0 auto;
+		}
+	}
+	&.square{
+		//border:0;
+		height:auto;
+		&:before{
+			content:"";
+			padding-top: 100%;
+			//padding-top: 100%;
+			display: block;
+		}
+		&.architect-team{
+			@media screen and (max-width: $break-small){
+				width:50%;
+				float: right;
+				margin-top: -54%;
+			}
+		}
+	}
+	.beta &:nth-child(1){
+		border-bottom: $gutter solid white;
+	}
+	.beta &:nth-child(2){
+		#people &{
+			border-bottom: $gutter solid white;
+		}
+		
+	}
+	.beta &.gutter-2x:nth-child(1){
+		border-bottom:$gutter solid white;
+	}
+	.beta &.gutter-2x:nth-child(2){
+		border-top: $gutter solid white;
+	}
+	.beta &.no-gutter:nth-child(1){
+		border:none;
+	}
+	.beta &.no-gutter:nth-child(2){
+		border:none;
+	}
+}
+.column{
+	float:left;
+	height:100%;
+	display: block;
+	position:relative;
+	&.blue{
+		background-color: $blue;
+	}
+	&.green{
+		background-color: $green;
+	}
+	&.orange{
+		background-color: $orange;
+	}
+	&.pink{
+		background-color: $pink;
+	}
+	&.logo{
+		text-align: center;
+		overflow:hidden;
+		img{
+			@include fit-grid(height);
+			display: inline-block;
+			margin:0 auto;
+		}
+	}
+	&.width-25-pct{
+		width:25%;
+		#case-studies &{
+			@media screen and (max-width: $break-medium+1) {
+				//width:100%;
+				height:auto;
+				width:30%;
+				padding: 0 24px 0 12px;
+			}
+			&.gutter-2x{
+				@media screen and (max-width: $break-medium+1) {
+					border:none;
+					margin-bottom: 20px;
+				}
+			}
+		}
+	}
+	&.width-40-pct{
+		width:35.72%;
+		@media screen and(max-width: $break-small){
+			width: 50%;
+		}
+	}
+	&.width-45-pct{
+		width:45.24%;
+		&.main{
+			.fixed &{
+				position:fixed;
+				@media screen and (max-width: $break-medium+1) {
+					position: relative;
+				}
+			}
+			@media screen and (max-width: $break-medium+1) {
+				position:relative;
+				height:40%;
+				width:100%;
+			}
+
+			@media screen and(max-width: $break-small){
+				height:auto;
+				width:100%;
+				float:none;
+			}
+		}
+		section[data-anchor="our-csr"] &.main, section[data-anchor="our-awards"] &.main, section[data-anchor="bim"] &.main{
+			
+			@media screen and (max-width: $break-medium+1) {
+				height:48%;
+				}
+			@media screen and (max-width: $break-small) {
+				height:auto;
+			}
+		}
+		#about &.main{
+			@media screen and (max-width: $break-medium+1) {
+				width:55.24%;
+				height:100%;
+				padding-right:48px;
+			}
+			@media screen and(max-width: $break-small){
+				height:auto;
+				width:100%;
+				padding:0;
+				float:none;
+				padding:0 10px;
+			}
+		}
+	}
+
+	&.width-50-pct{
+		width:50%;
+	}
+	&.width-55-pct{
+		width:54.76%;
+		&.beta{
+			.fixed &{
+				margin-left: 45.24%;
+				@media screen and (max-width: $break-medium+1) {
+					margin-left:0;
+				}
+				@media screen and(max-width: $break-small){
+					width:100%;
+					margin:0;
+					height: auto;
+					float: none;
+				}
+			}
+			#case-studies &{
+				@media screen and(max-width: $break-small){
+					height:auto;
+				}
+			}
+			@media screen and (max-width: $break-medium+1) {
+				height:60%;
+				width:100%;
+			}
+			section[data-anchor="our-csr"] &, section[data-anchor="our-awards"] &, section[data-anchor="bim"] &{
+
+				
+				@media screen and (max-width: $break-medium+1) {
+					height:52%;
+				}
+				@media screen and (max-width: $break-small) {
+					height:400px;
+				}
+			}
+			#about &{
+			@media screen and (max-width: $break-medium+1) {
+				margin:0;
+				bottom:auto;
+				left:auto;
+				position: relative;
+				}
+			@media screen and (max-width: $break-small) {
+				height: 400px;
+
+			}
+			}
+			#people &, #explore &{
+				@media screen and (max-width: $break-medium+1) {
+					height: auto;
+					@include abs-pos(auto,auto,0,0);
+				}
+				@media screen and (max-width: $break-small) {
+					height: auto;
+					position: relative;
+				}
+			}
+			
+			@media screen and(max-width: $break-small){
+				width:100%;
+				height:400px;
+				margin:0;
+				float: none;
+			}
+			#about &{
+				@media screen and (max-width: $break-medium+1) {
+					width: 44.76%;
+					height:auto;
+					position: relative;
+				}
+				@media screen and(max-width: $break-small){
+					width:100%;
+					height:auto;
+					margin:0;
+					float: none;
+				}
+				svg,img{
+					@media screen and (max-width: $break-medium+1) {
+						width:100%;
+						height:100%;
+					}
+				}
+			}
+		}
+	}
+	&.width-60-pct{
+		width:64.28%;
+		@media screen and(max-width: $break-small){
+			width: 50%;
+		}
+	}
+	&.width-75-pct{
+		width:75%;
+		#case-studies &{
+			
+			@media screen and (max-width: $break-medium+1) {
+				//width:100%;
+				height:auto;
+				width:70%;
+			}	
+			&.gutter-2x{
+				@media screen and (max-width: $break-medium+1) {
+					border:none;
+				}	
+			}
+		}
+	}
+	&.width-100-pct{
+		width:100%;
+	}
+	&.width-one-third{
+		width:33.33%;
+		@media screen and (max-width: $break-small){
+			width:100%;
+		}
+	}
+	&.width-two-thirds{
+		width:66.66%;
+		@media screen and (max-width: $break-small){
+			width:100%;
+		}
+	}
+	.masked{
+		overflow:hidden; 
+	}
+	.beta &.gutter-2x:nth-child(1){
+		border-right:$gutter solid white;
+		@media screen and (max-width: $break-small){
+			border-right: none;
+		}
+	}
+	.beta &:nth-child(2){
+		border-left:$gutter solid white;
+	}
+	.beta &.gutter-2x:nth-child(2){
+		border-left:$gutter solid white;
+	}
+	.beta &.no-gutter:nth-child(1){
+		border:none;
+	}
+	.beta &.no-gutter:nth-child(2){
+		border:none;
+	}
+}
+.cell{
+	position:relative;
+	display: block;
+	float:left;
+	width:100%;
+	background-color:#ccc;
+	overflow:hidden;
+	//border: calc(#{$gutter}/2) solid white;
+	border: $gutter solid white;
+	border-right:0;
+	border-top:0;
+	#explore &{
+		border:$gutter solid white;
+	}
+	height:100%;
+	&.height-50-pct{
+		height:50%;
+	}
+	&.twice-height{
+		&:before{
+			padding-top:200%;
+			@media screen and (max-width: $break-small){
+				padding-top:50%;
+			}
+		}
+	}
+	&.half-height{
+		height:auto;
+		img{
+			@include abs-pos(0,auto,auto,0);
+		}
+		&:before{
+			content:"";
+			//padding-top: calc(50% - #{$gutter}/2);
+			display: block;
+			padding-top:50%;
+		}
+	}
+	img{
+		@include fit-grid(width);
+		@include abs-pos(0,0,0,0);
+		display:block;
+		z-index: 1;
+	}
+	&.half{
+		width:50%;
+		#case-studies &{
+			&:before{
+				content:"";
+				padding-top:50%;
+				display: block;
+				@media screen and (max-width: $break-small){
+					padding-top:100%;
+				}
+			}
+			@media screen and (max-width: $break-small){
+				width:100%;	
+				height:50%;
+			}
+		}
+	}
+	&.square{
+		//border:0;
+		height:auto;
+		&:before{
+			content:"";
+			padding-top:100%;
+			display: block;
+		}
+	}
+	&.one-third{
+		width:33.33%;
+		
+		@media screen and (max-width: $break-medium+1) {
+			width:33.33%;
+		}
+		@media screen and (max-width: $break-small){
+			width:100%; 
+		}
+		#case-studies &{
+			&:before{
+				content:"";
+				padding-top:50%;
+				display: block;
+				@media screen and (max-width: $break-small){
+					padding-top:50%;
+				}
+			}
+			@media screen and (max-width: $break-small) {
+				width:100%;
+			}
+		}
+		/*@media screen and (max-width: $break-large) {
+			width:50%;
+		}
+		*/
+	}
+	&.two-thirds{
+		width: 66.66%;
+		img{
+			@include abs-pos(-50%,auto,auto,0);
+		}
+	}
+
+}
+.cell-inner{
+		display: block;
+		width:100%;
+		height:100%;
+		border: 1px solid #ccc;
+	}
+.shift-gutter-up{
+	margin-top:-6px;
+}
+.shift-gutter-right{
+	margin-left:6px;
+}

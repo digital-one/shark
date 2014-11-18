@@ -1,0 +1,96 @@
+#map{
+	background-color:#ccc;
+	@media screen and (max-width: $break-small){
+				height:600px !important;
+			}
+}
+#offices{ 
+	margin-top:40px;
+	ul{
+		li{
+			padding-bottom:6px;
+			border-bottom: 1px solid $grey;
+			margin-bottom: 10px;
+			@extend %clearfix;
+		}
+		div{
+			float:left;
+			display: inline-block;
+			h4,p{
+				margin-bottom: 3px;
+				a{
+					&:link, &:visited{
+						text-decoration: none;
+					}
+					&:hover, &:active{
+						color:$brown;
+					}
+				}
+
+			}
+		}
+		&.links{
+			float:right;
+			li{
+				margin:0;
+				padding:0;
+				border:none;
+			}
+		}
+	}
+} 
+#calculate-route{
+	display: none;
+	margin-top: 30px;
+	p.error{
+		display: none;
+		background-color: $blue;
+		color: #fff;
+		padding: 3px 4px;
+		margin-bottom: 10px;
+	}
+	li{
+		position: relative;
+		margin-bottom: 5px;
+		@extend %clearfix;
+	}
+	input{
+		padding-right:30px;
+	}
+	button{
+		display: block;
+		width:30px;
+		height:30px;
+		@include abs-pos(0,0,auto,auto);
+		background:url('../images/arrow-right.svg') center center no-repeat;
+		background-size:20px 20px;
+		border:none;
+		@extend %ir;
+	}
+	a{
+		&:link,&:visited{
+			color: $blue;
+			position:relative;
+			display: inline-block;
+			height:16px;
+			line-height: 16px;
+			&#from-link{
+				@extend %align-left;
+				padding-right: 18px;
+				display: none;
+				&:after{
+					content:"";
+					width:16px;
+					height:16px;
+					display: block;
+					@include abs-pos(0,0,auto,auto);
+					background:url('../images/icon-location-blue.svg') center center no-repeat;
+					background-size:16px 16px;
+				}
+			}
+			&#reset{
+				@extend %align-right;
+			}
+		}
+	}
+}

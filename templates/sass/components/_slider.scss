@@ -1,0 +1,179 @@
+#slider{
+	@extend %full-width;
+	background-color: $blue;
+	position: relative;
+	overflow:hidden;
+	height:290px;
+	@media screen and (max-width: $break-medium) {
+		height:200px;
+	}
+	.home &{
+			height: 500px;
+			@media screen and (max-width: $break-medium) {
+				height:200px;
+
+			}
+		}
+	width:100%;
+	overflow:hidden;
+	nav{
+		@include centered-menu;
+		@include abs-pos(auto,auto,12px,0); 
+		z-index: 999;
+		width:100%;
+		text-align: center;
+		a{
+			width:5px;
+			height:5px;
+			@include border-radius(50%);
+			background-color:white;
+			display: inline-block !important;
+			margin:0 3px;
+			@extend %ir;
+			@include opacity(0.5);
+			&.activeSlide{
+				@include opacity(1);	
+			}
+		}
+	}
+	a.control{
+		display:block;
+		@media screen and (max-width: $break-medium) {
+			display: none;
+		}
+		height:120px;
+		width:120px;
+		@include abs-pos(50%,auto,auto,0);
+		@include border-radius(50%);
+		@include rgba-bg($r:255,$g:255,$b:255,$hex:#FFFFFF,$opacity:0.2);
+		@include transition (all .1s linear 0s);
+		background-image:url('../images/slider-arrow-left.png');
+		background-repeat: no-repeat;
+		background-position:right center;
+		margin: -60px 0 0 -80px;
+		z-index: 999;
+		@extend %ir;
+		cursor:pointer;
+		&:hover, &:active{
+			@include rgba-bg($r:255,$g:255,$b:255,$hex:#FFFFFF,$opacity:0.5);
+			margin: -60px 0 0 -70px;
+		}
+		&.right{
+			@include abs-pos(50%,0,auto,auto);
+			margin: -60px -80px 0 0;
+			background-image:url('../images/slider-arrow-right.png');
+			background-position:left center;
+			&:hover, &:active{
+				margin: -60px -70px 0 0;
+			}
+		}
+	}
+	#slides{
+		width: 100% !important;
+		.slide{
+			height:290px;
+			width:100% !important;
+			@media screen and (max-width: $break-medium) {
+				height:200px;
+			}
+			.home &{
+				height: 500px;	
+				@media screen and (max-width: $break-medium) {
+					height:200px;
+				}
+			}
+			position: relative;
+			@extend %bg-cover;
+			@extend %full-width;
+			position: relative;
+			a:link, a:visited{
+				color: #fff;
+				display: block;
+			}
+			.container{
+				height:290px;
+				@media screen and (max-width: $break-medium) {
+					height:200px;
+				}
+				.home &{
+					height: 500px;	
+					@media screen and (max-width: $break-medium) {
+						height:200px;
+					}
+				}
+				@media screen and (max-width: $break-large) {
+					padding: 0 60px !important;
+				}
+				@media screen and (max-width: $break-medium) {
+					padding: 0 10px !important;
+				}
+			}
+			.content{
+				@include vcenter;
+			}
+			h1,h2,h3{
+				font-weight: 400;
+				color: white;
+				display: inline-block;
+				text-transform: uppercase;
+				margin: 0;
+				padding:0 8px;
+			}
+			h2,h3{
+				@include font-size(22);
+				line-height: 41px;
+				height: 41px;
+				margin-bottom:0;
+				background-color: $light-blue;
+				@media screen and (max-width: $break-medium) {
+					height:21px;
+					line-height: 21px;
+					//@include font-size(12);
+					@include font-size-vw(3.8,12);
+					height:auto;
+					padding:3px 4px;
+					line-height: 110%;
+				}
+			}
+			h1, .home & h2{
+				background-color: $blue; 
+				height:52px;
+				line-height:52px;
+				@include font-size(42);
+				@media screen and (max-width: $break-large) {
+					@include font-size(32);
+				}
+				@media screen and (max-width: $break-medium) {
+					//@include font-size(22);
+					@include font-size-vw(6.8,22);
+					height:auto;
+					padding: 6px 6px;
+					line-height: 110%;
+				}
+			}
+			.home & h2{
+				background-color: $light-blue;
+				@media screen and (max-width: $break-medium) {
+					@include font-size(16);
+				}
+			}
+			.home & h3{
+				background-color: $dark-grey;
+				@include font-size(32);
+				@media screen and (max-width: $break-large) {
+					@include font-size(22);
+				}
+				@media screen and (max-width: $break-medium) {
+					@include font-size(12);
+				}
+			}
+			.spacer{
+				@extend %full-width;
+				height:6px;
+				@media screen and (max-width: $break-medium) {
+					height:2px;
+				}
+			}
+		}
+	}
+}

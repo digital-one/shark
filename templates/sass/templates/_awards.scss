@@ -1,0 +1,27 @@
+ul#awards-list{
+	li{
+		width:50%;
+		float:left;
+		min-height:60px;
+		@media screen and (max-width: $break-medium+1) {
+			width:33.33%;
+			padding-right: 10px;
+			min-height:70px;
+		}
+		@media screen and (max-width: $break-small) {
+			width:100%;
+			padding-right:0;
+			margin-bottom: 20px;
+			min-height: 1px;
+			float: none;
+		}
+		span{
+			display: block;
+			line-height: 115%;
+			&.award{
+				font-weight: 600;
+				margin-bottom: 2px;
+			}
+		}
+	}
+}

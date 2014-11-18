@@ -1,0 +1,27 @@
+#header{
+	position:fixed; 
+	display: block; 
+	z-index:9998;
+	@extend %full-width;
+	background-color:$grey;
+	color:white;
+	height:52px;
+	//overflow:hidden;
+	//border-bottom:2px solid $brown;
+	#home-link{
+		width:150px;
+		height:18px;
+		display: block;
+		@include abs-pos(18px,24px,auto,auto);
+		margin:0;
+		img{
+			@include fit-grid(width);
+			display: block;
+		}
+	}
+	&.front-page{
+		#home-link{
+			@include abs-pos(-20px,24px,auto,auto);
+		}
+	}
+}

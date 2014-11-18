@@ -1,0 +1,466 @@
+#nav{
+	@include inline-menu;
+	@include wp-current-page-links{
+		background-color: $dark-grey;
+	}
+	margin-left: 14px;  
+	ul{
+		display: block;
+		@media screen and (min-width: $break-nav+1) {
+			//display: block !important;
+		}
+		@media screen and (max-width: $break-nav) {
+			position:fixed;
+			top:52px;
+			left:0;
+			width:30%;
+			display: none;
+			z-index: 1;
+		}
+		@media screen and (max-width: $break-small) {
+			width:80%;
+		}
+	}
+	li{
+		position:relative;
+		&.hover{
+			background-color: $dark-grey;
+		}
+		@media screen and (max-width: $break-nav) {
+			float:none;
+			display: block;
+			width:100%;
+
+		}
+		a{
+			@include transition (background-color 0.2s ease-in-out);
+			text-transform: uppercase;
+			@include font-size(12);
+			&:link,&:visited{
+				color:white;
+				padding:0 10px;
+				height:52px;
+				line-height: 59px;
+				@media screen and (max-width: $break-nav) {
+					float:none;
+					display: block;
+					width:100%;
+					padding:7px 24px;
+					height:auto;
+					line-height: 100%;
+				}
+			}
+			&:hover,&:active{
+				background-color: $dark-grey;
+			}
+		}
+		.sub-menu{
+			@include abs-pos(50px,auto,auto,0);
+			//border-top:2px solid $brown;
+			display: none;
+			width:auto;
+			min-width: 10px;
+			background-color:$dark-grey;
+			padding: 12px 20px 12px;
+			@media screen and (max-width: $break-nav) {
+				position:relative;
+				top:auto;
+				background-color:lighten($dark-grey,20);
+				padding:0;
+				display: none;
+				border:none;
+			}
+			
+			h5{
+				@include font-size(12);
+				margin-bottom: 5px;
+				color: white;
+			}
+			li{
+				width:auto;
+				display: inline-block;
+				padding-bottom:0;
+				&.current-menu-item{
+					background-color: transparent;
+				}
+			}
+			li,a{
+				
+				width: 100%;
+				display: block;
+				@media screen and (max-width: $break-nav) {
+					padding:0;
+				}
+				a{
+					@include transition (color 0.2s ease-in-out);
+					text-transform: capitalize;
+					float: none;
+					line-height: 100%;
+					height:auto;
+					width:100%;
+					display: block;
+					white-space: nowrap;
+					padding: 6px 0;
+					@include opacity(.7);
+					@media screen and (max-width: $break-nav) {
+						padding: 6px 20px 6px 24px;
+						width:100%;
+						line-height: 110%;
+						white-space: normal;
+					}
+					&:hover, &:active{
+						@include opacity(1);
+					}
+
+				}
+			}		
+		}
+		&.current-menu-item .sub-menu{
+				@media screen and (max-width: $break-nav) {
+					display: block;
+				}	
+			}
+		&.menu-item-50{
+			.sub-menu{
+				width: 360px;
+				padding: 20px 20px 15px;
+				@media screen and (max-width: $break-medium+1) {
+					display: none;
+				}
+				ul{
+					@extend %clearfix;
+					margin-bottom: 13px;
+					border-bottom: 1px solid lighten($grey,10);
+					padding-bottom: 8px;
+					&:last-child{
+						padding: 0;
+						margin:0;
+						border: none;
+					}
+				}
+				li{
+					display: block;
+					float: left !important;
+					width:50% !important;
+				}
+			}
+		}
+		&.current-menu-item{
+			@media screen and (max-width: $break-nav) {
+				background-color: $dark-grey;
+				//padding-bottom:16px;
+			}
+		}
+	}
+	a#mobile{
+		display: none;
+		@media screen and (max-width: $break-nav) {
+			display: block;
+		}
+		width:24px;
+		height:24px;
+		cursor:pointer;
+		@extend %ir;
+		@include abs-pos(14px,auto,auto,24px);
+		background:url('../images/menu.svg') left top no-repeat;
+		.ie8 &{
+			background:url('../images/menu.png') left top no-repeat;
+		}
+	}
+}
+.secondary-nav{
+	display: block;
+	@include abs-pos(auto,auto,24px,0);
+	.fixed &{
+		@include abs-pos(auto,auto,72px,0);
+		@media screen and (max-width: $break-medium+1) {
+			@include abs-pos(auto,auto,12px,0);
+		}
+		@media screen and(max-width: $break-small){
+			position: relative;
+		}
+	}
+	@include transition (bottom 0.2s ease-in-out);
+	width:100%;
+	padding: 0 calc(#{$gutter*5 + 1}) 0 24px;
+	@media screen and (max-width: $break-medium+1) {
+		padding:0 12px 0;
+		@include abs-pos(auto,auto,12px,0);
+	}
+	
+	#about &{
+		@media screen and (max-width: $break-medium+1) {
+			@include abs-pos(auto,auto,24px,0);
+		}
+		@media screen and(max-width: $break-small){
+			position: relative;
+		}
+	}
+	
+	@media screen and (max-width: $break-small) {
+		position:relative;
+		padding: 36px 0 0;
+	}
+	.tabs{
+		margin-bottom: 10px;
+		a{
+			display: inline-block;
+			height:24px;
+			line-height: 24px;
+			padding: 0 20px;
+			background-color: $brown;
+			margin-right: 3px;
+			color: white;
+			@include transition (all 0.2s ease-in-out);
+			&:hover,&:active{
+				background-color: lighten($brown,5);
+			}
+			&.active{
+				background-color: $grey;
+			}
+		}
+	}
+}
+nav#sub-nav,
+nav#utility-nav{
+	width:100%;
+	li{
+		list-style-type: none;
+		padding:10px 0 0;
+		display: block;
+		&.share, &.search{
+			border-bottom:1px solid $grey;
+		}
+		&.share{
+			display: block;
+			a{
+				padding:0;
+				svg,img{
+					width:100%;
+					height:auto;
+				}
+			}
+			/*
+			@media screen and (min-height: 700px) {
+				display:block;
+			}
+			*/
+		}
+		&.search{
+			padding-bottom:0;
+			padding-right:25px;
+			position: relative;
+			input{
+				height:30px;
+				line-height:1;
+				border:none;
+				padding:0;
+				width:100%;
+				background-color: white;
+				@include font-size(13);
+				@include placeholder {
+    				color: $grey;
+    				@include opacity(1);
+  				}
+			}
+			button{
+				width:20px;
+				height:20px;
+				background-color: transparent;
+				border:none;
+				padding:0;
+				@include abs-pos(auto,0,10px,auto);
+				img{
+					@include fit-grid(width);
+				}
+			}
+		}
+		&.current-menu-item{
+			a{
+				color:$brown;
+				border-color:$brown;
+			}
+			svg path.icon{
+				fill:$brown;
+			}
+			.orange &{
+				a{
+					color:$orange;
+					border-color:$orange;
+				}
+				svg path.icon{
+					fill:$orange;
+				}
+			}
+			.blue &{
+				a{
+					color:$blue;
+					border-color:$blue;
+				}
+				svg path.icon{
+					fill:$blue;
+				}
+			}
+			.green &{
+				a{
+					color:$green;
+					border-color:$green;
+				}
+				svg path.icon{
+					fill:$green;
+				}
+			}
+			.pink &{
+				a{
+					color:$pink;
+					border-color:$pink;
+				}
+				svg path.icon{
+					fill:$pink;
+				}
+			}
+		}
+		a,span{
+			height:30px;
+			display: block;
+			position: relative;
+			@include font-size(13);
+			line-height:31px;
+			//padding-bottom:10px;
+		}
+		a{
+			border-bottom:1px solid $grey;
+			padding-bottom:0;
+			@include transition (all 0.2s ease-in-out);
+			span{
+				@include abs-pos(0,0,auto,auto);
+				width:20px;
+				height:20px;
+				display: block;
+				svg{
+					width:100%;
+					height:auto;
+				}
+				img{
+					@include fit-grid(height);
+				}
+				svg path.icon{
+					@include transition (all 0.2s ease-in-out);
+				}
+			}
+			&:hover, &:active{
+				color: $blue;
+				border-color: $blue;
+				svg path.icon{
+					fill:$blue;
+				}
+				.orange &{
+					color: $orange;
+					border-color: $orange;
+					svg path.icon{
+						fill:$orange;
+					}
+				}
+				.blue &{
+					color: $blue;
+					border-color: $blue;
+					svg path.icon{
+						fill:$blue;
+					}
+				}
+				.green &{
+					color: $green;
+					border-color: $green;
+					svg path.icon{
+						fill:$green;
+					}
+				}
+				.pink &{
+					color: $pink;
+					border-color: $pink;
+					svg path.icon{
+						fill:$pink;
+					}
+				}
+			}
+		}
+		&.share{
+			@extend %clearfix;
+			span{
+				float: left;
+			}
+			ul{
+				float:right;
+				li{
+					padding:0;
+					margin:0 0 0 10px;
+					float: left;
+					display: inline-block;
+					border:none;
+					a{
+						width:20px;
+						height:20px;
+						border:none;
+						g.icon path {
+							@include transition (fill 0.2s ease-in-out);
+						}
+						svg:hover g.icon path{
+							fill: $blue;
+							.orange &{
+								fill: $orange;
+							}
+							.blue &{
+								fill: $blue;
+							}
+							.green &{
+								fill: $green;
+							}
+							.pink &{
+								fill: $pink;
+							}
+						}
+
+						img{
+							@include fit-grid(width);
+						}
+					}
+				}
+			}
+		}
+	}
+	@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
+		//width:50%;
+		//float:left;
+	}
+}
+nav#sub-nav{
+	text-transform:uppercase;
+	display:none;
+		@media screen and (min-height:690px) {
+		//padding-right: calc(#{$gutter});
+		display: block;
+	}
+	@media screen and (max-width: $break-medium+1) {
+		display:none;
+	}
+}
+nav#utility-nav{
+	@media screen and (min-width: $break-small+1) and (max-width: $break-medium+1) {
+		//padding-left: calc(#{$gutter});
+	}
+}
+nav#case-studies-nav{
+	ul{
+		border-bottom: 1px solid $grey;
+	}
+	li{
+		border-top: 1px solid $grey;
+		padding:10px 0;
+	}
+	a{
+		text-transform: uppercase;
+		&.current{
+			color: $brown;
+		}
+	}
+}
