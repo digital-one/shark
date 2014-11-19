@@ -1,27 +1,20 @@
-#header{
-	position:fixed; 
-	display: block; 
-	z-index:9998;
+header#header{
+	position: fixed;
+	z-index: 999;
 	@extend %full-width;
-	background-color:$grey;
-	color:white;
-	height:52px;
-	//overflow:hidden;
-	//border-bottom:2px solid $brown;
+	padding: 30px 30px 0;
+	top:0;
+	left:0;
+	background-color: transparent;
+	@extend %clearfix;
 	#home-link{
-		width:150px;
-		height:18px;
+		width: 115px;
+		height: 77px;
 		display: block;
-		@include abs-pos(18px,24px,auto,auto);
+		float: right;
 		margin:0;
 		img{
 			@include fit-grid(width);
-			display: block;
-		}
-	}
-	&.front-page{
-		#home-link{
-			@include abs-pos(-20px,24px,auto,auto);
 		}
 	}
 }

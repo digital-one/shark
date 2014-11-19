@@ -1,124 +1,24 @@
-#main{
+#page-wrap{
 	width:100%;
 	height:100%;
-	background-color: white;
-
-}
-#page-wrap{
-	//width:100%;
-	height:100%;
-	display:block;
-	position:relative;
-	background-color:white;
-	left:0;
-	@media screen and (max-width: $break-small){
+	position: relative;
+	padding-left:17.9%;
+	aside#sidebar{
+		position: fixed;
 		overflow:hidden;
-		width: 100%;
-	}
-	@include opacity(1);
-	@include transition (opacity 0.2s ease-in-out);
-	&.loading{
-		@include opacity(.6);
+		z-index: 999;
+		top:0;
+		left:0;
+		display: block;
+		background-color: black;
+		width:18%;
+		height:100%;
 	}
 	.section{
-		padding:50px 0 0;
+		height:100%;
 		width:100%;
-		height:100%;
 		display: block;
-		background-color:white;
-		position:relative;  
-		@media screen and (max-width: $break-small) {
-			padding-top: 70px;
-		}
-	}
-	@media screen and (max-width: $break-medium+1) {
-		//padding-top:7%;
-	}
-	@media screen and (max-width: $break-small) {
-		//padding-top:7%;
-		height:auto;
-	}
-
-}
-.main{
-	padding:calc(#{$gutter*2}) calc(#{$gutter*4 + 1}) calc(#{$gutter*2}) calc(#{$gutter*2});
-
-	@media screen and (max-width: $break-medium+1) {
-		padding: calc(#{$gutter*2}) $gutter $gutter $gutter;
-	}
-	@media screen and (max-width: $break-small) {
-		padding: 0 $gutter $gutter;
-	}
-}
-.beta{
-	.inner{
-		padding:0 0 0 $gutter;
-		height:100%;
-		display:block;
-		@media screen and (max-width: $break-medium+1) {
-			padding:0 $gutter $gutter;
-		}
-
-	}
-	#about &{
-		.inner{
-			padding:calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter*2}) 0;
-			text-align: center;
-			@media screen and (max-width: $break-medium+1) {
-				height:auto !important;
-			}
-			@media screen and(max-width: $break-small){
-				padding: 0 10px 10px;
-			}
-		}
-		svg,img{
-			width:auto;
-			height:100%;
-			max-width: 100%;
-			margin:0 auto;
-			@media screen and (max-width: $break-medium+1) {
-				height:auto;
-			}
-
-		}
-	}
-	#downloads &{
-		.inner{
-			padding:calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter*2}) 0;
-			@media screen and (max-width: $break-medium+1) {
-				padding: $gutter $gutter 0;
-			}
-		}
-	}
-	#case-studies & .inner{
-		padding:calc(#{$gutter*2}) calc(#{$gutter*2}) $gutter 0;
-		@media screen and (max-width: $break-medium+1) {
-			padding: 0 $gutter 0 0;
-		}
-		@media screen and (max-width: $break-small) {
-			padding:0 $gutter 0 0;
-		}
-	}
-	#case-studies-single & .inner{
-		padding:calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter*2}) calc(#{$gutter/2});
-		@media screen and (max-width: $break-medium+1) {
-			padding: $gutter $gutter calc(#{$gutter*2});
-		}
-	}
-	#people & .inner{
-		@extend %clearfix;
-		padding:0;
-		@media screen and (max-width: $break-medium+1) {
-			padding: 0 $gutter 0 0;
-
-		}
-	}
-	#explore & .inner{
-		@extend .clearfix;
-		height:auto;
-		padding:$gutter $gutter $gutter 0;
-		@media screen and (max-width: $break-medium+1) {
-			padding:$gutter 0 0 0;
-		}
+		position: relative;
+		background-color: red;
 	}
 }

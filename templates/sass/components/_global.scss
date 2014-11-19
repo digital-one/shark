@@ -1,425 +1,121 @@
-#overlay{
-	display:block;
-	z-index:9999;
-	background-color:white;
-	@include opacity(0);
-	@include abs-pos(0,auto,auto,0);
-	width:100%;
-	height:100%;
-}
-
-a{
-	&.fit-cell{
-	@include abs-pos(0,0,0,0);
-	@include transition (background-color 0.2s ease-in-out);
-	padding: $gutter 77px $gutter $gutter;
-	@media screen and (max-width: $break-large) {
-		padding:12px 40px 12px 12px;
-		@include font-size(16);
-	}
-	@media screen and (max-width: $break-small) {
-		padding:8px;
-		@include font-size(14);
-	}
-	#people &{
-		padding: $gutter;
-	}
-	display:block;
-	color:$grey;
-	background-color:white;
-	text-transform:uppercase;
-	#people &{
-		text-transform: none;
-	}
-	&.down{
-		&:after{
-			background-image:url('../images/arrow-down-white.svg');
-		}
-		&:hover,&:active{
-			&:after{
-				bottom:17px;
-				right:20px;
-				@media screen and (max-width: $break-small) {
-					bottom:10px;
-					right:6px;
-				}
+aside{
+	#contacts{
+		@extend %full-width;
+		padding: 0 8% 0 8%;
+		@include abs-pos(auto,auto,7%,0);
+		a{
+			&:link, &:visited{
+				@include opacity(.5);
+			}
+			&:hover, &:active{
+				@include opacity(1);
 			}
 		}
-	}
-	&.up{
-		&:after{
-			background-image:url('../images/arrow-up-white.svg');
-		}
-		&:hover,&:active{
-			&:after{
-				bottom:23px;
-				right:20px;
-				@media screen and (max-width: $break-small) {
-					bottom:6px;
-					right:6px;
-				}
-			}
-		}
-	}
-	@include font-size(18);
-	line-height:120%;
-		&:after{
-			content:"";
+		small a{
 			display: block;
-			width:55px;
-			@media screen and (max-width: $break-large) {
-				width:35px;
-				height:32px;
-				background-size: 35px 32px;
-				@media screen and (max-width: $break-small) {
-					bottom:10px;
-					height:20px;
-					width:23px;
-					right:6px;
-					background-size: 23px 20px;
-				}
-			}
-			height:50px;
-			background-image:url('../images/arrow-right-white.svg');
-			background-position: left top;
-			background-repeat:no-repeat;
-			background-size: 55px 50px;
-			@include abs-pos(auto,20px,20px,auto);
-			@include transition (all 0.2s ease-in-out);
-			#people &{
-				width:20px;
-				height:20px;
-				@include abs-pos(auto,auto,20px,20px);
-				background-image:url('../images/arrow-right-white.svg');
-				background-size: 20px 18px;
-			}
-			.ie8 &{
-				//ie8 fallback;
-			}
 		}
-		&:hover,&:active{
-			&:after{
-				right:17px;
-				@media screen and (max-width: $break-small) {
-					right:6px;
-				}
-			}
-			#people &{
-				&:after{
-					left:23px;
-					right:auto;
-				}
-			}
-		}
-		.cell &{
-			text-transform: none;
-		}
-		&.orange{
-			background-color: $orange;
-			color:white;
-			&:hover,&:active{
-				background-color:lighten($orange,5);
-			}
-			#people &, #our-people-sector &{
-				background-color: white;
-				color: $orange;
-				&:after{
-					background-image:url('../images/arrow-right-orange.svg');
-				}
-			}
-		}
-		&.green{
-			background-color: $green;
-			color: white;
-			&:hover,&:active{
-				background-color:lighten($green,5);
-			}
-			#people &, #our-people-sector &{
-				background-color: white;
-				color: $green;
-				&:after{
-					background-image:url('../images/arrow-right-green.svg');
-				}
-			}
-		}
-		&.pink{
-			background-color: $pink;
-			color: white;
-			&:hover,&:active{
-				background-color:lighten($pink,5);
-			}
-			#people &, #our-people-sector &{
-				background-color: white;
-				color: $pink;
-				&:after{
-					background-image:url('../images/arrow-right-pink.svg');
-				}
-			}
-		}
-		&.blue{
-			background-color: $blue;
-			color:white;
-			&:hover,&:active{
-				background-color:lighten($blue,5);
-			}
-			#people &{
-				background-color:white;
-				color:$blue;
-				&:after{
-					background-image:url('../images/arrow-right-blue.svg');
-				}
-			}
-			&.inverted{
-				background-color: white;      
-				color: $blue; 
-				&:after{
-					background-image:url('../images/arrow-right-blue.svg'); 
-				}
-			}
-			/*#people &, #our-people-sector &{
-				background-color: white;  
-				color: $blue; 
-				&:after{
-					background-image:url('../images/arrow-right-purple.svg'); 
-				}
-			}
-			*/
-		}
-		&.grey{
-			background-color: $grey;
-			color:white;
-			&:hover,&:active{
-				background-color:lighten($grey,5);
-			}
-		}
-		
-		&.brown{
-			background-color: $brown;
-			color:white;
-			&:hover,&:active{
-				background-color:lighten($brown,5);
-			}
-			&.inverted{
-				background-color:white;
-				color: $brown;
-				&.down{
-					&:after{
-						background-image:url('../images/arrow-down-brown.svg');
-					}
-				}
-			}
-		}
-		&.white{
-			&:after{
-				background-image:url('../images/arrow-right.svg');	
-			}
-			&.down{
-				&:after{
-					background-image:url('../images/arrow-down.svg');	
-				}
-			}
-		}
-
 	}
 }
-.bg-fill-cell{
+section.page-title{
+	background-color:white;
+	@extend %full-width;
+	height: 27%;
+	position: relative;
+	div{
+		@include vertical-align;
+		text-align: center;
+	}
+}
+section.banner{
+	@extend %full-width;
 	@include bg-cover;
-	a{
-		@include abs-pos(0,0,0,0);
+	background-color: #ccc;
+	height:36%;
+}
+section.content{
+	background-color:$blue;
+	@extend %full-width;
+	@extend %clearfix;
+	height:37%;
+	.content-wrap{
+		padding: 4% 3%;
+		width:100%;
+		height:100%;
 		display: block;
-		padding: $gutter;
-		@include opacity(0);
-		@include rgba-bg($r:0,$g:133,$b:179,$hex:$blue,$opacity:0.75);
-		@include transition (all 0.2s ease-in-out);
-		color: white;
-		&:hover,&:active{
-			@include opacity(1);
-		}
-		&:after{
-			content:"";
-			width:20px;
-			height:20px;
-			@include abs-pos(auto,auto,$gutter,$gutter);
-			background:url('../images/arrow-right-white.svg') left top no-repeat;
+		div.column{
+			display: block;
+			height:100%;
+			border-left:1px solid white;
+			float:left;
+			width:33.33%;
+			padding:1% 3%;
 		}
 	}
 }
-.arrow-divide{
-	display: block;
-	width:20px;
-	@include abs-pos(20px,15px,35px,auto);
-	.fixed &{
-		@include abs-pos(20px,15px,70px,auto);
-	}
-	@media screen and (max-width: $break-medium+1) {
-		display:none;
-	}
-
-	background: url('../images/divide-v.png') center top repeat-y;
-	a,span{
-		display: block;
-		width:20px;
-		height:20px;
-		@include abs-pos(auto,auto,0,0);
-		img{
-			@include fit-grid(width);
-		}
-	}
-}
-a.overlay{
-	@include abs-pos(0,0,0,0);
-	display: block;
-	z-index:999;
-	padding: 18px 12px;
-	&.main{
-		padding: 18px 60% 12px 18px;
-		@media screen and (max-width: $break-small){
-			padding: 18px 18px 12px 18px;
-		}
-	}
-	#our-people-sector &{
-		padding:18px;
-	}
-	@include opacity(0);
-	&.select{
-		@include opacity(0);
-		&:hover,&:active{
-			opacity:1 !important;
-		}	
-	}
-	@include rgba-bg($r:0,$g:133,$b:179,$hex:$blue,$opacity:0.75);
-	&.orange{
-		@include rgba-bg($r:238,$g:125,$b:0,$hex:$orange,$opacity:0.75);
-	}
-	&.green{
-		@include rgba-bg($r:118,$g:184,$b:42,$hex:$green,$opacity:0.75);
-	}
-	&.pink{
-		@include rgba-bg($r:236,$g:0,$b:140,$hex:$pink,$opacity:0.75);
-	}
-	@include transition (all 0.2s ease-in-out);
+.button{
+	height:48px;
+	line-height: 48px;
+	display:inline-block;
+	border:1px solid white;
+	padding: 0 71px 0 21px;
+	text-align:left;
 	color: white;
-	&:hover,&:active,&.close{
-		opacity:1 !important;
+	font-family: $proximanova-bold;
+	text-transform:uppercase;
+	position:relative;
+	.caption &{
+		height:66px;
+		line-height: 66px;
+		padding: 0 74px;
 	}
-	
+	//@include rgba-bg(0,0,0,#000000,.3);
+	@include font-size(16);
 	&:after{
 		content:"";
-		width:20px;
-		height:20px;
-		@include abs-pos(auto,18px,$gutter,auto);
-		background:url('../images/arrow-right-white.svg') left top no-repeat;
+		display: block;
+		width:36px;
+		height:13px;
+		background:url('../images/arrow.png') left top no-repeat;
+		@include abs-pos(50%,16px,auto,auto);
+		margin-top:-6px;
 	}
-	&.close:after{
+}
+.underline{
+	&:after{
 		content:"";
 		display: block;
-		width:18px;
-		height:18px;
-		@include abs-pos(18px,18px,auto,auto);
-		background:url('../images/close-white.svg') left top no-repeat;
+		width:70px;
+		height: 2px;
+		background-color: white;
+		margin: 30px auto 0;
+		.caption &{
+			margin: 50px auto 40px;	
+		}
+		.blue &{
+			background-color: $blue;
+		}
 	}
 }
-#case-studies,#news,#people-single,#our-people-sector{
-	a.close{
+a.scroll{
+	display:inline-block;
+	@include font-size(16);
+	color: white;
+	font-family: $proximanova-bold;
+	text-transform: uppercase;
+	text-align: center;
+	width:80px;
+	height: auto;
+	padding:56px 0 0;
+	@include abs-pos(auto,auto,6%,50%);
+	margin-left:-40px;
+	z-index:998;
+	&:before{
+		content:"";
+		width:22px;
+		height:48px;
 		display: block;
-		width:18px;
-		height:18px;
-		@include abs-pos(0,10px,auto,auto);
-		cursor:pointer;
-		background:url('../images/close.svg') left top no-repeat;
-		@extend %ir;
-		@media screen and (max-width: $break-small){
-			@include abs-pos(0,0,auto,auto);
-		}
+		@include abs-pos(0,auto,auto,50%);
+		margin-left:-11px;
+		background: url('../images/scroll-icon.png');
 	}
-}
-.main-content{
-	ul{
-		margin-bottom: 12px;
-	}
-	li{
-		padding-left:14px;
-		margin-bottom: 5px;
-		position:relative;
-		&:before{
-			content:"";
-			@include abs-pos(5px,auto,auto,0);
-			display: block;
-			width:4px;
-			height:4px;
-			background:url('../images/bulletpoint.svg') left top no-repeat;
-			background-size: 4px 4px;
-		}
-		@media screen and (max-width: $break-medium+1) {
-			margin-bottom: 2px;
-		}
-	}
-}
-.slick-prev,.slick-next{ 
-	cursor:pointer;
-	z-index:999;
-	border:none;
-	display: inline-block;
-	width: 30px;
-	height:30px;
-	background-color: $blue;
-	background-image:url('../images/slider-arrow-left.svg');
-	background-position: center center;
-	background-repeat: no-repeat;
-	background-size: 18px 18px;
-	@include abs-pos(50%,auto,auto,0);
-	@extend %ir;
-	margin-top: -15px;
-	.orange &{
-		background-color: $orange;
-	}
-	.green &{
-		background-color: $green;
-	}
-	.pink &{
-		background-color: $pink;
-	}
-}
-.slick-next{
-	@include abs-pos(50%,0,auto,auto);
-	background-image:url('../images/slider-arrow-right.svg');
-}
-.owl-carousel{
-	display:block;
-	height:100%;
-}
-.owl-stage-outer{
-	height:100%;
-	display: block;
-	.owl-stage{
-		height:100%;
-		display:block;
-	}
-	.owl-item{
-		display: block;
-		height: 100%;
-	}
-	
-}
-.slick-slider, .slick-list, .slick-track, .slick-slider{
-	height: 100%;
-}
-.image-slide{
-	display:block;
-	height:100%;
-	@include bg-cover;
-}
-.fancybox-overlay{
-	z-index:9999 !important;
-}
-#loader{
-	display: block;
-	width: 85px;
-  	height: 85px;
-  	background-color: white;
-  	position: absolute;
-  	@include opacity(0);
-  	z-index: 9999;
-  	@include border-radius(50%);
-  	background: white url('../images/loader.gif') center center no-repeat;
 }

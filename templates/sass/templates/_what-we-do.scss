@@ -1,0 +1,70 @@
+dl#sectors{
+	@extend %full-width;
+	@extend %clearfix;
+	margin:0;
+	height:100%;
+	dt,dd{
+		float:left;
+		width:20%;
+		height:100%;
+		display: block;
+		margin:0;
+	}
+	dt{
+		cursor:pointer;
+		@include transition(background-color 0.3s ease-in-out);
+		&:hover,&:active{
+			background-color: darken($blue,5);
+		}
+		div{
+			@extend %full-width;
+			@include vertical-align;
+			text-align: center;
+			padding:110px 0 0;
+			position: relative;
+			h3{
+				margin-bottom: 8px;
+			}
+			&:before{
+				content:"";
+				width:90px;
+				height:90px;
+				display: block;
+				@include abs-pos(0,auto,auto,50%);
+				margin-left:-45px;
+				background-image:url('../images/brand-strategy-icon.png');
+				background-position: center center;
+				background-repeat:no-repeat;
+			}
+		}
+	}
+	dd{
+		width: 80%;
+		.main,aside{
+			width:75%;
+			height:100%;
+			display: block;
+			float:left;
+			padding: 4% 3%;
+			border-left:1px solid white;
+		}
+		aside{
+			width: 25%;
+			ul{
+				li{
+					padding-left:30px;
+					margin-bottom: 5px;
+					position:relative;
+					&:before{
+						content:"";
+						width:15px;
+						height:16px;
+						display: block;
+						background:url('../images/tick.png') center center no-repeat;
+						@include abs-pos(2px,auto,auto,0);
+					}
+				}
+			}
+		}
+	}
+}
