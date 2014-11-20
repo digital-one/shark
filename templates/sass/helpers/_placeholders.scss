@@ -32,3 +32,8 @@
 %align-right{
 	float:right;
 }
+%preserve-3d{
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}

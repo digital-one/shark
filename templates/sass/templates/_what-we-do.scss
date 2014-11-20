@@ -13,6 +13,10 @@ dl#sectors{
 	dt{
 		cursor:pointer;
 		@include transition(background-color 0.3s ease-in-out);
+		border-right:1px solid rgba(255,255,255,.4);
+		&:last-child{
+			border-right: none;
+		}
 		&:hover,&:active{
 			background-color: darken($blue,5);
 		}
@@ -36,9 +40,31 @@ dl#sectors{
 				background-position: center center;
 				background-repeat:no-repeat;
 			}
+			&.creative{
+				&:before{
+					background-image:url('../images/creative-icon.png');
+				}
+			}
+			&.print{
+				&:before{
+					background-image:url('../images/print-icon.png');
+				}
+			}
+			&.dm{
+				&:before{
+					background-image:url('../images/direct-marketing-icon.png');
+				}
+			}
+			&.digital{
+				&:before{
+					background-image:url('../images/digital-icon.png');
+				}
+			}
 		}
+
 	}
 	dd{
+		display: none;
 		width: 80%;
 		.main,aside{
 			width:75%;

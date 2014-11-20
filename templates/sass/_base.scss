@@ -11,5 +11,5 @@ html{
 body{
 	font-family: $proximanova-regular;
 	@include font-size(18);
-	color: white;
+	color: $grey;
 }
