@@ -32,7 +32,7 @@ nav#nav{
 		}
 	}
 }
-nav#social{
+nav.social{
 	@include inline-menu;
 	@extend %clearfix;
 	margin-bottom:20px;

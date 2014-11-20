@@ -55,7 +55,7 @@
 </section>
         </aside>
 <div class="section" data-anchor="" data-title="">
-<section class="page-title blue">
+<section class="page-title white>
 <div><h1>What we do</h1><h2 class="underline">out thinking your competition</h2></div>
 </section>
  <section class="banner" style="background-image:url('images/what-we-do.jpg');">image</section>   

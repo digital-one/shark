@@ -43,7 +43,7 @@
 
 
 <section id="contacts">
-<nav id="social">
+<nav class="social">
 <ul><li><a href="" class="facebook">Facebook</a></li>
     <li><a href="" class="twitter">Twitter</a></li>   
     <li><a href="" class="linkedin">Linkedin</a></li>
@@ -58,8 +58,19 @@
 <section class="page-title white">
 <div><h1>Who we are</h1><h2 class="underline">a little bit about us</h2></div>
 </section>
- <section class="banner">image</section>   
-<section class="content"><div class="content-wrap"><div class="column"><h3>A Friendly Bunch</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div><div class="column"><h3>Full of passion</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div><div class="column"><h3>We love a challenge</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div></div></section>
+ <section id="map" class="banner">map</section>   
+<section class="content blue"><div class="content-wrap"><div class="column"><h3>Find us at</h3><address>Shark! Design &amp; Marketing<br />
+The W&amp;L Building,<br />
+Lowfields Way,<br />
+Elland,<br />
+HX5 9DA</address><small>Registered in England No: 581 7121</small></div><div class="column"><h3>start your project</h3><p><strong>New client enquiries</strong><br />
+<a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></p></div><div class="column"><h3>get in touch</h3><p><a href="tel:01422376466">01422 376446</a><br />
+<a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></p><nav class="social">
+<ul><li><a href="" class="facebook">Facebook</a></li>
+    <li><a href="" class="twitter">Twitter</a></li>   
+    <li><a href="" class="linkedin">Linkedin</a></li>
+</ul>
+</nav></div></div></section>
 </div>
 </div>
     </body>

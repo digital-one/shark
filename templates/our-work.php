@@ -55,7 +55,7 @@
 </section>
         </aside>
 <div class="section scrollable" data-anchor="" data-title="">
-<section class="page-title blue">
+<section class="page-title white">
 <div><h1>Our work</h1><h2 class="underline">increasing market share</h2></div>
 </section>
 

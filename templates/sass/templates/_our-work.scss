@@ -70,14 +70,22 @@ ul#featured-work{
 			text-align: center;
 			@extend %full-width;
 			h3{
-				color: $blue;
 				@include font-size(44);
-				margin-bottom: 12px;
+				margin-bottom: 4px;
 			}
 			h4{
-				color: $grey;
 				@include font-size(18);
 				margin-bottom: 50px;
+			}
+		}
+		footer{
+			&.intro{
+				h3{
+					margin-bottom: 30px;
+				}
+				h4{
+					padding: 0 20%;
+				}
 			}
 		}
 		section{
@@ -88,53 +96,53 @@ ul#featured-work{
 .column{
 	float:left;
 	display: block;
-	background-color: $light-grey;
+	width:100%;
 	height:100%;
-	&.half{
-		width:50%;
-	}
-}
-.cell{
-	display: block;
-	width: 100%;
-	position: relative;
-	color: white;
-	@include bg-cover;
-	&:before{
-		content:"";
+	.cell{
 		display: block;
-		padding-top: 140%;
-	}
-	&.half-height{
+		width: 100%;
+		position: relative;
+		color: white;
+		@include bg-cover;
 		&:before{
+			content:"";
+			display: block;
 			padding-top: 70%;
 		}
+		.inner{
+			@include abs-pos(0,0,0,0);
+			div{
+				@include vertical-align;
+				text-align: center;
+				padding:0 14%;
+				p{
+					text-align: left;
+				}
+			}
+		}
+		h5{
+			@include font-size(34);
+			color: white;
+			font-family: $proximanova-bold;
+			text-transform: uppercase;
+			margin-bottom: 40px;
+		}
 	}
-	.inner{
-		@include abs-pos(0,0,0,0);
-		div{
-			@include vertical-align;
-			text-align: center;
-			padding:0 14%;
-			p{
-				text-align: left;
+	&.half{
+		width:50%;
+		.cell{
+			&:before{
+				padding-top:140%;
+			}
+			&.half-height{
+				&:before{
+					padding-top:70%;
+				}
 			}
 		}
 	}
-	h5{
-		@include font-size(34);
-		color: white;
-		font-family: $proximanova-bold;
-		text-transform: uppercase;
-		margin-bottom: 40px;
-	}
-	&.pink{
-		background-color: $pink;
-	}
-	&.blue{
-		background-color: $blue;
-	}
 }
+
 nav#categories{
 	@extend %clearfix;
 	@include centered-menu;
@@ -162,4 +170,34 @@ nav#categories{
 		}
 	}
 
+}
+nav#social-share{
+	@extend %clearfix;
+	@include centered-menu;
+	span{
+		display: block;
+		margin:10px auto 10px;
+		font-family: $georgia;
+		font-style: italic;
+		@include font-size(16);
+	}
+	li{
+		margin:0 4px;
+		a{
+			width:30px;
+			height: 30px;
+			@extend %ir;
+			display: block;
+			background-size: 30px 30px;
+			background-image:url('../images/facebook-share.png');
+			background-position: center center;
+			background-repeat: no-repeat;
+			&.twitter{
+				background-image:url('../images/twitter-share.png');
+			}
+			&.email{
+				background-image:url('../images/email-share.png');
+			}
+		}
+	}
 }
