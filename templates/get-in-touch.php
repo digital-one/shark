@@ -73,5 +73,23 @@ HX5 9DA</address><small>Registered in England No: 581 7121</small></div><div cla
 </nav></div></div></section>
 </div>
 </div>
+<!-- Load jQuery from Google CDN -->
+<script  src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<!-- Load jQuery from a local copy if loading from Google fails -->
+<script>window.jQuery || document.write('<script type="text/javascript" src="js/jquery-1.10.1.min.js"><\/script>')</script>
+<script src="//maps.google.com/maps/api/js?sensor=true"></script>
+<script src="js/jquery.gmap.js"></script>
+<script>
+$(function(){
+$('#map').gmap({
+    markers: [{'latitude': 53.6925016,'longitude': -1.8210985,'name': 'Shark Design &amp; Marketing','content': '83 Princes Street,<br />Edinburgh, EH2 2ER'}],
+    markerFile:  'http://shark.localhost/images/marker.png',
+    markerWidth:77,
+    markerHeight:52,
+    markerAnchorX:38,
+    markerAnchorY:52
+})
+});
+</script>
     </body>
     </html>

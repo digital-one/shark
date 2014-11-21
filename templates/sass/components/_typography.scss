@@ -28,10 +28,10 @@ a{
 	text-decoration: none;
 	@include transition(all 0.3s ease-in-out);
 	&:link,&:visited{
-		color:white;
+		color:$blue;
 	}
 	&:hover,&:active{
-
+		color: $grey;
 	}
 }
 small{

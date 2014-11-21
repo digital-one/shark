@@ -34,7 +34,7 @@
 			background-color: white;
 		}
 	}
-	h1,h2,h3,h4,h5,p{
+	h1,h2,h3,h4,h5,p,a{
 		color: white;
 	}
 	p,nav{
@@ -61,6 +61,7 @@ aside{
 		}
 		small a{
 			display: block;
+			color: white;
 		}
 	}
 }
@@ -85,10 +86,12 @@ section.banner{
 	height:36%;
 }
 section.content{
-	background-color:$blue;
+	//background-color:white;
 	@extend %full-width;
-	@extend %clearfix;
+	@extend .clearfix;
 	height:37%;
+	position: relative;
+	overflow:visible;
 	.content-wrap{
 		padding: 3% 5%;
 		width:100%;
@@ -114,7 +117,7 @@ section.content{
 	border:1px solid white;
 	padding: 0 71px 0 21px;
 	text-align:left;
-	color: white;
+	color: white !important;
 	font-family: $proximanova-bold;
 	text-transform:uppercase;
 	position:relative;
@@ -144,17 +147,20 @@ section.content{
 	}
 	&:hover,&:active{
 		background-color:lighten(black,95);
+		@include opacity(1);
 		.blue &{
 			background-color:darken($blue,5);
+			@include opacity(1);
 		}
 		.pink &{
 			background-color:darken($pink,5);
+			@include opacity(1);
 		}
 		.orange &{
 			background-color:darken($orange,10);
+			@include opacity(1);
 		}
-	}
-	
+	}	
 }
 .underline{
 	&:after{
@@ -193,5 +199,28 @@ a.scroll{
 		@include abs-pos(0,auto,auto,50%);
 		margin-left:-11px;
 		background: url('../images/scroll-icon.png');
+	}
+}
+.tooltip-pointer{
+	display:inline-block;
+	z-index: 9999;
+	position: relative;
+	margin:0 0 8px;
+	height:30px;
+	line-height:32px;
+	color: white;
+	@include font-size(14);
+	text-align: center;
+	font-family: $proximanova-semibold;
+	padding: 0 15px;
+	background-color: $grey;
+	@include abs-pos(0,auto,auto,0);
+	&:after{
+		content:"";
+		width:16px;
+		height:8px;
+		@include abs-pos(30px,auto,-8px,50%);
+		margin-left:-8px;
+		background:url('../images/tooltip-pointer.png') center top no-repeat;
 	}
 }

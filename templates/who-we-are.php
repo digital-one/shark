@@ -29,37 +29,13 @@
         <h1 id="home-link"><img src="images/shark.svg" alt="Shark Design" /></h1>
         <!--<a id="home-link" href="">Shark Design</a>-->
     </header>
-           <aside id="sidebar">
-<nav id="nav">
-    <ul>
-<li class="current-menu-item"><a href="">Home</a></li>
-<li><a href="">Who we are</a></li>
-<li><a href="">What we do</a></li>
-<li><a href="">Our work</a></li>
-<li><a href="">Get in touch</a></li>
-<li><a href="">Enlightenment</a></li>
-</ul>
-</nav>
-
-
-<section id="contacts">
-<nav id="social">
-<ul><li><a href="" class="facebook">Facebook</a></li>
-    <li><a href="" class="twitter">Twitter</a></li>   
-    <li><a href="" class="linkedin">Linkedin</a></li>
-    <li><a href="" class="email">Email</a></li>
-</ul>
-</nav>
-<small><a href="tel:01422376446">01422 376446</a>
-<a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></small>
-</section>
-        </aside>
+      <?php include_once('sidebar.php') ?>
 <div class="section" data-anchor="" data-title="">
 <section class="page-title white">
 <div><h1>Who we are</h1><h2 class="underline">a little bit about us</h2></div>
 </section>
- <section class="banner">image</section>   
-<section class="content"><div class="content-wrap"><div class="column"><h3>A Friendly Bunch</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div><div class="column"><h3>Full of passion</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div><div class="column"><h3>We love a challenge</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div></div></section>
+ <section class="banner" style="background-image:url('images/who-we-are-image.jpg');"></section>   
+<section class="content blue"><div class="content-wrap"><div class="column"><h3>A Friendly Bunch</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div><div class="column"><h3>Full of passion</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div><div class="column"><h3>We love a challenge</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div></div></section>
 </div>
 </div>
     </body>

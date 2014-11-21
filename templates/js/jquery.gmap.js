@@ -13,7 +13,7 @@ $.fn.gmap = function(options){
 	
 	var defaults = {
 		markers: [{'latitude': 51.490405,'longitude': -0.232193,'name': 'London','content': 'Argentum<br />2 Queen Caroline Street<br />Hammersmith<br />London<br />W6 9DX'}],
-		markerFile:  'http://localhost/corporateresolve/wp-content/themes/corporateresolve/images/marker.png',
+		markerFile:  'marker.png',
 		markerWidth:97,
 		markerHeight:95,
 		markerAnchorX:45,

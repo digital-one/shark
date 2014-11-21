@@ -1,0 +1,32 @@
+ul#enlightenment{
+	margin:0 1%;
+	width:100%;
+	li{
+		float:left;
+		width:30.6666%;
+		display: block;
+		border: 12px solid $light-grey;
+		background-color: white;
+		color: $grey;
+		margin: 0 1% 2%;
+		figure{
+			img{
+				@include fit-grid(width);
+				display: block;
+			}
+		}
+		figcaption{
+			padding: 4% 4% 6%;
+			h4{
+				color: $grey;
+				font-family: $proximanova-bold;
+				font-style: normal;
+				@include font-size(16);
+				margin-bottom: 4px;
+			}
+			p{
+				margin-bottom: 0;
+			}
+		}
+	}
+}
