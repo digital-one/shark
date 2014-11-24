@@ -2,23 +2,26 @@
 	width:100%;
 	height:100%;
 	position: relative;
-	padding-left:17.9%;
-	
-	aside#sidebar{
-		position: fixed;
-		overflow:hidden;
-		z-index: 999;
-		top:0;
-		left:0;
-		display: block;
-		background-color: black;
-		width:18%;
-		height:100%;
+	padding-left: 17.7%;
+	@media screen and (max-width: $break-medium){
+		padding-left: 48px;
+	}
+	@media screen and (max-width: $break-small){
+		padding-left:0px;
 	}
 	.section{
 		height:100%;
 		width:100%;
 		display: block;
 		position: relative;
+		z-index: 997;
+		@media screen and (max-width: $break-small){
+			height: auto;
+		}
+		&#home{
+			@media screen and (max-width: $break-small){
+				height: 500px;
+			}	
+		}
 	}
 }

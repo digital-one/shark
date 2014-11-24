@@ -12,5 +12,9 @@ html{
 body{
 	font-family: $proximanova-regular;
 	@include font-size(16);
+	@media screen and (max-width: $break-xlarge){
+		@include font-size(14);
+	}
 	color: $grey;
+	overflow-x: hidden;
 }

@@ -9,6 +9,9 @@ ul#enlightenment{
 		background-color: white;
 		color: $grey;
 		margin: 0 1% 2%;
+		@media screen and (max-width: $break-large){
+			width: 47%;
+		}
 		figure{
 			img{
 				@include fit-grid(width);

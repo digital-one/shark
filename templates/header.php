@@ -25,7 +25,33 @@
     </head>
     <body>
     <div id="page-wrap" class="fullpage">
-        <header id="header">
+        <nav id="controls"><ul><li><a href="" class="close">Close</a></li><li><a href="" class="next">Next</a></li><li><a href="">Previous</a></li></ul></nav>
         <h1 id="home-link"><img src="images/shark.svg" alt="Shark Design" /></h1>
-        <!--<a id="home-link" href="">Shark Design</a>-->
-    </header>
+                <header id="header">
+     <a href="" id="mobile-menu">Menu</a>           
+<nav id="nav">
+
+    <ul>
+<li class="current-menu-item"><a href="">Home</a></li>
+<li><a href="/~sharkdesignco/">Who we are</a></li>
+<li><a href="/~sharkdesignco/">What we do</a></li>
+<li><a href="/~sharkdesignco/">Our work</a></li>
+<li><a href="/~sharkdesignco/">Get in touch</a></li>
+<li><a href="/~sharkdesignco/">Enlightenment</a></li>
+</ul>
+<div class="highlight"></div>
+</nav>
+
+
+<section id="contacts">
+<nav class="social">
+<ul><li><a href="" class="facebook">Facebook</a></li>
+    <li><a href="" class="twitter">Twitter</a></li>   
+    <li><a href="" class="linkedin">Linkedin</a></li>
+    <li><a href="" class="email">Email</a></li>
+</ul>
+</nav>
+<small><a href="tel:01422376446">01422 376446</a>
+<a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></small>
+</section>
+        </header>

@@ -1,4 +1,30 @@
+var isTouchDevice = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isTouchDevice.Android() || isTouchDevice.BlackBerry() || isTouchDevice.iOS() || isTouchDevice.Opera() || isTouchDevice.Windows());
+    }
+};
+
+
 $(function(){
+
+var isMobile, isTabletMenu, isMobileMenu,
+	$fullPageActive = false;
+
 
 parallaxTitle = function(){
 	console.log('parallax')
@@ -11,8 +37,14 @@ $title.css({
 }
 
 $(window).on('scroll',function() {
-	 parallaxTitle();
+	if(!isTouchDevice.any()){
+		 parallaxTitle();
+	}
     })
+
+
+//mobile menu
+
 
 //tooltip
 
@@ -114,8 +146,16 @@ activateSectorClick  = function(){
 killSectorClick = function(){
 	$handles.off('click');
 }
-		activateSectorClick();
-
+		
+activateMobileSectorClick = function(){
+	$handles.off('click').on('click',function(e){
+		e.preventDefault();
+		var $parent = $(this).parent('li');
+		$parent.addClass('active');
+		$('.handle',$parent).removeClass('hover');
+		$('.main,aside',$parent).show();
+	})
+}
 
 //menu
 
@@ -135,24 +175,110 @@ var $options = $('#nav li'),
 		//callback
 	})
 }
+resetMobileNav = function(){
 
+}
+mobileNavClickAction = function(e){
+		e.preventDefault();
+		var $header = $(this).parent('header');
+		if($(this).hasClass('active')){
+		$('#nav').hide();
+		$header.removeClass('expanded');
+		$(this).removeClass('active');
+	} else {
+		$header.addClass('expanded');
+		$('#nav').show();
+		$(this).addClass('active');
+	}
+}
+tabletNavClickAction = function(e){
+		e.preventDefault();
+		if($(this).hasClass('active')){
+		$(this).removeClass('active');
+		$('#nav').hide();
+		$('#header').animate({
+		width: '50px'
+	},200,"easeOutQuad",function(){
+		//finished
+	})
+	$('#page-wrap, #work-single .page-title').animate({
+		'left':'0'
+	},200,"easeOutQuad",function(){
+		//finished
+	})
+	} else {
+		$(this).addClass('active');
+	$('#header').animate({
+		width: '190px'
+	},200,"easeOutQuad",function(){
+		$('#nav').fadeIn(300);
+	})
+	$('#page-wrap, #work-single .page-title').animate({
+		'left':'140px'
+	},200,"easeOutQuad",function(){
 
+	})
+	}
+}
+activateTabletMenu = function(){
+	$('a#mobile-menu').off('click').on('click',tabletNavClickAction);
+}
+activateMobileMenu = function(){
+	$('a#mobile-menu').off('click').on('click',mobileNavClickAction);
+}
+activateHistoryActions = function(){
+	activateFullPage();
+}
+killHistoryActions = function(){
+	if($fullPageActive){
+		$.fn.fullpage.destroy('all');
+	}
+}
+updateMenuActions = function(){
+	isMobile = $(window).width() < 660;
+	isTabletMenu = $(window).width() > 659 && $(window).width() < 769;
+	isMobileMenu = $(window).width() < 660;
+	if(!isMobile && Modernizr.history){
+		activateHistoryActions();
+	} else {
+		killHistoryActions();
+	}
+	if(!isMobile){ //what we do panel
+		activateSectorClick();
+	} else {
+		activateMobileSectorClick();
+	}
+	if(isMobileMenu){
+		activateMobileMenu();
+	}
+	if(isTabletMenu){
+		activateTabletMenu();
+	}
+}
+
+activateFullPage = function(){
 //full page scroll
 if($('.fullpage').length){
  $('.fullpage').fullpage({
         verticalCentered: false,
         resize : false,
         scrollOverflow: true,
-        paddingTop: 50,
-        paddingBottom: 50,
+        autoScrolling: scroll,
+        //css3: true,
+		paddingTop: '0',
+		paddingBottom: '0',
         normalScrollElementTouchThreshold: 15,
-        touchSensitivity: 10,
-        scrollingSpeed: 700,
+        touchSensitivity: 30,
+        keyboardScrolling: true,
+        scrollingSpeed: 1000,
+		easing: 'easeInQuart',
        // anchors: $anchors,
     onLeave: function(index, nextIndex, direction){
          changeMenuState(nextIndex);
          }
     });
+ 	$fullPageActive = true;
+}
 
 $links = $('#nav a');
 $links.on('click',function(e){
@@ -166,6 +292,10 @@ $('.caption .button').on('click',function(e){
 	 $.fn.fullpage.moveTo(4, 0);
 })
 }
+
+updateMenuActions();
+
+$(window).on('resize',updateMenuActions);
 
 }) 	//end on document load
 

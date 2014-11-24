@@ -1,22 +1,41 @@
 ul#featured-work{
+	height:73%;
+	@media screen and (min-height: 1000px){
+		height: 68%;
+	}
+	display:block;
 	li{
 		width:33.33%;
+		height:50%;
+		@media screen and (max-width: $break-medium) and (min-height: 1000px){
+			width:50%;
+			height:33.33%;
+
+		}
 		float:left;
 		position: relative;
 		&:after{
-			content:"";
-			padding-top:68%;
-			display: inline-block;
+			///content:"";
+			//padding-top:68%;
+			//display: inline-block;
 		}
 		figure{
 			@include abs-pos(0,0,0,0);
 			text-align: center;
-			background-size: 100% auto;
+			//background-size: 100% auto;
+			background-size: auto 100%;
+			@media screen and (max-width: $break-medium) and (min-height: 1000px){
+				background-size: 100% auto;
+			}
 			background-position: center center;
 			background-repeat:no-repeat;
 			@include transition(background-size 0.2s ease);
 			&:hover,&:active{
-				background-size: 120% auto;
+				//background-size: 120% auto;
+				background-size: auto 110%;
+				@media screen and (max-width: $break-medium) and (min-height: 1000px){
+					background-size: 110% auto;
+				}
 				figcaption{
 					@include opacity(1);
 				}
@@ -42,6 +61,9 @@ ul#featured-work{
 					}
 					h4{
 						@include font-size(16);
+						@media screen and (max-width: $break-large){
+							@include font-size(14);
+						}
 						color: white;
 						margin-bottom: 35px;
 					}
@@ -52,23 +74,31 @@ ul#featured-work{
 }
 #work-single{
 	padding-top:50vh;
+	@media screen and (min-height: 1000px){
+		padding-top: 25vh
+	}
 	.page-title{
 		position: fixed;
 		width: 100%;
 		left:0;
 		top:0;
 		z-index: 997;
-
 		div{
 			@extend %preserve-3d;
 			padding-left:17.9%;
-
+			@media screen and (max-width: $break-medium){
+				padding-left:48px;
+			}
 		}
 		h1{
-			width: 28%;
+			width: 45%;
+			max-width: 400px;
 			display: inline-block;
 			img{
 				@include fit-grid(width);
+			}
+			@media screen and (max-width: $break-xlarge){
+				width: 45%;
 			}
 		}
 	}
@@ -78,15 +108,24 @@ ul#featured-work{
 		z-index: 998;
 		.intro{
 			padding: 6% 12%;
+			@media screen and (max-width: $break-xlarge){
+				padding: 4% 8% 2%;
+			}
 			text-align: center;
 			@extend %full-width;
 			h3{
 				@include font-size(44);
 				margin-bottom: 4px;
+				@media screen and (max-width: $break-xlarge){
+					@include font-size(38);
+				}
 			}
 			h4{
 				@include font-size(18);
 				margin-bottom: 50px;
+				@media screen and (max-width: $break-xlarge){
+					margin-bottom: 30px;
+				}
 			}
 		}
 		footer{
@@ -126,6 +165,9 @@ ul#featured-work{
 				@include vertical-align;
 				text-align: center;
 				padding:0 14%;
+				@media screen and (max-width: $break-large){
+					padding:0 8%;
+				}
 				p{
 					text-align: left;
 				}
@@ -137,6 +179,15 @@ ul#featured-work{
 			font-family: $proximanova-bold;
 			text-transform: uppercase;
 			margin-bottom: 40px;
+			@media screen and (max-width: $break-large){
+				@include font-size(28);
+				margin-bottom: 20px;
+			}
+		}
+		.underline{
+			&:after{
+				margin-top:20px;
+			}
 		}
 	}
 	&.half{
@@ -208,6 +259,50 @@ nav#social-share{
 			}
 			&.email{
 				background-image:url('../images/email-share.png');
+			}
+		}
+	}
+}
+nav#controls{
+	width:70px;
+	z-index:9999;
+	position:fixed;
+	display: none;
+	top:0;
+	right:0;
+	@media screen and (max-width: $break-xlarge){
+		width:50px;
+	}
+	ul{
+		li{
+			a{
+				width:70px;
+				height:70px;
+				display: block;
+				@extend %ir;
+				background-color: black;
+				background-image:url('../images/prev-btn.png');
+				background-position: center center;
+				background-repeat: no-repeat;
+				@media screen and (max-width: $break-xlarge){
+					background-size: 10px 19px;
+				}
+				&:hover,&:active{
+					background-color: lighten(black,20);
+				}
+				&.next{
+					background-image:url('../images/next-btn.png');
+				}
+				&.close{
+					background-image:url('../images/close-btn.png');
+					@media screen and (max-width: $break-xlarge){
+						background-size: 19px 19px;
+					}
+				}
+				@media screen and (max-width: $break-xlarge){
+					width:50px;
+					height:50px;
+				}
 			}
 		}
 	}

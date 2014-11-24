@@ -4,12 +4,44 @@
 		"selected_items":
 		[
 			[
-				"pad",
-				"padding-bottom"
+				"killSe",
+				"killSectorClose"
 			],
 			[
 				"ba",
 				"background-color"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"en",
+				"enlightenment"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"fo",
+				"font-style"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"fon",
+				"font-size"
 			],
 			[
 				"backg",
@@ -18,14 +50,6 @@
 			[
 				"marg",
 				"margin-top"
-			],
-			[
-				"font",
-				"font-size"
-			],
-			[
-				"fon",
-				"font-family"
 			],
 			[
 				"pr",
@@ -40,16 +64,8 @@
 				"text-transform"
 			],
 			[
-				"fo",
-				"font-family"
-			],
-			[
 				"pa",
 				"padding-bottom"
-			],
-			[
-				"tex",
-				"text-decoration"
 			],
 			[
 				"mar",
@@ -70,10 +86,6 @@
 			[
 				"border-",
 				"border-bottom"
-			],
-			[
-				"padd",
-				"padding"
 			],
 			[
 				"bord",
@@ -502,23 +514,59 @@
 			[
 				"quick",
 				"quickmenu_show"
-			],
-			[
-				"quic",
-				"quickmenu_show"
-			],
-			[
-				"o",
-				"opacity"
-			],
-			[
-				"is",
-				"is_open"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "templates/sass/components/_container.scss",
+			"settings":
+			{
+				"buffer_size": 332,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/_base.scss",
+			"settings":
+			{
+				"buffer_size": 244,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/our-work-detail.php",
+			"settings":
+			{
+				"buffer_size": 4773,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/js/scripts.js",
+			"settings":
+			{
+				"buffer_size": 3719,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sidebar.php",
+			"settings":
+			{
+				"buffer_size": 844,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/js/jquery.gmap.js",
+			"settings":
+			{
+				"buffer_size": 4498,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -548,6 +596,40 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/shark/templates/home.php",
+		"/Applications/MAMP/htdocs/shark/templates/who-we-are.php",
+		"/Applications/MAMP/htdocs/shark/templates/get-in-touch.php",
+		"/Applications/MAMP/htdocs/shark/templates/enlightenment.php",
+		"/Applications/MAMP/htdocs/shark/templates/sidebar.php",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_what-we-do.scss",
+		"/Applications/MAMP/htdocs/shark/templates/what-we-do.php",
+		"/Applications/MAMP/htdocs/shark/templates/header.php",
+		"/Applications/MAMP/htdocs/shark/templates/index.php",
+		"/Applications/MAMP/htdocs/shark/templates/our-work-detail.php",
+		"/Applications/MAMP/htdocs/shark/templates/our-work.php",
+		"/Applications/MAMP/htdocs/shark/templates/js/scripts.js",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_header.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_vertical-align.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_all.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/_placeholders.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/_variables.scss",
+		"/Applications/MAMP/htdocs/shark/templates/js/jquery.gmap.js",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_all.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_enlightenment.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/_base.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_our-work.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_container.scss",
+		"/Applications/MAMP/htdocs/shark/templates/js/masonry.pkgd.min.js",
+		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_center-vertical.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_rgba-bg.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_vertical-centre-child.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_forms.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_grid.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_slider.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_home.scss",
 		"/Applications/MAMP/htdocs/ama/pagets/templates/js/scripts.js",
 		"/Applications/MAMP/htdocs/ama/pagets/templates/sass/helpers/mixins/_wp-current-page-links.scss",
 		"/Applications/MAMP/htdocs/ama/pagets/templates/sass/components/_header.scss",
@@ -641,41 +723,7 @@
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/search-icon.svg",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav-home.php",
 		"/Applications/MAMP/htdocs/Backups/Stonefix/stonefix/lloyds/js/jquery.confirmBox.js",
-		"/Users/neilmills/Downloads/altinetc_dev.sql",
-		"/Applications/MAMP/htdocs/bowman-riley/bowmanriley.sql",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-latest-news.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/jquery.slimscroll.min.js",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/news-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/header.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/----page-our-story.php",
-		"/Users/neilmills/Library/Caches/Cleanup At Startup/Transmit/58C53E6F-9FC9-4C5D-90EA-3A62DD171973/archive-news.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/----page-architects.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/functions/retina-images.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-our-architectural-services.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/work-with-us.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/our-people-sector.php",
-		"/Applications/MAMP/htdocs/park_manor/wp-content/themes/parkmanor_modified/taxonomy-activity_category.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_grid.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/build/about.php",
-		"/Applications/MAMP/htdocs/bowman-riley/build/index.php",
-		"/Applications/MAMP/htdocs/bowman-riley/.htaccess",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_contact.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_typography.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/contact.php",
-		"/Applications/MAMP/htdocs/bowman-riley/images/bowman-riley-home.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/header.php",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_header.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/index.php",
-		"/Applications/MAMP/htdocs/bowman-riley/our-people-sector.php",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_media.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/js/scripts.js",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/index.php",
-		"/Applications/MAMP/htdocs/bowman-riley/sass/templates/_all.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/media.php"
+		"/Users/neilmills/Downloads/altinetc_dev.sql"
 	],
 	"find":
 	{
@@ -696,6 +744,19 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"resize",
+			"scroll",
+			"console",
+			"showSectorClose",
+			"resetSectorMenu",
+			"work-single",
+			"our-work",
+			"blue",
+			"bg-align",
+			".data",
+			"$bgobj",
+			"cover-image",
+			"parall",
 			"secondary-nav",
 			"current-menu-item",
 			"current",
@@ -810,20 +871,7 @@
 			"main",
 			"arrow-divide",
 			".cell",
-			"sub-nav",
-			"main",
-			"-50",
-			"main",
-			"svg",
-			"main",
-			"twitter",
-			"latest-work",
-			"share",
-			"svg",
-			"mouseenter",
-			"menu",
-			"sub-menu",
-			"overlay"
+			"sub-nav"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -969,8 +1017,169 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "templates/sass/components/_container.scss",
+					"settings":
+					{
+						"buffer_size": 332,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								82,
+								82
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/sass/_base.scss",
+					"settings":
+					{
+						"buffer_size": 244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								41,
+								41
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/our-work-detail.php",
+					"settings":
+					{
+						"buffer_size": 4773,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1382,
+								1344
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 144.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "templates/js/scripts.js",
+					"settings":
+					{
+						"buffer_size": 3719,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3046,
+								3046
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1832.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/sidebar.php",
+					"settings":
+					{
+						"buffer_size": 844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								343,
+								343
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "templates/js/jquery.gmap.js",
+					"settings":
+					{
+						"buffer_size": 4498,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1440,
+								1440
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 629.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],

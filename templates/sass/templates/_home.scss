@@ -1,10 +1,15 @@
-section#home{
+#home{
 	@include bg-cover;
+	@extend %clearfix;
+	@media screen and (max-width: $break-small){
+		height:500px !important; 
+	}
 }
 .bg-overlay{
 	@include abs-pos(0,0,0,0);
 	z-index: 996;
-	@include rgba-bg(0,0,0,#000000,.6);
+	background-color: #282828;
+	@include opacity(.6);
 }
 .caption{
 	text-align:center;
@@ -17,12 +22,44 @@ section#home{
 	}
 	h2{
 		display:block;
-		@include font-size(54);
+		@include font-size(62);
+		@media screen and (max-width: $break-xlarge){
+			@include font-size(48);
+		}
 		color: white; 
 		font-style: normal;
 		text-transform: uppercase;
 		font-family: $proximanova-bold;
 		line-height: 85%;
 		text-align: left;
+	}
+	@media screen and (max-width: $break-small){
+		padding:0 54px;
+	}
+}
+a.scroll{
+	display:inline-block;
+	@include font-size(16);
+	color: white;
+	font-family: $proximanova-bold;
+	text-transform: uppercase;
+	text-align: center;
+	width:80px;
+	height: auto;
+	padding:56px 0 0;
+	@include abs-pos(auto,auto,6%,50%);
+	margin-left:-40px;
+	z-index:998;
+	&:before{
+		content:"";
+		width:22px;
+		height:48px;
+		display: block;
+		@include abs-pos(0,auto,auto,50%);
+		margin-left:-11px;
+		background: url('../images/scroll-icon.png');
+	}
+	@media screen and (max-width: $break-small){
+		display: none;
 	}
 }

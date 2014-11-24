@@ -1,6 +1,6 @@
-         <aside id="sidebar">
+         <header id="header">
 <nav id="nav">
-
+<a href="" id="mobile-menu">Menu</a>
     <ul>
 <li class="current-menu-item"><a href="">Home</a></li>
 <li><a href="/~sharkdesignco/">Who we are</a></li>
@@ -24,4 +24,4 @@
 <small><a href="tel:01422376446">01422 376446</a>
 <a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></small>
 </section>
-        </aside>
+        </header>

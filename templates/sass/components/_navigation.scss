@@ -1,9 +1,21 @@
 nav#nav{
+	display:none;
 	@include wp-current-page-links{
 		background-color: transparent;
 	}
     @extend %full-width;
     @include vertical-align;
+    @media screen and (max-width: $break-medium){
+    	display: none;
+    }
+    @media screen and (max-width: $break-small){
+    	position: relative;
+    	transform: none;
+    	//@include rgba-bg(39,39,41,$dark-grey,.9);
+    	background-color: black;
+    	top:0;
+    	//display: block;
+    }
     position:relative;
     .highlight{
     	@include abs-pos(0,auto,auto,0);
@@ -12,6 +24,9 @@ nav#nav{
     	height:40px;
     	background-color: $blue;
     	z-index: 1;
+    	@media screen and (min-width: $break-medium) and (max-width: $break-xlarge){
+    		height:35px;
+    	}
     }
 	ul{
 		position:relative;
@@ -25,6 +40,12 @@ nav#nav{
 				padding: 0 0 0 8%;
 				line-height: 45px;
 				height:40px;
+				@media screen and (min-width: $break-medium) and (max-width: $break-xlarge){
+					@include font-size(15);
+					height: 35px;
+					line-height: 40px;
+    			}
+
 				display: block;
 				span{
 					height: 100%;

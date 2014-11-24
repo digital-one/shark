@@ -6,6 +6,7 @@ $visual-grid: false;
 $blue: #00b6f0;
 $grey: #605959;
 $light-grey: #dcdcdc;
+$dark-grey: #272729;
 $pink: #d3185f;
 $orange: #f4831f;
 
@@ -49,8 +50,7 @@ $proximanova-regular: "proximanova-regular-webfont", sans-serif;
 $georgia: Georgia, Times, serif;
 
 //break points
-$break-small: 640px;
-$break-medium: 767px; //ipad 
-$break-large: 979px;
-$break-xlarge: 1132px;
-$break-nav: 1200px;
+$break-small: 659px; //mobile
+$break-medium: 768px; //ipad 
+$break-large: 989px; //desktop
+$break-xlarge: 1179px; //hi res desktop

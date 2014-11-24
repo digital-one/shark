@@ -47,28 +47,18 @@
 	}
 }
 aside{
-	#contacts{
-		@extend %full-width;
-		padding: 0 8% 0 8%;
-		@include abs-pos(auto,auto,7%,0);
-		a{
-			&:link, &:visited{
-				@include opacity(.5);
-			}
-			&:hover, &:active{
-				@include opacity(1);
-			}
-		}
-		small a{
-			display: block;
-			color: white;
-		}
-	}
+	
 }
 section.page-title{
 	background-color:white;
 	@extend %full-width;
 	height: 27%;
+	@media screen and (min-height: 1000px){
+		height: 32%;
+	}
+	@media screen and (max-width: $break-small){
+		height: 134px;
+	}
 	position: relative;
 	div{
 		@include vertical-align;
@@ -77,6 +67,9 @@ section.page-title{
 	#work-single &{
 		height:50%;
 		background-color: $light-grey;
+		@media screen and (min-height: 1000px){
+			height:25%;
+		}
 	}
 }
 section.banner{
@@ -84,12 +77,24 @@ section.banner{
 	@include bg-cover;
 	background-color: #ccc;
 	height:36%;
+	@media screen and (min-height: 1000px){
+		height: 41%;
+	}
+	@media screen and (max-width: $break-small){
+		height:250px;
+	}
 }
 section.content{
 	//background-color:white;
 	@extend %full-width;
 	@extend .clearfix;
 	height:37%;
+	@media screen and (min-height: 1000px){
+		height: 27%;
+	}
+	@media screen and (max-width: $break-small){
+		height: auto;
+	}
 	position: relative;
 	overflow:visible;
 	.content-wrap{
@@ -97,6 +102,9 @@ section.content{
 		width:100%;
 		height:100%;
 		display: block;
+		@media screen and (max-width: $break-small){
+			padding:40px 5% 0;
+		}
 		div.column{
 			display: block;
 			height:100%;
@@ -104,6 +112,19 @@ section.content{
 			float:left;
 			width:33.33%;
 			padding:1% 3%;
+			&:last-child{
+				padding-right:1%;
+			}
+			@media screen and (max-width: $break-small){
+				width:100%;
+				float:none;
+				margin-bottom: 40px;
+				padding:1% 10% 1px;
+				height: auto;
+			}
+			p{
+				margin-bottom: 15px;
+			}
 		}
 	}
 	.scrollable &{
@@ -125,6 +146,11 @@ section.content{
 		height:66px;
 		line-height: 66px;
 		padding: 0 74px;
+		@media screen and (max-width: $break-small){
+			padding: 0 51px 0 21px;
+			height:40px;
+			line-height: 40px;
+		}
 		&:hover,&:active{
 			@include rgba-bg(0,0,0,#000000,.3);
 		}
@@ -144,6 +170,9 @@ section.content{
 		background:url('../images/arrow.png') left top no-repeat;
 		@include abs-pos(50%,16px,auto,auto);
 		margin-top:-6px;
+		@media screen and (max-width: $break-small){
+			right:7px;
+		}
 	}
 	&:hover,&:active{
 		background-color:lighten(black,95);
@@ -170,35 +199,22 @@ section.content{
 		height: 2px;
 		background-color: white;
 		margin: 30px auto 0;
+		@media screen and (max-width: $break-xlarge){
+			margin: 20px auto 0;
+		}
+		@media screen and (max-width: $break-small){
+			margin: 15px auto 0;
+			width:35px;
+		}
 		.caption &{
 			margin: 50px auto 40px;	
+			@media screen and (max-width: $break-small){
+				margin: 25px auto 37px;
+			}
 		}
 		.white &{
 			background-color: $blue;
 		}
-	}
-}
-a.scroll{
-	display:inline-block;
-	@include font-size(16);
-	color: white;
-	font-family: $proximanova-bold;
-	text-transform: uppercase;
-	text-align: center;
-	width:80px;
-	height: auto;
-	padding:56px 0 0;
-	@include abs-pos(auto,auto,6%,50%);
-	margin-left:-40px;
-	z-index:998;
-	&:before{
-		content:"";
-		width:22px;
-		height:48px;
-		display: block;
-		@include abs-pos(0,auto,auto,50%);
-		margin-left:-11px;
-		background: url('../images/scroll-icon.png');
 	}
 }
 .tooltip-pointer{
