@@ -2954,7 +2954,14 @@ ul#enlightenment {
   margin: 0 1%;
   width: 98%;
 }
-/* line 4, ../sass/templates/_enlightenment.scss */
+@media screen and (max-width: 659px) {
+  /* line 1, ../sass/templates/_enlightenment.scss */
+  ul#enlightenment {
+    margin: 0 4%;
+    width: 92%;
+  }
+}
+/* line 8, ../sass/templates/_enlightenment.scss */
 ul#enlightenment li {
   float: left;
   width: 30.6666%;
@@ -2962,31 +2969,32 @@ ul#enlightenment li {
   border: 12px solid #dcdcdc;
   background-color: white;
   color: #605959;
-  margin: 0 1% 2%;
+  margin: 0 0 2%;
 }
 @media screen and (max-width: 989px) {
-  /* line 4, ../sass/templates/_enlightenment.scss */
+  /* line 8, ../sass/templates/_enlightenment.scss */
   ul#enlightenment li {
     width: 47%;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 4, ../sass/templates/_enlightenment.scss */
+  /* line 8, ../sass/templates/_enlightenment.scss */
   ul#enlightenment li {
-    width: 98%;
+    width: 100%;
+    margin: 0 0 4%;
   }
 }
-/* line 19, ../sass/templates/_enlightenment.scss */
+/* line 24, ../sass/templates/_enlightenment.scss */
 ul#enlightenment li figure img {
   width: 100%;
   height: auto;
   display: block;
 }
-/* line 24, ../sass/templates/_enlightenment.scss */
+/* line 29, ../sass/templates/_enlightenment.scss */
 ul#enlightenment li figcaption {
   padding: 4% 4% 6%;
 }
-/* line 26, ../sass/templates/_enlightenment.scss */
+/* line 31, ../sass/templates/_enlightenment.scss */
 ul#enlightenment li figcaption h4 {
   color: #605959;
   font-family: "proximanova-bold-webfont", sans-serif;
@@ -2995,7 +3003,7 @@ ul#enlightenment li figcaption h4 {
   font-size: 1.6rem;
   margin-bottom: 4px;
 }
-/* line 33, ../sass/templates/_enlightenment.scss */
+/* line 38, ../sass/templates/_enlightenment.scss */
 ul#enlightenment li figcaption p {
   margin-bottom: 0;
 }
