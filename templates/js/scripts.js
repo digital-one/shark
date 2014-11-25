@@ -151,10 +151,14 @@ activateMobileSectorClick = function(){
 	$handles.off('click').on('click',function(e){
 		e.preventDefault();
 		var $parent = $(this).parent('li');
-		$parent.addClass('active');
-		$('.handle',$parent).removeClass('hover');
-		$('.main,aside',$parent).show();
-	})
+		if($parent.hasClass('active')){
+			$parent.removeClass('active');
+			$('.main,aside',$parent).hide();
+		}else{
+			$parent.addClass('active');
+			$('.main,aside',$parent).show();
+		}
+		})
 }
 
 //menu
@@ -240,6 +244,7 @@ updateMenuActions = function(){
 	isMobileMenu = $(window).width() < 660;
 	if(!isMobile && Modernizr.history){
 		activateHistoryActions();
+
 	} else {
 		killHistoryActions();
 	}
@@ -257,8 +262,9 @@ updateMenuActions = function(){
 }
 
 activateFullPage = function(){
+
 //full page scroll
-if($('.fullpage').length){
+if($('.fullpage').length && !$fullPageActive){
  $('.fullpage').fullpage({
         verticalCentered: false,
         resize : false,

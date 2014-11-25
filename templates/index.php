@@ -68,19 +68,19 @@
 </section>
 
     <ul id="featured-work">
-        <li><figure style="background-image:url('images/work-tn-1.jpg');"><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption></figure></li>
-<li><figure style="background-image:url('images/work-tn-2.jpg');"><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption></figure></li>
-<li><figure style="background-image:url('images/work-tn-3.jpg');"><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption></figure></li>
-<li><figure style="background-image:url('images/work-tn-4.jpg');"><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption></figure></li>
-<li><figure style="background-image:url('images/work-tn-5.jpg');"><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption></figure></li>
-<li><figure style="background-image:url('images/work-tn-6.jpg');"><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption></figure></li>
+        <li><figure><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption><div class="bg" style="background-image:url('images/work-tn-1.jpg');"></div></figure></li>
+<li><figure><figcaption><a href="our-work-detail-2.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption><div class="bg" style="background-image:url('images/work-tn-2.jpg');"></div></figure></li>
+<li><figure><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption><div class="bg" style="background-image:url('images/work-tn-3.jpg');"></div></figure></li>
+<li><figure><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption><div class="bg" style="background-image:url('images/work-tn-4.jpg');"></div></figure></li>
+<li><figure><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption><div class="bg" style="background-image:url('images/work-tn-5.jpg');"></div></figure></li>
+<li><figure><figcaption><a href="our-work-detail.php"><div><h3>Halco Rock Tools</h3><h4>new corporate identity</h4><span class="button">Read more</span></div></a></figcaption><div class="bg" style="background-image:url('images/work-tn-6.jpg');"></div></figure></li>
 </ul>
 </div>
 <!--/our work-->
 <!--get in touch-->
 <div class="section" data-anchor="" data-title="">
 <section class="page-title white">
-<div><h1>Who we are</h1><h2 class="underline">a little bit about us</h2></div>
+<div><h1>Get in touch</h1><h2 class="underline">start your project</h2></div>
 </section>
  <section id="map" class="banner">map</section>   
 <section class="content blue"><div class="content-wrap"><div class="column"><h3>Find us at</h3><address>Shark! Design &amp; Marketing<br />

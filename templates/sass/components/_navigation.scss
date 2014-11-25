@@ -1,5 +1,5 @@
 nav#nav{
-	display:none;
+	display:block;
 	@include wp-current-page-links{
 		background-color: transparent;
 	}
@@ -24,9 +24,6 @@ nav#nav{
     	height:40px;
     	background-color: $blue;
     	z-index: 1;
-    	@media screen and (min-width: $break-medium) and (max-width: $break-xlarge){
-    		height:35px;
-    	}
     }
 	ul{
 		position:relative;
@@ -42,8 +39,6 @@ nav#nav{
 				height:40px;
 				@media screen and (min-width: $break-medium) and (max-width: $break-xlarge){
 					@include font-size(15);
-					height: 35px;
-					line-height: 40px;
     			}
 
 				display: block;

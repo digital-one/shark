@@ -8,8 +8,8 @@
 <section id="challenge" class="intro white"><h3>the challenge</h3><h4 class="underline">lets set the scene</h4><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu </p>
 </section>
 <section id="background">
-<div class="half column"><div class="cell half-height pink"><div class="inner"><div><h5 class="underline">background</h5><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div></div></div><div class="cell half-height blue" style="background-image:url('images/new-ivory-bg-sub-image.jpg');"><div class="inner"><div></div></div></div></div>
-<div class="half column"><div class="cell" style="background-image:url('images/new-ivory-bg-main-image.jpg');"><div class="inner"></div></div></div>
+<div class="half column"><div class="cell half-height pink"><div class="inner"><div><h5 class="underline">background</h5><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p></div></div></div><div class="cell half-height image blue" style="background-image:url('images/new-ivory-bg-sub-image.jpg');"><div class="inner"><div></div></div></div></div>
+<div class="half column"><div class="cell image" style="background-image:url('images/new-ivory-bg-main-image.jpg');"><div class="inner"></div></div></div>
     </section>
     <section id="result" class="intro white"><h3>result</h3><h4 class="underline">well, did it work?</h4>
        
@@ -24,9 +24,9 @@
 </nav>
 </section>
 <section id="">
-<div class="half column"><div class="cell" style="background-image:url('images/new-ivory-image-3.jpg');"></div></div>
-<div class="half column"><div class="cell" style="background-image:url('images/new-ivory-image-4.jpg');"></div></div>
-<div class="column"><div class="cell" style="background-image:url('images/new-ivory-image-5.jpg');"></div></div>
+<div class="half column"><div class="cell image" style="background-image:url('images/new-ivory-image-3.jpg');"></div></div>
+<div class="half column"><div class="cell image" style="background-image:url('images/new-ivory-image-4.jpg');"></div></div>
+<div class="column"><div class="cell image" style="background-image:url('images/new-ivory-image-5.jpg');"></div></div>
     </section>
 <footer id="challenge" class="intro orange"><h3>fantastic work, really impressed</h3><h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercit ation</h4><a href="" class="button">Start your project</a>
 </footer>

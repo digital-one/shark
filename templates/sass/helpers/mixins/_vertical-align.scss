@@ -5,3 +5,10 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+@mixin reset-vertical-align{
+	position: relative;
+	top: auto;
+	-webkit-transform: none;
+  	-ms-transform: none;
+  	transform: none;
+}

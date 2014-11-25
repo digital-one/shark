@@ -1,6 +1,6 @@
 ul#enlightenment{
 	margin:0 1%;
-	width:100%;
+	width:98%;
 	li{
 		float:left;
 		width:30.6666%;
@@ -11,6 +11,9 @@ ul#enlightenment{
 		margin: 0 1% 2%;
 		@media screen and (max-width: $break-large){
 			width: 47%;
+		}
+		@media screen and (max-width: $break-small){
+			width:98%;
 		}
 		figure{
 			img{

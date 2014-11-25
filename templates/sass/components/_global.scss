@@ -66,6 +66,9 @@ section.page-title{
 	}
 	#work-single &{
 		height:50%;
+		@media screen and (max-width: $break-small){
+			height: 250px;
+		}
 		background-color: $light-grey;
 		@media screen and (min-height: 1000px){
 			height:25%;
@@ -142,14 +145,21 @@ section.content{
 	font-family: $proximanova-bold;
 	text-transform:uppercase;
 	position:relative;
+	@media screen and (max-width: $break-small){
+		padding: 0 51px 0 15px;
+		height:40px;
+		line-height: 40px;
+		@include font-size(14);
+	}
 	.caption &{
 		height:66px;
 		line-height: 66px;
 		padding: 0 74px;
 		@media screen and (max-width: $break-small){
-			padding: 0 51px 0 21px;
+			padding: 0 51px 0 15px;
 			height:40px;
 			line-height: 40px;
+			@include font-size(14);
 		}
 		&:hover,&:active{
 			@include rgba-bg(0,0,0,#000000,.3);
@@ -171,7 +181,10 @@ section.content{
 		@include abs-pos(50%,16px,auto,auto);
 		margin-top:-6px;
 		@media screen and (max-width: $break-small){
-			right:7px;
+			right:11px;
+			width:30px;
+			height:11px;
+			background-size: 30px 11px;
 		}
 	}
 	&:hover,&:active{
