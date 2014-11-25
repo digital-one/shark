@@ -25,7 +25,7 @@
     </head>
     <body>
     <div id="page-wrap" class="fullpage">
-        <nav id="controls"><ul><li><a href="" class="close">Close</a></li><li><a href="" class="next">Next</a></li><li><a href="">Previous</a></li></ul></nav>
+     
         <h1 id="home-link"><img src="images/shark.svg" alt="Shark Design" /></h1>
                 <header id="header">
      <a href="" id="mobile-menu">Menu</a>           
@@ -55,3 +55,5 @@
 <a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></small>
 </section>
         </header>
+
+           <nav id="controls"><ul><li class="close"><a href="" class="close">Close</a></li><li><a href="">Previous</a></li><li><a href="" class="next">Next</a></li></ul></nav>

@@ -347,14 +347,28 @@ nav#controls{
 	width:70px;
 	z-index:9999;
 	position:fixed;
-	display: none;
+	display: block;
 	top:0;
 	right:0;
 	@media screen and (max-width: $break-xlarge){
 		width:50px;
 	}
+	@media screen and (max-width: $break-small){
+		width:100%;
+		height:50px;
+		background-color:#b8b8b8;
+		position: relative;
+	}
 	ul{
 		li{
+			@media screen and (max-width: $break-small){
+				float:left;
+				display: inline-block;
+				&.close{
+				float:right;
+			}
+			}
+
 			a{
 				width:70px;
 				height:70px;
@@ -362,6 +376,10 @@ nav#controls{
 				@extend %ir;
 				background-color: black;
 				background-image:url('../images/prev-btn.png');
+				@media screen and (max-width: $break-small){
+					background-image:url('../images/prev-btn-black.png');
+					background-color: #b8b8b8;
+				}
 				background-position: center center;
 				background-repeat: no-repeat;
 				@media screen and (max-width: $break-xlarge){
@@ -369,14 +387,24 @@ nav#controls{
 				}
 				&:hover,&:active{
 					background-color: lighten(black,20);
+					@media screen and (max-width: $break-small){
+						background-color: lighten(#b8b8b8,10);
+					}
 				}
 				&.next{
 					background-image:url('../images/next-btn.png');
+					@media screen and (max-width: $break-small){
+						background-image:url('../images/next-btn-black.png');
+					}
 				}
 				&.close{
 					background-image:url('../images/close-btn.png');
 					@media screen and (max-width: $break-xlarge){
 						background-size: 19px 19px;
+					}
+					@media screen and (max-width: $break-small){
+						background-image:url('../images/close-btn-black.png');
+						float: right;
 					}
 				}
 				@media screen and (max-width: $break-xlarge){

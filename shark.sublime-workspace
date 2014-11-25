@@ -4,16 +4,48 @@
 		"selected_items":
 		[
 			[
-				"killSe",
-				"killSectorClose"
+				"padd",
+				"padding-left"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"ac",
+				"activateTabletMenu"
+			],
+			[
+				"full",
+				"fullPageActive"
+			],
+			[
+				"is",
+				"isTouchDevice"
+			],
+			[
+				"n",
+				"none"
+			],
+			[
+				"tra",
+				"transform"
 			],
 			[
 				"ba",
 				"background-color"
 			],
 			[
-				"padd",
-				"padding-top"
+				"killSe",
+				"killSectorClose"
 			],
 			[
 				"en",
@@ -66,10 +98,6 @@
 			[
 				"pa",
 				"padding-bottom"
-			],
-			[
-				"mar",
-				"margin-bottom"
 			],
 			[
 				"max",
@@ -172,10 +200,6 @@
 				"casestudies_category"
 			],
 			[
-				"n",
-				"nowrap"
-			],
-			[
 				"ma",
 				"margin-bottom"
 			],
@@ -262,10 +286,6 @@
 			[
 				"over",
 				"overflow-y"
-			],
-			[
-				"bac",
-				"background-color"
 			],
 			[
 				"incorr",
@@ -494,36 +514,72 @@
 			[
 				"lin",
 				"link_anim_d"
-			],
-			[
-				"rota",
-				"rotateX"
-			],
-			[
-				"remove",
-				"removeClass"
-			],
-			[
-				"content",
-				"contents"
-			],
-			[
-				"quickmen",
-				"quickmenu_moveto"
-			],
-			[
-				"quick",
-				"quickmenu_show"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "templates/js/scripts.js",
+			"settings":
+			{
+				"buffer_size": 6739,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/components/_header.scss",
+			"settings":
+			{
+				"buffer_size": 2010,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/templates/_home.scss",
+			"settings":
+			{
+				"buffer_size": 1240,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/components/_global.scss",
+			"settings":
+			{
+				"buffer_size": 4514,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/components/_typography.scss",
+			"settings":
+			{
+				"buffer_size": 1177,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/templates/_what-we-do.scss",
+			"settings":
+			{
+				"buffer_size": 4207,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "templates/sass/components/_container.scss",
 			"settings":
 			{
-				"buffer_size": 332,
+				"buffer_size": 478,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/header.php",
+			"settings":
+			{
+				"buffer_size": 2319,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +587,47 @@
 			"file": "templates/sass/_base.scss",
 			"settings":
 			{
-				"buffer_size": 244,
+				"buffer_size": 341,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/components/_navigation.scss",
+			"settings":
+			{
+				"buffer_size": 1761,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/templates/_our-work.scss",
+			"settings":
+			{
+				"buffer_size": 7542,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/index.php",
+			"settings":
+			{
+				"buffer_size": 11752,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/templates/_enlightenment.scss",
+			"settings":
+			{
+				"buffer_size": 718,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "templates/sass/helpers/mixins/_vertical-align.scss",
+			"settings":
+			{
+				"buffer_size": 298,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,31 +635,7 @@
 			"file": "templates/our-work-detail.php",
 			"settings":
 			{
-				"buffer_size": 4773,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/js/scripts.js",
-			"settings":
-			{
-				"buffer_size": 3719,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/sidebar.php",
-			"settings":
-			{
-				"buffer_size": 844,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "templates/js/jquery.gmap.js",
-			"settings":
-			{
-				"buffer_size": 4498,
+				"buffer_size": 4222,
 				"line_ending": "Unix"
 			}
 		}
@@ -596,32 +668,34 @@
 	},
 	"file_history":
 	[
+		"/Applications/MAMP/htdocs/shark/templates/js/jquery-1.10.1.min.js",
+		"/Applications/MAMP/htdocs/shark/templates/sidebar.php",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_container.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_what-we-do.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/shark/templates/header.php",
+		"/Applications/MAMP/htdocs/shark/templates/index.php",
+		"/Applications/MAMP/htdocs/shark/templates/our-work-detail.php",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_home.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/_base.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/_variables.scss",
+		"/Applications/MAMP/htdocs/shark/templates/js/scripts.js",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_our-work.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_header.scss",
+		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_enlightenment.scss",
+		"/Applications/MAMP/htdocs/shark/templates/js/jquery.gmap.js",
 		"/Applications/MAMP/htdocs/shark/templates/home.php",
 		"/Applications/MAMP/htdocs/shark/templates/who-we-are.php",
 		"/Applications/MAMP/htdocs/shark/templates/get-in-touch.php",
 		"/Applications/MAMP/htdocs/shark/templates/enlightenment.php",
-		"/Applications/MAMP/htdocs/shark/templates/sidebar.php",
-		"/Applications/MAMP/htdocs/shark/templates/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_what-we-do.scss",
 		"/Applications/MAMP/htdocs/shark/templates/what-we-do.php",
-		"/Applications/MAMP/htdocs/shark/templates/header.php",
-		"/Applications/MAMP/htdocs/shark/templates/index.php",
-		"/Applications/MAMP/htdocs/shark/templates/our-work-detail.php",
 		"/Applications/MAMP/htdocs/shark/templates/our-work.php",
-		"/Applications/MAMP/htdocs/shark/templates/js/scripts.js",
-		"/Applications/MAMP/htdocs/shark/templates/sass/components/_header.scss",
 		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_vertical-align.scss",
 		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_all.scss",
 		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/_placeholders.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/_variables.scss",
-		"/Applications/MAMP/htdocs/shark/templates/js/jquery.gmap.js",
 		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_all.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_enlightenment.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/components/_typography.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/_base.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_our-work.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/components/_container.scss",
 		"/Applications/MAMP/htdocs/shark/templates/js/masonry.pkgd.min.js",
 		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_center-vertical.scss",
 		"/Applications/MAMP/htdocs/shark/templates/sass/helpers/mixins/_rgba-bg.scss",
@@ -629,7 +703,6 @@
 		"/Applications/MAMP/htdocs/shark/templates/sass/components/_forms.scss",
 		"/Applications/MAMP/htdocs/shark/templates/sass/components/_grid.scss",
 		"/Applications/MAMP/htdocs/shark/templates/sass/components/_slider.scss",
-		"/Applications/MAMP/htdocs/shark/templates/sass/templates/_home.scss",
 		"/Applications/MAMP/htdocs/ama/pagets/templates/js/scripts.js",
 		"/Applications/MAMP/htdocs/ama/pagets/templates/sass/helpers/mixins/_wp-current-page-links.scss",
 		"/Applications/MAMP/htdocs/ama/pagets/templates/sass/components/_header.scss",
@@ -722,8 +795,7 @@
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/twitter.svg",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/search-icon.svg",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/secondary-nav-home.php",
-		"/Applications/MAMP/htdocs/Backups/Stonefix/stonefix/lloyds/js/jquery.confirmBox.js",
-		"/Users/neilmills/Downloads/altinetc_dev.sql"
+		"/Applications/MAMP/htdocs/Backups/Stonefix/stonefix/lloyds/js/jquery.confirmBox.js"
 	],
 	"find":
 	{
@@ -731,7 +803,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 93.0,
 		"where_history":
 		[
 			"",
@@ -744,6 +816,21 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"button",
+			"underline",
+			"activateFullPage",
+			"activateMobileSectorClick",
+			"#contacts",
+			"content-wrap",
+			"resize\nresize",
+			"resize\nscroll",
+			"resize\nresize",
+			"resize\n",
+			"resize",
+			"#contacts",
+			"animate",
+			"highlight",
+			"contacts",
 			"resize",
 			"scroll",
 			"console",
@@ -856,22 +943,7 @@
 			"span",
 			"beta",
 			"share",
-			"arrow-divide",
-			"overlay",
-			"$.ajax",
-			"$.get",
-			"anchor",
-			"main",
-			"anchor",
-			"beta",
-			"case-studies",
-			"fixed",
-			"aside",
-			"fixed",
-			"main",
-			"arrow-divide",
-			".cell",
-			"sub-nav"
+			"arrow-divide"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1017,23 +1089,76 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 12,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "templates/sass/components/_container.scss",
+					"file": "templates/js/scripts.js",
 					"settings":
 					{
-						"buffer_size": 332,
+						"buffer_size": 6739,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								82,
-								82
+								5831,
+								5831
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 3785.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "templates/sass/components/_header.scss",
+					"settings":
+					{
+						"buffer_size": 2010,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 119.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "templates/sass/templates/_home.scss",
+					"settings":
+					{
+						"buffer_size": 1240,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								46,
+								46
 							]
 						],
 						"settings":
@@ -1048,11 +1173,147 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
+					"buffer": 3,
+					"file": "templates/sass/components/_global.scss",
+					"settings":
+					{
+						"buffer_size": 4514,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3155,
+								3155
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2188.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "templates/sass/components/_typography.scss",
+					"settings":
+					{
+						"buffer_size": 1177,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								338,
+								338
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "templates/sass/templates/_what-we-do.scss",
+					"settings":
+					{
+						"buffer_size": 4207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								799,
+								755
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 513.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "templates/sass/components/_container.scss",
+					"settings":
+					{
+						"buffer_size": 478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								365,
+								321
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "templates/header.php",
+					"settings":
+					{
+						"buffer_size": 2319,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "templates/sass/_base.scss",
 					"settings":
 					{
-						"buffer_size": 244,
+						"buffer_size": 341,
 						"regions":
 						{
 						},
@@ -1060,7 +1321,34 @@
 						[
 							[
 								41,
-								41
+								39
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "templates/sass/components/_navigation.scss",
+					"settings":
+					{
+						"buffer_size": 1761,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								968,
+								968
 							]
 						],
 						"settings":
@@ -1074,19 +1362,46 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "templates/our-work-detail.php",
+					"buffer": 10,
+					"file": "templates/sass/templates/_our-work.scss",
 					"settings":
 					{
-						"buffer_size": 4773,
+						"buffer_size": 7542,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1382,
-								1344
+								2741,
+								2741
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1965.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "templates/index.php",
+					"settings":
+					{
+						"buffer_size": 11752,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7554,
+								7554
 							]
 						],
 						"settings":
@@ -1096,57 +1411,31 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 144.0,
+						"translation.y": 1424.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "templates/js/scripts.js",
+					"buffer": 12,
+					"file": "templates/sass/templates/_enlightenment.scss",
 					"settings":
 					{
-						"buffer_size": 3719,
+						"buffer_size": 718,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3046,
-								3046
+								115,
+								115
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
 							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1832.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "templates/sidebar.php",
-					"settings":
-					{
-						"buffer_size": 844,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								343,
-								343
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1155,27 +1444,55 @@
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "templates/js/jquery.gmap.js",
+					"buffer": 13,
+					"file": "templates/sass/helpers/mixins/_vertical-align.scss",
 					"settings":
 					{
-						"buffer_size": 4498,
+						"buffer_size": 298,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1440,
-								1440
+								164,
+								164
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 629.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "templates/our-work-detail.php",
+					"settings":
+					{
+						"buffer_size": 4222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1119,
+								1119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 31.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
