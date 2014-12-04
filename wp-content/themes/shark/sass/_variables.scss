@@ -1,0 +1,56 @@
+//neat overrides
+$max-width: 1920px; //overide neat outer container width
+$visual-grid: false; 
+
+//colours
+$blue: #00b6f0;
+$grey: #605959;
+$light-grey: #dcdcdc;
+$dark-grey: #272729;
+$pink: #d3185f;
+$orange: #f4831f;
+
+//font face
+
+@font-face {
+    font-family: 'proximanova-bold-webfont';
+    src: url('../fonts/proximanova-bold-webfont.eot');
+    src: url('../fonts/proximanova-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-bold-webfont.woff') format('woff'),
+         url('../fonts/proximanova-bold-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-bold-webfont.svg#proximanova-bold-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proximanova-semibold-webfont';
+    src: url('../fonts/proximanova-semibold-webfont.eot');
+    src: url('../fonts/proximanova-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-semibold-webfont.woff') format('woff'),
+         url('../fonts/proximanova-semibold-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-semibold-webfont.svg#proximanova-semibold-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'proximanova-regular-webfont';
+    src: url('../fonts/proximanova-regular-webfont.eot');
+    src: url('../fonts/proximanova-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/proximanova-regular-webfont.woff') format('woff'),
+         url('../fonts/proximanova-regular-webfont.ttf') format('truetype'),
+         url('../fonts/proximanova-regular-webfont.svg#proximanova-regular-webfont') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+//fonts
+$proximanova-bold: "proximanova-bold-webfont", sans-serif;
+$proximanova-semibold: "proximanova-semibold-webfont", sans-serif;
+$proximanova-regular: "proximanova-regular-webfont", sans-serif;
+$georgia: Georgia, Times, serif;
+
+//break points
+$break-small: 659px; //mobile
+$break-medium: 768px; //ipad 
+$break-large: 989px; //desktop
+$break-xlarge: 1179px; //hi res desktop

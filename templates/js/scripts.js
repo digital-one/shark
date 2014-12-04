@@ -240,7 +240,7 @@ killHistoryActions = function(){
 }
 updateMenuActions = function(){
 	isMobile = $(window).width() < 660;
-	isTabletMenu = $(window).width() > 659 && $(window).width() < 769;
+	isTabletMenu = $(window).width() > 659 && $(window).width() < 989;
 	isMobileMenu = $(window).width() < 660;
 	if(!isMobile && Modernizr.history){
 		activateHistoryActions();
@@ -262,27 +262,59 @@ updateMenuActions = function(){
 }
 
 activateFullPage = function(){
-
+/*
+verticalCentered: true,
+		        resize : true,
+		        anchors:['page1','page2', 'page3', 'page4', 'page5', 'page6', 'page7', 'page8', 'page9', 'page10'],
+		        scrollingSpeed: 1600,
+		        easing: 'easeInQuart',
+		        menu: '.nav',
+		        navigation: false,
+		        slidesNavigation: true,
+		        slidesNavPosition: 'bottom',
+		        loopBottom: false,
+		        loopTop: false,
+		        loopHorizontal: true,
+		        autoScrolling: scroll,
+		        scrollOverflow: true,
+		        css3: true,
+		        paddingTop: '0',
+		        paddingBottom: '0',
+		        fixedElements: '.header, .nav, .border-top, .border-left,.loader, .overlay_main,.view-second-menu,.menu_small,.openmenu,#awwwards',
+		        normalScrollElements: '.scrollarea',
+		        normalScrollElementTouchThreshold: 10,
+		        keyboardScrolling: true,
+		        touchSensitivity: 30,
+		        continuousVertical: false,
+		        animateAnchor: true,
+		        */
 //full page scroll
 if($('.fullpage').length && !$fullPageActive){
- $('.fullpage').fullpage({
-        verticalCentered: false,
-        resize : false,
-        scrollOverflow: true,
-        autoScrolling: scroll,
-        //css3: true,
+	$('.fullpage').fullpage({
+		verticalCentered: false,
+		resize : false,
+		scrollingSpeed: 1100,
+		easing: 'easeInOutQuart',
+		navigation: false,
+		slidesNavigation: true,
+		slidesNavPosition: 'bottom',
+		loopBottom: false,
+		loopTop: false,
+		loopHorizontal: true,
+		autoScrolling: scroll,
+		scrollOverflow: true,
 		paddingTop: '0',
 		paddingBottom: '0',
-        normalScrollElementTouchThreshold: 15,
-        touchSensitivity: 30,
-        keyboardScrolling: true,
-        scrollingSpeed: 1000,
-		easing: 'easeInQuart',
+		normalScrollElementTouchThreshold: 10,
+		keyboardScrolling: true,
+		touchSensitivity: 30,
+		continuousVertical: false,
+		animateAnchor: true,
        // anchors: $anchors,
-    onLeave: function(index, nextIndex, direction){
-         changeMenuState(nextIndex);
-         }
-    });
+    		onLeave: function(index, nextIndex, direction){
+         		changeMenuState(nextIndex);
+         	}
+    	});
  	$fullPageActive = true;
 }
 

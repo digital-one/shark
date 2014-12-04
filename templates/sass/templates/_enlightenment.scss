@@ -7,12 +7,12 @@ ul#enlightenment{
 	}
 	li{
 		float:left;
-		width:30.6666%;
+		width:31.3333%;
 		display: block;
 		border: 12px solid $light-grey;
 		background-color: white;
 		color: $grey;
-		margin: 0 0 2%;
+		margin: 0 1% 2%;
 		@media screen and (max-width: $break-large){
 			width: 47%;
 		}

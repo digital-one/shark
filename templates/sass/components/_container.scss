@@ -2,12 +2,16 @@
 	width:100%;
 	height:100%;
 	position: relative;
-	padding-left: 17.7%;
-	@media screen and (max-width: $break-medium){
+	@media screen and (max-width: $break-large){
 		padding-left: 48px;
 	}
 	@media screen and (max-width: $break-small){
 		padding-left:0px;
+	}
+	#main{
+		padding:0 0 0 239px;
+		width:100%;
+		height:100%;
 	}
 	.section{
 		height:100%;

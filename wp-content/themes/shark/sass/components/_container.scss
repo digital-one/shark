@@ -1,0 +1,32 @@
+#page-wrap{
+	//padding:0 0 0 239px;
+	width:100%;
+	height:100%;
+	position: relative;
+	@media screen and (max-width: $break-large){
+		padding-left: 48px;
+	}
+	@media screen and (max-width: $break-small){
+		padding-left:0px;
+	}
+	#main{
+		padding:0 0 0 239px;
+		width:100%;
+		height:100%;
+	}
+	.section{
+		height:100%;
+		width:100%;
+		display: block;
+		position: relative;
+		z-index: 997;
+		@media screen and (max-width: $break-small){
+			height: auto;
+		}
+		&#home{
+			@media screen and (max-width: $break-small){
+				height: 500px;
+			}	
+		}
+	}
+}
