@@ -98,7 +98,7 @@ $image2_src = getRetinaSrc($image2_src);
 <div class="column"><div class="cell image" style="background-image:url('<?php echo $image2_src ?>');"></div></div>
 <?php endif ?>
     </section>
-<footer id="cta" class="intro" style="background-color:<?php echo $colour ?>;"><h3><?php echo get_field('fourth_section_heading',$post->ID) ?></h3><h4><?php echo get_field('fourth_section_text',$post->ID) ?></h4><a href="/#get-in-touch" class="button push-link">Start your project</a>
+<footer id="cta" class="intro" style="background-color:<?php echo $colour ?>;"><h3><?php echo get_field('fourth_section_heading',$post->ID) ?></h3><h4><?php echo get_field('fourth_section_text',$post->ID) ?></h4><a href="" class="button push-link">Start your project</a>
 </footer>
    </div>
 </div>

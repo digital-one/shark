@@ -860,7 +860,7 @@ body {
   }
 }
 /* line 12, ../sass/components/_container.scss */
-#page-wrap #main {
+#page-wrap main {
   padding: 0 0 0 239px;
   width: 100%;
   height: 100%;
@@ -873,6 +873,15 @@ body {
   position: relative;
   z-index: 997;
 }
+/* line 23, ../sass/components/_container.scss */
+#page-wrap .section.scrollable {
+  height: auto !important;
+}
+/* line 26, ../sass/components/_container.scss */
+#page-wrap .section.enlightenment {
+  height: auto !important;
+  overflow: visible !important;
+}
 @media screen and (max-width: 659px) {
   /* line 17, ../sass/components/_container.scss */
   #page-wrap .section {
@@ -880,10 +889,32 @@ body {
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 26, ../sass/components/_container.scss */
+  /* line 33, ../sass/components/_container.scss */
   #page-wrap .section#home {
     height: 500px;
   }
+}
+
+/* line 40, ../sass/components/_container.scss */
+#overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  filter: alpha(opacity=80);
+  background-color: white;
+  z-index: 99999;
+  position: relative;
+}
+
+/* line 49, ../sass/components/_container.scss */
+.scroll-area {
+  position: relative;
+  width: 100%;
+  height: 771px;
+  overflow: hidden;
 }
 
 /* line 1, ../sass/components/_header.scss */
@@ -2044,6 +2075,7 @@ nav#sectors .close {
   display: block;
   width: 60px;
   height: 60px;
+  cursor: pointer;
   background: #00b6f0 url("../images/close.png") center center no-repeat;
   top: 0;
   right: 0;
@@ -2052,19 +2084,19 @@ nav#sectors .close {
   position: absolute;
   z-index: 998;
 }
-/* line 16, ../sass/templates/_what-we-do.scss */
+/* line 17, ../sass/templates/_what-we-do.scss */
 nav#sectors .close:hover, nav#sectors .close:active {
   opacity: 1;
   -moz-opacity: 1;
   -khtml-opacity: 1;
   filter: alpha(opacity=100);
 }
-/* line 21, ../sass/templates/_what-we-do.scss */
+/* line 22, ../sass/templates/_what-we-do.scss */
 nav#sectors .underline:after {
   width: 30px;
   margin: 20px auto 0;
 }
-/* line 26, ../sass/templates/_what-we-do.scss */
+/* line 27, ../sass/templates/_what-we-do.scss */
 nav#sectors ul {
   z-index: 999;
   position: relative;
@@ -2072,7 +2104,7 @@ nav#sectors ul {
   height: 100%;
   display: block;
 }
-/* line 34, ../sass/templates/_what-we-do.scss */
+/* line 35, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item {
   width: 100%;
   display: block;
@@ -2085,23 +2117,23 @@ nav#sectors ul li.item {
   left: 0;
   position: absolute;
 }
-/* line 41, ../sass/templates/_what-we-do.scss */
+/* line 42, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle, nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   float: left;
 }
 @media screen and (max-width: 659px) {
-  /* line 41, ../sass/templates/_what-we-do.scss */
+  /* line 42, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle, nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     float: none;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 34, ../sass/templates/_what-we-do.scss */
+  /* line 35, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item {
     position: relative;
   }
 }
-/* line 50, ../sass/templates/_what-we-do.scss */
+/* line 51, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle {
   -webkit-transition: background-color 0.3s ease-in-out;
   -moz-transition: background-color 0.3s ease-in-out;
@@ -2111,20 +2143,20 @@ nav#sectors ul li.item .handle {
   height: 100%;
   padding: 0 15px;
 }
-/* line 56, ../sass/templates/_what-we-do.scss */
+/* line 57, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle:last-child {
   border-right: none;
 }
-/* line 59, ../sass/templates/_what-we-do.scss */
+/* line 60, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle.hover {
   cursor: pointer;
 }
-/* line 61, ../sass/templates/_what-we-do.scss */
+/* line 62, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle.hover:hover, nav#sectors ul li.item .handle.hover:active {
   background-color: #00a3d6;
 }
 @media screen and (max-width: 659px) {
-  /* line 50, ../sass/templates/_what-we-do.scss */
+  /* line 51, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle {
     width: 100%;
     height: 200px;
@@ -2133,7 +2165,7 @@ nav#sectors ul li.item .handle.hover:hover, nav#sectors ul li.item .handle.hover
     border-right: none;
   }
 }
-/* line 72, ../sass/templates/_what-we-do.scss */
+/* line 73, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div {
   position: relative;
   top: 50%;
@@ -2145,31 +2177,31 @@ nav#sectors ul li.item .handle div {
   position: relative;
 }
 @media screen and (max-width: 1179px) {
-  /* line 72, ../sass/templates/_what-we-do.scss */
+  /* line 73, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div {
     padding-top: 86px;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 72, ../sass/templates/_what-we-do.scss */
+  /* line 73, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div {
     padding-top: 95px;
   }
 }
-/* line 84, ../sass/templates/_what-we-do.scss */
+/* line 85, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div h3 {
   margin-bottom: 8px;
   font-size: 20px;
   font-size: 2rem;
 }
 @media screen and (max-width: 1179px) {
-  /* line 84, ../sass/templates/_what-we-do.scss */
+  /* line 85, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 {
     height: 35px;
     font-size: 18px;
     font-size: 1.8rem;
   }
-  /* line 90, ../sass/templates/_what-we-do.scss */
+  /* line 91, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 span {
     display: block;
     position: relative;
@@ -2180,7 +2212,7 @@ nav#sectors ul li.item .handle div h3 {
   }
 }
 @media screen and (max-width: 1179px) and (max-width: 659px) {
-  /* line 90, ../sass/templates/_what-we-do.scss */
+  /* line 91, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 span {
     transform: none;
     top: 0;
@@ -2188,13 +2220,13 @@ nav#sectors ul li.item .handle div h3 {
 }
 
 @media screen and (max-width: 659px) {
-  /* line 84, ../sass/templates/_what-we-do.scss */
+  /* line 85, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 {
     height: auto;
     margin-bottom: 2px;
   }
 }
-/* line 104, ../sass/templates/_what-we-do.scss */
+/* line 105, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div img {
   width: 88px;
   height: 76px;
@@ -2207,53 +2239,53 @@ nav#sectors ul li.item .handle div img {
   margin-left: -44px;
 }
 @media screen and (min-width: 660px) and (max-width: 1179px) {
-  /* line 104, ../sass/templates/_what-we-do.scss */
+  /* line 105, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div img {
     width: 60px;
     height: 52px;
   }
 }
-/* line 117, ../sass/templates/_what-we-do.scss */
+/* line 118, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-2 {
   left: 20%;
 }
 @media screen and (max-width: 659px) {
-  /* line 117, ../sass/templates/_what-we-do.scss */
+  /* line 118, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-2 {
     left: 0;
   }
 }
-/* line 123, ../sass/templates/_what-we-do.scss */
+/* line 124, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-3 {
   left: 40%;
 }
 @media screen and (max-width: 659px) {
-  /* line 123, ../sass/templates/_what-we-do.scss */
+  /* line 124, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-3 {
     left: 0;
   }
 }
-/* line 129, ../sass/templates/_what-we-do.scss */
+/* line 130, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-4 {
   left: 60%;
 }
 @media screen and (max-width: 659px) {
-  /* line 129, ../sass/templates/_what-we-do.scss */
+  /* line 130, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-4 {
     left: 0;
   }
 }
-/* line 135, ../sass/templates/_what-we-do.scss */
+/* line 136, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-5 {
   left: 80%;
 }
 @media screen and (max-width: 659px) {
-  /* line 135, ../sass/templates/_what-we-do.scss */
+  /* line 136, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-5 {
     left: 0;
   }
 }
-/* line 141, ../sass/templates/_what-we-do.scss */
+/* line 142, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   width: 60%;
   height: 100%;
@@ -2266,7 +2298,7 @@ nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   filter: alpha(opacity=0);
 }
 @media screen and (max-width: 659px) {
-  /* line 141, ../sass/templates/_what-we-do.scss */
+  /* line 142, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     opacity: 1;
     -moz-opacity: 1;
@@ -2278,24 +2310,24 @@ nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     border: 0;
   }
 }
-/* line 156, ../sass/templates/_what-we-do.scss */
+/* line 157, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item aside {
   width: 20%;
 }
 @media screen and (max-width: 659px) {
-  /* line 156, ../sass/templates/_what-we-do.scss */
+  /* line 157, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item aside {
     width: 100%;
     border-bottom: 1px solid white;
   }
 }
-/* line 163, ../sass/templates/_what-we-do.scss */
+/* line 164, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item aside ul li {
   padding-left: 30px;
   margin-bottom: 5px;
   position: relative;
 }
-/* line 167, ../sass/templates/_what-we-do.scss */
+/* line 168, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item aside ul li:before {
   content: "";
   width: 15px;
@@ -2454,23 +2486,7 @@ ul#featured-work li figure figcaption div h4 {
   }
 }
 
-/* line 85, ../sass/templates/_our-work.scss */
-#work-single {
-  padding-top: 50vh;
-}
-@media screen and (max-width: 659px) {
-  /* line 85, ../sass/templates/_our-work.scss */
-  #work-single {
-    padding-top: 0;
-  }
-}
-@media screen and (min-height: 1000px) {
-  /* line 85, ../sass/templates/_our-work.scss */
-  #work-single {
-    padding-top: 25vh;
-  }
-}
-/* line 93, ../sass/templates/_our-work.scss */
+/* line 88, ../sass/templates/_our-work.scss */
 #work-single .page-title {
   position: fixed;
   width: 100%;
@@ -2479,130 +2495,143 @@ ul#featured-work li figure figcaption div h4 {
   z-index: 997;
 }
 @media screen and (max-width: 659px) {
-  /* line 93, ../sass/templates/_our-work.scss */
+  /* line 88, ../sass/templates/_our-work.scss */
   #work-single .page-title {
     position: relative;
     left: auto;
     top: auto;
   }
 }
-/* line 104, ../sass/templates/_our-work.scss */
+/* line 99, ../sass/templates/_our-work.scss */
 #work-single .page-title div {
   padding-left: 240px;
 }
 @media screen and (max-width: 768px) {
-  /* line 104, ../sass/templates/_our-work.scss */
+  /* line 99, ../sass/templates/_our-work.scss */
   #work-single .page-title div {
     padding-left: 48px;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 104, ../sass/templates/_our-work.scss */
+  /* line 99, ../sass/templates/_our-work.scss */
   #work-single .page-title div {
     padding-left: 0;
   }
 }
-/* line 114, ../sass/templates/_our-work.scss */
+/* line 109, ../sass/templates/_our-work.scss */
 #work-single .page-title h1 {
   width: 45%;
   max-width: 420px;
   display: inline-block;
 }
-/* line 118, ../sass/templates/_our-work.scss */
+/* line 113, ../sass/templates/_our-work.scss */
 #work-single .page-title h1 img {
   width: 100%;
   height: auto;
 }
 @media screen and (max-width: 1179px) {
-  /* line 114, ../sass/templates/_our-work.scss */
+  /* line 109, ../sass/templates/_our-work.scss */
   #work-single .page-title h1 {
     width: 45%;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 114, ../sass/templates/_our-work.scss */
+  /* line 109, ../sass/templates/_our-work.scss */
   #work-single .page-title h1 {
     width: 55%;
   }
 }
-/* line 129, ../sass/templates/_our-work.scss */
+/* line 124, ../sass/templates/_our-work.scss */
 #work-single .content {
+  margin-top: 50vh;
   background-color: white;
   position: relative;
   z-index: 998;
 }
-/* line 133, ../sass/templates/_our-work.scss */
+@media screen and (max-width: 659px) {
+  /* line 124, ../sass/templates/_our-work.scss */
+  #work-single .content {
+    margin-top: 0;
+  }
+}
+@media screen and (min-height: 1000px) {
+  /* line 124, ../sass/templates/_our-work.scss */
+  #work-single .content {
+    margin-top: 25vh;
+  }
+}
+/* line 135, ../sass/templates/_our-work.scss */
 #work-single .content .intro {
   padding: 6% 12%;
   text-align: center;
 }
 @media screen and (max-width: 1179px) {
-  /* line 133, ../sass/templates/_our-work.scss */
+  /* line 135, ../sass/templates/_our-work.scss */
   #work-single .content .intro {
     padding: 4% 8% 2%;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 133, ../sass/templates/_our-work.scss */
+  /* line 135, ../sass/templates/_our-work.scss */
   #work-single .content .intro {
     padding: 60px 30px 30px;
   }
 }
-/* line 143, ../sass/templates/_our-work.scss */
+/* line 145, ../sass/templates/_our-work.scss */
 #work-single .content .intro h3 {
   font-size: 44px;
   font-size: 4.4rem;
   margin-bottom: 4px;
 }
 @media screen and (max-width: 1179px) {
-  /* line 143, ../sass/templates/_our-work.scss */
+  /* line 145, ../sass/templates/_our-work.scss */
   #work-single .content .intro h3 {
     font-size: 38px;
     font-size: 3.8rem;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 143, ../sass/templates/_our-work.scss */
+  /* line 145, ../sass/templates/_our-work.scss */
   #work-single .content .intro h3 {
     font-size: 25px;
     font-size: 2.5rem;
   }
 }
-/* line 153, ../sass/templates/_our-work.scss */
+/* line 155, ../sass/templates/_our-work.scss */
 #work-single .content .intro h4 {
   font-size: 18px;
   font-size: 1.8rem;
   margin-bottom: 50px;
 }
 @media screen and (max-width: 1179px) {
-  /* line 153, ../sass/templates/_our-work.scss */
+  /* line 155, ../sass/templates/_our-work.scss */
   #work-single .content .intro h4 {
     margin-bottom: 30px;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 153, ../sass/templates/_our-work.scss */
+  /* line 155, ../sass/templates/_our-work.scss */
   #work-single .content .intro h4 {
     font-size: 13px;
     font-size: 1.3rem;
   }
 }
-/* line 166, ../sass/templates/_our-work.scss */
+/* line 168, ../sass/templates/_our-work.scss */
 #work-single .content footer.intro h3 {
   margin-bottom: 30px;
 }
-/* line 169, ../sass/templates/_our-work.scss */
+/* line 171, ../sass/templates/_our-work.scss */
 #work-single .content footer.intro h4 {
   padding: 0 20%;
 }
 @media screen and (max-width: 659px) {
-  /* line 169, ../sass/templates/_our-work.scss */
+  /* line 171, ../sass/templates/_our-work.scss */
   #work-single .content footer.intro h4 {
     padding: 0;
   }
 }
 
-/* line 182, ../sass/templates/_our-work.scss */
+/* line 184, ../sass/templates/_our-work.scss */
 .column {
   float: left;
   display: block;
@@ -2610,12 +2639,12 @@ ul#featured-work li figure figcaption div h4 {
   height: 100%;
 }
 @media screen and (max-width: 659px) {
-  /* line 182, ../sass/templates/_our-work.scss */
+  /* line 184, ../sass/templates/_our-work.scss */
   .column {
     float: none;
   }
 }
-/* line 190, ../sass/templates/_our-work.scss */
+/* line 192, ../sass/templates/_our-work.scss */
 .column .cell {
   display: block;
   width: 100%;
@@ -2629,20 +2658,20 @@ ul#featured-work li figure figcaption div h4 {
   background-size: cover;
 }
 @media screen and (max-width: 659px) {
-  /* line 190, ../sass/templates/_our-work.scss */
+  /* line 192, ../sass/templates/_our-work.scss */
   .column .cell {
     height: auto;
   }
 }
 @media screen and (min-width: 660px) {
-  /* line 200, ../sass/templates/_our-work.scss */
+  /* line 202, ../sass/templates/_our-work.scss */
   .column .cell:before {
     content: "";
     display: block;
     padding-top: 70%;
   }
 }
-/* line 207, ../sass/templates/_our-work.scss */
+/* line 209, ../sass/templates/_our-work.scss */
 .column .cell .inner {
   top: 0;
   right: 0;
@@ -2651,13 +2680,13 @@ ul#featured-work li figure figcaption div h4 {
   position: absolute;
 }
 @media screen and (max-width: 659px) {
-  /* line 207, ../sass/templates/_our-work.scss */
+  /* line 209, ../sass/templates/_our-work.scss */
   .column .cell .inner {
     position: relative;
     padding: 60px 30px 30px;
   }
 }
-/* line 213, ../sass/templates/_our-work.scss */
+/* line 215, ../sass/templates/_our-work.scss */
 .column .cell .inner div {
   position: relative;
   top: 50%;
@@ -2668,13 +2697,13 @@ ul#featured-work li figure figcaption div h4 {
   padding: 0 14%;
 }
 @media screen and (max-width: 989px) {
-  /* line 213, ../sass/templates/_our-work.scss */
+  /* line 215, ../sass/templates/_our-work.scss */
   .column .cell .inner div {
     padding: 0 8%;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 213, ../sass/templates/_our-work.scss */
+  /* line 215, ../sass/templates/_our-work.scss */
   .column .cell .inner div {
     position: relative;
     top: auto;
@@ -2684,17 +2713,17 @@ ul#featured-work li figure figcaption div h4 {
     padding: 0;
   }
 }
-/* line 224, ../sass/templates/_our-work.scss */
+/* line 226, ../sass/templates/_our-work.scss */
 .column .cell .inner div p {
   text-align: left;
 }
 @media screen and (max-width: 659px) {
-  /* line 224, ../sass/templates/_our-work.scss */
+  /* line 226, ../sass/templates/_our-work.scss */
   .column .cell .inner div p {
     text-align: center;
   }
 }
-/* line 232, ../sass/templates/_our-work.scss */
+/* line 234, ../sass/templates/_our-work.scss */
 .column .cell h5 {
   font-size: 34px;
   font-size: 3.4rem;
@@ -2704,7 +2733,7 @@ ul#featured-work li figure figcaption div h4 {
   margin-bottom: 40px;
 }
 @media screen and (max-width: 989px) {
-  /* line 232, ../sass/templates/_our-work.scss */
+  /* line 234, ../sass/templates/_our-work.scss */
   .column .cell h5 {
     font-size: 28px;
     font-size: 2.8rem;
@@ -2712,53 +2741,53 @@ ul#featured-work li figure figcaption div h4 {
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 232, ../sass/templates/_our-work.scss */
+  /* line 234, ../sass/templates/_our-work.scss */
   .column .cell h5 {
     font-size: 25px;
     font-size: 2.5rem;
     margin-bottom: 30px;
   }
 }
-/* line 248, ../sass/templates/_our-work.scss */
+/* line 250, ../sass/templates/_our-work.scss */
 .column .cell .underline:after {
   margin-top: 15px;
 }
-/* line 253, ../sass/templates/_our-work.scss */
+/* line 255, ../sass/templates/_our-work.scss */
 .column.half {
   width: 50%;
 }
 @media screen and (min-width: 660px) {
-  /* line 256, ../sass/templates/_our-work.scss */
+  /* line 258, ../sass/templates/_our-work.scss */
   .column.half .cell:before {
     padding-top: 140%;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 261, ../sass/templates/_our-work.scss */
+  /* line 263, ../sass/templates/_our-work.scss */
   .column.half .cell.image {
     height: 500px;
   }
 }
 @media screen and (min-width: 660px) {
-  /* line 267, ../sass/templates/_our-work.scss */
+  /* line 269, ../sass/templates/_our-work.scss */
   .column.half .cell.half-height:before {
     padding-top: 70%;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 272, ../sass/templates/_our-work.scss */
+  /* line 274, ../sass/templates/_our-work.scss */
   .column.half .cell.half-height.image {
     height: 250px;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 253, ../sass/templates/_our-work.scss */
+  /* line 255, ../sass/templates/_our-work.scss */
   .column.half {
     width: 100%;
   }
 }
 
-/* line 285, ../sass/templates/_our-work.scss */
+/* line 287, ../sass/templates/_our-work.scss */
 nav#categories {
   width: 100%;
   position: relative;
@@ -2780,17 +2809,17 @@ nav#categories ul li {
   position: relative;
   right: 50%;
 }
-/* line 289, ../sass/templates/_our-work.scss */
+/* line 291, ../sass/templates/_our-work.scss */
 nav#categories li {
   margin: 0 20px;
 }
 @media screen and (max-width: 659px) {
-  /* line 289, ../sass/templates/_our-work.scss */
+  /* line 291, ../sass/templates/_our-work.scss */
   nav#categories li {
     margin: 0 10px;
   }
 }
-/* line 295, ../sass/templates/_our-work.scss */
+/* line 297, ../sass/templates/_our-work.scss */
 nav#categories a, nav#categories span {
   display: block;
   width: 50px;
@@ -2813,13 +2842,13 @@ nav#categories a, nav#categories span {
   }
   */
 }
-/* line 299, ../sass/templates/_our-work.scss */
+/* line 301, ../sass/templates/_our-work.scss */
 nav#categories a img, nav#categories span img {
   width: 100%;
   height: auto;
 }
 
-/* line 322, ../sass/templates/_our-work.scss */
+/* line 324, ../sass/templates/_our-work.scss */
 nav#social-share {
   width: 100%;
   position: relative;
@@ -2840,7 +2869,7 @@ nav#social-share ul li {
   position: relative;
   right: 50%;
 }
-/* line 325, ../sass/templates/_our-work.scss */
+/* line 327, ../sass/templates/_our-work.scss */
 nav#social-share span {
   display: block;
   margin: 10px auto 10px;
@@ -2849,11 +2878,11 @@ nav#social-share span {
   font-size: 16px;
   font-size: 1.6rem;
 }
-/* line 332, ../sass/templates/_our-work.scss */
+/* line 334, ../sass/templates/_our-work.scss */
 nav#social-share li {
   margin: 0 4px;
 }
-/* line 334, ../sass/templates/_our-work.scss */
+/* line 336, ../sass/templates/_our-work.scss */
 nav#social-share li a {
   width: 30px;
   height: 30px;
@@ -2863,16 +2892,16 @@ nav#social-share li a {
   background-position: center center;
   background-repeat: no-repeat;
 }
-/* line 343, ../sass/templates/_our-work.scss */
+/* line 345, ../sass/templates/_our-work.scss */
 nav#social-share li a.twitter {
   background-image: url("../images/twitter-share.png");
 }
-/* line 346, ../sass/templates/_our-work.scss */
+/* line 348, ../sass/templates/_our-work.scss */
 nav#social-share li a.email {
   background-image: url("../images/email-share.png");
 }
 
-/* line 352, ../sass/templates/_our-work.scss */
+/* line 354, ../sass/templates/_our-work.scss */
 nav#controls {
   width: 70px;
   z-index: 9999;
@@ -2881,14 +2910,18 @@ nav#controls {
   top: 0;
   right: 0;
 }
+/* line 359, ../sass/templates/_our-work.scss */
+nav#controls.show {
+  display: block;
+}
 @media screen and (max-width: 1179px) {
-  /* line 352, ../sass/templates/_our-work.scss */
+  /* line 354, ../sass/templates/_our-work.scss */
   nav#controls {
     width: 50px;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 352, ../sass/templates/_our-work.scss */
+  /* line 354, ../sass/templates/_our-work.scss */
   nav#controls {
     width: 100%;
     height: 50px;
@@ -2897,17 +2930,17 @@ nav#controls {
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 369, ../sass/templates/_our-work.scss */
+  /* line 374, ../sass/templates/_our-work.scss */
   nav#controls ul li {
     float: left;
     display: inline-block;
   }
-  /* line 373, ../sass/templates/_our-work.scss */
+  /* line 378, ../sass/templates/_our-work.scss */
   nav#controls ul li.close {
     float: right;
   }
 }
-/* line 378, ../sass/templates/_our-work.scss */
+/* line 383, ../sass/templates/_our-work.scss */
 nav#controls ul li a {
   width: 70px;
   height: 70px;
@@ -2918,57 +2951,57 @@ nav#controls ul li a {
   background-repeat: no-repeat;
 }
 @media screen and (max-width: 659px) {
-  /* line 378, ../sass/templates/_our-work.scss */
+  /* line 383, ../sass/templates/_our-work.scss */
   nav#controls ul li a {
     background-image: url("../images/prev-btn-black.png");
     background-color: #b8b8b8;
   }
 }
 @media screen and (max-width: 1179px) {
-  /* line 378, ../sass/templates/_our-work.scss */
+  /* line 383, ../sass/templates/_our-work.scss */
   nav#controls ul li a {
     background-size: 10px 19px;
   }
 }
-/* line 394, ../sass/templates/_our-work.scss */
+/* line 399, ../sass/templates/_our-work.scss */
 nav#controls ul li a:hover, nav#controls ul li a:active {
   background-color: #333333;
 }
 @media screen and (max-width: 659px) {
-  /* line 394, ../sass/templates/_our-work.scss */
+  /* line 399, ../sass/templates/_our-work.scss */
   nav#controls ul li a:hover, nav#controls ul li a:active {
     background-color: #d2d2d2;
   }
 }
-/* line 400, ../sass/templates/_our-work.scss */
+/* line 405, ../sass/templates/_our-work.scss */
 nav#controls ul li a.next {
   background-image: url("../images/next-btn.png");
 }
 @media screen and (max-width: 659px) {
-  /* line 400, ../sass/templates/_our-work.scss */
+  /* line 405, ../sass/templates/_our-work.scss */
   nav#controls ul li a.next {
     background-image: url("../images/next-btn-black.png");
   }
 }
-/* line 406, ../sass/templates/_our-work.scss */
+/* line 411, ../sass/templates/_our-work.scss */
 nav#controls ul li a.close {
   background-image: url("../images/close-btn.png");
 }
 @media screen and (max-width: 1179px) {
-  /* line 406, ../sass/templates/_our-work.scss */
+  /* line 411, ../sass/templates/_our-work.scss */
   nav#controls ul li a.close {
     background-size: 19px 19px;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 406, ../sass/templates/_our-work.scss */
+  /* line 411, ../sass/templates/_our-work.scss */
   nav#controls ul li a.close {
     background-image: url("../images/close-btn-black.png");
     float: right;
   }
 }
 @media screen and (max-width: 1179px) {
-  /* line 378, ../sass/templates/_our-work.scss */
+  /* line 383, ../sass/templates/_our-work.scss */
   nav#controls ul li a {
     width: 50px;
     height: 50px;

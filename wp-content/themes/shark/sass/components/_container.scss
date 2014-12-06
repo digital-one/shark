@@ -9,7 +9,7 @@
 	@media screen and (max-width: $break-small){
 		padding-left:0px;
 	}
-	#main{
+	main{
 		padding:0 0 0 239px;
 		width:100%;
 		height:100%;
@@ -20,6 +20,13 @@
 		display: block;
 		position: relative;
 		z-index: 997;
+		&.scrollable{
+			height: auto !important;
+		}
+		&.enlightenment{
+			height:auto !important;
+			overflow: visible !important;
+		}
 		@media screen and (max-width: $break-small){
 			height: auto;
 		}
@@ -29,4 +36,19 @@
 			}	
 		}
 	}
+}
+#overlay{
+	display: block;
+	width:100%;
+	height:100%;
+	@include opacity(.8);
+	background-color: white;
+	z-index: 99999;
+	position: relative;
+}
+.scroll-area{
+	position: relative;
+	width:100%;
+    height: 771px; 
+    overflow: hidden;
 }

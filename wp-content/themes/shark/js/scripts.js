@@ -24,7 +24,8 @@ $(function(){
 
 //------------- Globals -------------
 
-var isMobile, isTablet, 
+var isMobile = $(window).width() < 660,
+	isTablet = $(window).width() > 659 && $(window).width() < 989,
 	$fullPageActive = false,
 	$initFullPageJS = false,
 	$pageCache = [],
@@ -32,9 +33,11 @@ var isMobile, isTablet,
 	$loadedPages = 0,
 	$totalPages = 0,
 	$pages=[],
+	$singlePage=false,
 	$firstLoad=true,
 	$homeLoaded=false,
-	$container;
+	$container,
+	currentPathname = null;
 
 	//tooltip variables
 	var $mouseX, $mouseY, $tooltipX, $tooltipY,
@@ -42,16 +45,13 @@ var isMobile, isTablet,
 	$offsetX=0, $offsetY=0;
 
 	//sector panel variables
-	var $handles = $('#sectors .handle'),
-	$items = $('#sectors li.item'),
-	$close = $('#sectors a.close');
+	var $handles, $items, $close;
 
 
 //------------- Parallax -------------
 
 
 parallaxTitle = function(){
-	//console.log('parallax')
 var $title =  $('#work-single .page-title');
 windowScroll = $(this).scrollTop();
 $title.css({
@@ -68,7 +68,7 @@ $(window).on('scroll',function() {
     })
 }
 
-//------------- Parallax -------------
+//------------- Google Map -------------
 
 initMap = function(){
 if($('#map').length){
@@ -192,12 +192,15 @@ hideSectorClose = function(){
 	})
 }
 activateSectorClick  = function(){
+	$handles = $('#sectors .handle'),
+	$items = $('#sectors li.item'),
+	$close = $('#sectors a.close');
 	$handles.on('click',function(e){
 	destroySectorClick();
 	showSectorClose();
 	var $parent = $(this).parent('li');
 	var $position = $parent.position();
-	//console.log($position)
+	////console.log($position)
 	$parent.addClass('active');
 	$('.handle',$parent).removeClass('hover');
 	$items.not($parent).fadeOut(100);
@@ -215,6 +218,9 @@ destroySectorClick = function(){
 }
 		
 activateMobileSectorClick = function(){
+	$handles = $('#sectors .handle'),
+	$items = $('#sectors li.item'),
+	$close = $('#sectors a.close');
 	$handles.off('click').on('click',function(e){
 		e.preventDefault();
 		var $parent = $(this).parent('li');
@@ -230,21 +236,47 @@ activateMobileSectorClick = function(){
 
 //------------- Navigation -------------
 
-changeMenuState = function(index){
-
-var $options = $('#nav li'),
-	$highlight = $('#nav .highlight'),
-	$currentOption = $options.eq(index-1);
-
-	$options.removeClass('current-menu-item'),
-	$currentOption.addClass('current-menu-item');
-	var $currentPos = $currentOption.position();
-
-	$highlight.animate({
+moveMenuState = function(){
+	var $currentMenuItem = $('#nav ul li.current-menu-item'),
+		$currentPos = $currentMenuItem.position(),
+		$highlight = $('#nav .highlight');
+		$highlight.animate({
 		top: $currentPos.top+'px'
 	},200,"easeOutQuad",function(){
 		//callback
 	})
+}
+
+changeMenuState = function(index){
+
+var $options = $('#nav li'),
+	$currentMenuItem = $options.eq(index-1);
+
+	$options.removeClass('current-menu-item');
+	$currentMenuItem.addClass('current-menu-item');
+	
+	moveMenuState();
+}
+
+updateHashMenuState = function(){
+	var currentHash = location.hash;
+		_navLinks = $('#nav ul a');
+		_navLinks.each(function(){
+			var urlSegments = $(this).attr('href').split('/');
+			
+			if(urlSegments[urlSegments.length-1]==currentHash){
+				$('#nav ul li').removeClass('current-menu-item')
+				$(this).parent('li').addClass('current-menu-item');
+				moveMenuState();
+			}
+		})
+}
+
+desktopNavClickAction = function(e){
+	e.preventDefault();
+	$('#nav ul li').removeClass('current-menu-item');
+	var _this = e.currentTarget;
+	$(_this).parent('li').addClass('current-menu-item');
 }
 
 mobileNavClickAction = function(e){
@@ -289,26 +321,68 @@ tabletNavClickAction = function(e){
 	})
 	}
 }
+destroyMobileMenu = function(){
+	$('a#mobile-menu').off('click',tabletNavClickAction).off('click',mobileNavClickAction);
+}
 activateTabletMenu = function(){
+	destroyMobileMenu();
+	destroyDesktopMenu();
 	$('a#mobile-menu').off('click').on('click',tabletNavClickAction);
 }
 activateMobileMenu = function(){
+destroyMobileMenu();
+	destroyDesktopMenu();
 	$('a#mobile-menu').off('click').on('click',mobileNavClickAction);
+}
+activateDesktopMenu = function(){
+	destroyMobileMenu();
+	$('#nav ul a').on('click',desktopNavClickAction);
+}
+destroyDesktopMenu = function(){
+	$('#nav ul a').off('click',desktopNavClickAction);
+}
+
+scrollToAnchorPage = function(){
+	
+  //move page to requested anchor link
+   if(location.hash){
+    var $hash = location.hash.replace('#','');
+    if($fullPageActive){
+    	console.log('scroll to anchor');
+    $.fn.fullpage.moveTo($hash,0);
+    //$.fn.fullpage.reBuild();
+  }
+    }
 }
 
 //------------- Load pages -------------
 
 
-
 loadContent = function(url,push){
-	if(push) history.pushState({}, '', url); //push the url
+	console.log('load content')
+
+	//    $('body').prepend('<div id="overlay" />');
+
+
+	if(push){
+	history.pushState({}, '', url); //push the url
+	 currentPathname = location.pathname;
+	 updateHashMenuState();
+}
 	if(location.pathname=='/') url=null
-	console.log(location.pathname);
+
+	$singlePage=false;
+	////console.log(location.pathname);
 	
-
+	//if(location.hash && !$firstLoad){
+		//if hash and not first load, just scroll to page
+	//	//console.log(url)
+//	scrollToAnchorPage();
+	//} else {
 	if(url==null){ //on homepage
-
+		$('#nav').removeClass("single");
 		if($homeLoaded){
+			//console.log('home loaded');
 		//homepage already been loaded so grab HTML from cache
 		$.each($pageCache, function( key, obj) {
 			if(obj.home==1)  $loadedObjs.push(obj.html);
@@ -328,10 +402,11 @@ loadContent = function(url,push){
 	loadedObjs = [];
 	$pages = data;
 	$totalPages = data.length;
-	//console.log($totalPages);
+	////console.log($totalPages);
     $loadedPages = 0;
+
     //$pages = pages;
-    loadPage($pages[0],true); //load the first page
+    loadPage(0,$pages[0],true); //load the first page
 	},
     error: function(XMLHttpRequest, textStatus, errorThrown) {
         $('main').removeClass('loading');
@@ -343,28 +418,36 @@ loadContent = function(url,push){
     }); 
 	}
 	 } else {
+	 	$('#nav').addClass('single');
 	 	//load only the requested url (not homepage)
+	 	console.log('load single')
+	 	$singlePage=true;
 	 	if(!$firstLoad){
 	 	$totalPages=1;
-	 	loadPage(url,false);
+	 	loadPage(0,url,false);
 	 } else {
 	 	initPageScripts();
+	 	$firstLoad=false;
 	 }
 	 }
+//	}
 }
-loadPage = function(url,home){
+
+loadPage = function(index,url,home){
+console.log('load page')
 	var $ajaxLoad=true;
-	//console.log('load '+url);
+	////console.log('load '+url);
 
 if($pageCache.length>0){ 
 $.each($pageCache, function( key, obj) {
 	if(obj.url == url){ //page is in cache, get the HTML
+		console.log('load from cache')
         $ajaxLoad=false;
 		$loadedObjs.push(obj.html);
 		$loadedPages++;
 		if($loadedPages< $totalPages){
              var $url = $pages[$loadedPages];
-             loadPage($url,home);
+             loadPage($loadedPages,$url,home);
              } else {
                  renderPages();
              }
@@ -374,14 +457,30 @@ $.each($pageCache, function( key, obj) {
 //page isnt in cache, so make AJAX call
 		if($ajaxLoad){
      		$.get(url).done(function(data){
+     			
 			var $page = $(data).find('.section');
+			
+			if(index==0){ //if first page, change the page title
+				 $title = $page.attr('data-title');
+      			 document.title = $title;
+
+//update elements outside of the updatable area
+
+/*
+      			 var $controls = $(data).find('nav#controls');
+      			 var $prev = $(data).find('nav#controls a.prev');
+      			 var $next = $(data).find('nav#controls a.next');
+      			 $('nav#controls').attr('class',$controls.attr('class')); 
+      			 $('nav#controls a.prev').attr('href', $prev.attr('href'));
+      			 $('nav#controls a.next').attr('href', $next.attr('href')); */
+			}
               $loadedObjs.push($page);
               $pageCache.push({home: home, url: url, html: $page}); //push page data to cache
               $loadedPages++;
               if($loadedPages < $totalPages){
-              	//console.log('load '+$loadedPages)
+              	////console.log('load '+$loadedPages)
              var $url = $pages[$loadedPages];
-             loadPage($url,home);
+             loadPage($loadedPages,$url,home);
              } else {
                  renderPages();
              }
@@ -391,28 +490,47 @@ $.each($pageCache, function( key, obj) {
 
 	}
 
-/*
- if($loadedPages++ < $totalPages){
-             var $url = $pages[$loadedPages];
-             loadPage($url,home);
-             } else {
-                 renderPages();
-             }
-             */
-
-
 renderPages = function(){
-	if($initFullPageJS) $.fn.fullpage.destroy('all');
-    	if(!$firstLoad) $('main').empty();
-    	for(i=0;i<$loadedObjs.length;i++){
+	destroyFullPage();
+	$('.scroll-area').perfectScrollbar('destroy');
+	//$('.scroll-area').slimscroll({destroy:true});
+
+	var $start=0;
+    	if(!$firstLoad){
+    		//console.log('empty main')
+    		$('main').empty();
+
+    	} else {
+    		$start=1;
+    	}
+    	for(i=$start;i<$loadedObjs.length;i++){
             $('main').append($loadedObjs[i])
         }
-        $loadedObjs = [];
-   		initPageScripts();
-   		activateFullPage();
+    
+           $firstLoad = false;
+
+
+	if($loadedObjs.length>1){
+		activateFullPage(true);
+		$.fn.fullpage.setAutoScrolling(true);
+		console.log('auto scrolling=true')
+   		
+} else {
+	//activateFullPage(false);
+	//$.fn.fullpage.setAutoScrolling(false);
+	console.log('auto scrolling=false')
+}
+   //	}
+
+rebuildFullPage();
+   		
+  
+   		  $loadedObjs = [];
+
 }
 
 initPageScripts = function(){
+	//console.log('init scripts')
 	initMap(); //init map
 	initMasonry(); //init masonry
 	initTooltip(); //init tooltip
@@ -425,19 +543,26 @@ initPageScripts = function(){
 //------------- fullpage js -------------
 
 
-activateFullPage = function(){
-//full page scroll
-if($('.fullpage').length && !$fullPageActive){
 
+activateFullPage = function($scrolling){
+	
+//full page scroll
+
+if($('#fullpage').length && !$fullPageActive){
+//console.log('activate fullpage!!!')
 	 var $sections = $('.section'),
        $anchors = [];
       
+      /*
         $sections.each(function(){
         $anchors.push($(this).attr('data-anchor'));
         });
-        console.log($anchors);
-	
-	$('.fullpage').fullpage({
+*/
+
+$('main').attr('id','fullpage');
+        
+	$('#fullpage').fullpage({
+		
 		verticalCentered: false,
 		resize : false,
 		scrollingSpeed: 1100,
@@ -447,28 +572,65 @@ if($('.fullpage').length && !$fullPageActive){
 		slidesNavPosition: 'bottom',
 		loopBottom: false,
 		loopTop: false,
-		loopHorizontal: true,
-		autoScrolling: scroll,
-		scrollOverflow: true,
+		loopHorizontal: false,
+		scrollBar:false,
+		autoScrolling: true,
+		scrollOverflow: false,
 		paddingTop: '0',
 		paddingBottom: '0',
+		normalScrollElements: '#header',
 		normalScrollElementTouchThreshold: 10,
 		keyboardScrolling: true,
-		touchSensitivity: 30,
+		touchSensitivity: 10,
 		continuousVertical: false,
-		animateAnchor: true,
-		anchors: $anchors,
+		animateAnchor: false,
+	//	anchors: $anchors,
     		onLeave: function(index, nextIndex, direction){
-         		changeMenuState(nextIndex);
+         	changeMenuState(nextIndex);
+         	},
+         	afterRender: function(){
+         		console.log('ready')
+         		initPageScripts();
+         		rebuildFullPage();
+         		scrollToAnchorPage();
+         		$fullPageActive = true;
+         		$('#overlay').remove();
+         			var $h = $('.enlightenment').attr('style').replace(';','').split(' ');
+         			initScrollPanel();
+
          	}
-    	});
- 	$fullPageActive = true;
+         
+    	});	
+}
+}
+
+rebuildFullPage = function(){
+	if($fullPageActive){
+$.fn.fullpage.reBuild()
 }
 }
 
 destroyFullPage = function(){
 	if($fullPageActive){
 		$.fn.fullpage.destroy('all');
+		$fullPageActive=false;
+		
+	}
+
+}
+
+initScrollPanel = function(){
+	if($('#enlightenment-page').length){
+	var $height = $('#enlightenment-page').attr('style').replace(';','').split(' ');
+	$('.scroll-area').css({ height: $height[1]})
+	$('.scroll-area').perfectScrollbar();
+}
+}
+refreshScrollPanel = function(){
+	if($('#enlightenment-page').length){
+	var $height = $('#enlightenment-page').attr('style').replace(';','').split(' ');
+	$('.scroll-area').css({ height: $height[1]})
+	$('.scroll-area').perfectScrollbar('update');
 	}
 }
 
@@ -476,10 +638,11 @@ destroyFullPage = function(){
 //------------- History -------------
 
 activateHistoryActions = function(){
-	//console.log('activate history');
+	////console.log('activate history');
 	initPopState();
 	initHistoryLinks();
-	//convertNavLinksToHash();
+	initHistoryNavLinks();
+	convertNavLinksToHash();
 	
 
 	loadContent(location.href, true);
@@ -491,7 +654,7 @@ destroyHistoryActions = function(){
 
 
 convertNavLinksToHash = function(){
-  var $links = $('#nav a');
+  var $links = $('#nav a').not('#nav a:first');
     $links.each(function(){
     var $href = $(this).attr('href');
     //remove trailing slash
@@ -503,39 +666,50 @@ convertNavLinksToHash = function(){
     $url = $url.join('/');
     $(this).attr('href',$url);
     })
+    $('#nav a:first').attr('href', $('#nav a:first').attr('href')+'#home');
   }
 
 
 sendPushLink = function(e){
 
   e.preventDefault()
-  	console.log('push link')
+ // 	//console.log('push link');
   $this = $(e.currentTarget);
   url = $this.attr('href');
-console.log(url);
+////console.log(url);
   loadContent(url,true);
 }
-
+initHistoryNavLinks = function(){
+	$('body').on('click','#nav.single ul a',function(e){
+		var $index = $('#nav.single ul a').index($(this));
+		changeMenuState($index+1);
+		 url = $(this).attr('href');
+  	loadContent(url,true);
+	});
+}
 initHistoryLinks = function(){
-	$('body').on('click','.push-link, #nav a',sendPushLink);
+	$('body').on('click','.push-link',sendPushLink);
 }
 
 initPopState = function(){
  window.onpopstate = function (event){ 
- 	console.log('pop state')
+    if(location.pathname != currentPathname){
  	 if ($firstLoad){
-		$firstLoad = false;
+		//$firstLoad = false;
 	} else {
 	if (event.state != null){
+	//console.log('not null')
 // there is something in the history state for this entry, so we go ahead and load it
 // but we pass in false so that it doesn't write another entry over it...
 loadContent(location.href,false);
 }else{
+	//console.log('null')
 // if there is nothing in the state (either first load or returning to a page that was a first load)
 // then we tell it not to load the ajax, but instead just load the default content
 loadContent(null,false);
 }
 } 
+}
 }
 }
 /*
@@ -554,34 +728,49 @@ window.onpopstate = function(event) {
 
 //------------- Init Site -------------
 
-
-
-refreshPage = function(){
-	isMobile = $(window).width() < 660;
-	isTablet = $(window).width() > 659 && $(window).width() < 989;
-
-	if(!isMobile && Modernizr.history){
-		activateHistoryActions();
-
+switchMenu = function(){
+	if(isMobile){
+		activateMobileMenu();
+	} else if(isTablet){
+		activateTabletMenu();
 	} else {
-		destroyHistoryActions();
+		//destroy mobile nav js
+	//	activateDesktopMenu();
+	}
+}
+
+switchAccordion = function(){
+	if(!isMobile){ //what we do accordion panel
+		activateSectorClick();
+	} else {
+		activateMobileSectorClick();
+	}
+}
+
+initPage = function(){
+	if(!isMobile && Modernizr.history){
+		activateHistoryActions(); //browser history supported, activate js
 	}
 	if(!isMobile){ //what we do panel
 		activateSectorClick();
 	} else {
 		activateMobileSectorClick();
 	}
-	if(isMobile){
-		activateMobileMenu();
-	}
-	if(isTablet){
-		activateTabletMenu();
-	}
+	switchMenu();
+	switchAccordion();
+}
+
+refreshPage = function(){
+	isMobile = $(window).width() < 660;
+	isTablet = $(window).width() > 659 && $(window).width() < 989;
+	switchMenu();
+	switchAccordion();
+	refreshScrollPanel();
 }
 
 
 
-refreshPage();
+initPage();
 $(window).on('resize',refreshPage);
 
 }) 	//end on document load

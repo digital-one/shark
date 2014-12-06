@@ -1,8 +1,13 @@
 <?php get_header() ?>
-<div class="section enlightenment scrollable" data-anchor="<?php echo $post->post_name ?>" data-title="">
+<div id="enlightenment-page" class="section enlightenment scrollable" data-anchor="<?php echo $post->post_name ?>" data-title="<?php wp_title()?>">
+  <div class="scroll-area">
+  
+    <!-- title -->
 <section class="page-title white">
 <div><h1><?php echo $post->post_title ?></h1><h2 class="underline"><?php echo get_field('sub_heading',$post->ID) ?></h2></div>
 </section>
+<!-- /title -->
+<!-- content -->
 <section class="content">
     <?php
     $paged = isset($wp->query_vars['pge']) ? $wp->query_vars['pge'] : 1;
@@ -38,6 +43,9 @@ $src = getRetinaSrc($src);
 </footer>
 <?php endif ?>
 </section>
+<!-- /content -->
 </div>
 </div>
+
+
 <?php get_footer() ?>

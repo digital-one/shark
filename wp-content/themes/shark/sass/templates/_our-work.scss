@@ -83,13 +83,8 @@ ul#featured-work{
 	}
 }
 #work-single{
-	padding-top:50vh;
-	@media screen and (max-width: $break-small){
-		padding-top: 0;
-	}
-	@media screen and (min-height: 1000px){
-		padding-top: 25vh
-	}
+	//padding-top:50vh;
+	
 	.page-title{
 		position: fixed;
 		width: 100%;
@@ -127,6 +122,13 @@ ul#featured-work{
 		}
 	}
 	.content{
+		margin-top:50vh;
+		@media screen and (max-width: $break-small){
+			margin-top: 0;
+		}
+		@media screen and (min-height: 1000px){
+			margin-top: 25vh
+		}
 		background-color: white;
 		position: relative;
 		z-index: 998;
@@ -354,6 +356,9 @@ nav#controls{
 	z-index:9999;
 	position:fixed;
 	display: block;
+	&.show{
+		display: block;
+	}
 	top:0;
 	right:0;
 	@media screen and (max-width: $break-xlarge){

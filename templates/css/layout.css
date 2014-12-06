@@ -860,12 +860,13 @@ body {
   }
 }
 /* line 11, ../sass/components/_container.scss */
-#page-wrap #main {
+#page-wrap #fullpage {
   padding: 0 0 0 239px;
   width: 100%;
   height: 100%;
+  display: block;
 }
-/* line 16, ../sass/components/_container.scss */
+/* line 17, ../sass/components/_container.scss */
 #page-wrap .section {
   height: 100%;
   width: 100%;
@@ -874,13 +875,13 @@ body {
   z-index: 997;
 }
 @media screen and (max-width: 659px) {
-  /* line 16, ../sass/components/_container.scss */
+  /* line 17, ../sass/components/_container.scss */
   #page-wrap .section {
     height: auto;
   }
 }
 @media screen and (max-width: 659px) {
-  /* line 25, ../sass/components/_container.scss */
+  /* line 26, ../sass/components/_container.scss */
   #page-wrap .section#home {
     height: 500px;
   }

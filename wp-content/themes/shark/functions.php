@@ -67,7 +67,7 @@ $args = array(
     'orderby' => 'menu_order',
     'order' => 'ASC'
     );
-if($first_load) $args['exclude'] = $front_id; 
+//if($first_load) $args['exclude'] = $front_id; 
 
  if($pages = get_posts($args)):
       foreach($pages as $page):

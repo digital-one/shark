@@ -8,10 +8,11 @@
 	@media screen and (max-width: $break-small){
 		padding-left:0px;
 	}
-	#main{
+	#fullpage{
 		padding:0 0 0 239px;
 		width:100%;
 		height:100%;
+		display: block;
 	}
 	.section{
 		height:100%;

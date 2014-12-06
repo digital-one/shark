@@ -9,6 +9,7 @@ nav#sectors{
 		display: block;
 		width:60px;
 		height:60px;
+		cursor: pointer;
 		@extend %ir;
 		background: $blue url('../images/close.png') center center no-repeat;
 		@include abs-pos(0,0,auto,auto);

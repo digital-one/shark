@@ -1,6 +1,6 @@
 <?php /* Template Name: Contact */ ?>
 <?php get_header()?>
-<div id="contact" class="section" data-anchor="<?php echo $post->post_name ?>" data-title="">
+<div class="section" data-anchor="<?php echo $post->post_name ?>" data-title="<?php wp_title()?>">
 <section class="page-title white">
 <div><h1><?php echo $post->post_title ?></h1><h2 class="underline"><?php echo get_field('sub_heading',$post->ID) ?></h2></div>
 </section>
@@ -18,7 +18,8 @@ while(the_repeater_field('columns',$post->ID)):
 <div class="column"><h3><?php echo get_sub_field('column_heading') ?></h3><?php echo do_shortcode(get_sub_field('column_content')) ?></div>
 <?php endwhile; ?>
 <?php endif; ?>
-</div></section>
 </div>
+</section>
+
 </div>
 <?php get_footer()?>

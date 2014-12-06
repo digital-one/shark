@@ -10,7 +10,8 @@
         <title><?php wp_title() ?></title> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
-        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/layout.css" />
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
+        
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
 <!--[if (gte IE 6)&(lte IE 8)]>
 <script src="js/selectivizr-min.js"></script>
@@ -21,7 +22,7 @@
         <?php wp_head() ?>
     </head>
     <body>
-    <div id="page-wrap" <?php if($post->ID != 13 and !is_single()): ?>class="fullpage"<?php endif ?>>
+    <div id="page-wrap" class="page-wrap" <?php if(is_single()): ?> class="show-controls"<?php endif ?>>
      
         <h1 id="home-link"><img src="<?php echo get_template_directory_uri(); ?>/images/shark.svg" alt="Shark Design" /></h1>
                 <header id="header">
@@ -63,34 +64,10 @@
 <a href="mailto:enquiries@sharkdesign.co.uk">enquiries@sharkdesign.co.uk</a></small>
 </section>
         </header>
-        <?php if(is_single()): ?>
-        <?php
-//next and prev navigation
-    $args = array(
-          'post_type' => 'casestudies',
-          'orderby' => 'menu_order',
-          'post_status' => 'publish',
-          'numberposts' => 6
-        );
-    if($items = get_posts($args)):
-      $total = count($items);
-      $first_permalink = get_permalink($items[0]->ID);
-      $last_permalink = get_permalink($items[$total-1]->ID);
-      $key=0;
-      foreach($items as $item):
-        if($item->ID == $post->ID):
-          $prev_key = $key-1;
-          $next_key = $key+1;
-           endif;
-        $key++;
-        endforeach;
-          $prev_permalink = array_key_exists($prev_key, $items) ? get_permalink($items[$prev_key]->ID) : $last_permalink;
-          $next_permalink = array_key_exists($next_key, $items) ? get_permalink($items[$next_key]->ID) : $first_permalink;
-         
-      endif;
-        ?>
- <nav id="controls"><ul><li class="close"><a href="" class="close push-link">Close</a></li><li><a href="<?php echo $prev_permalink ?>" class="prev push-link">Previous</a></li><li><a href="<?php echo $next_permalink ?>" class="next push-link">Next</a></li></ul></nav>
-            <?php endif ?>
+    
   <!--/header-->
+      
+
+           
   <!--main-->
-  <main id="main">
+  <main id="fullpage">
