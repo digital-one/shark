@@ -76,7 +76,7 @@ if($('#map').length){
 		$lng = $('#map').attr('data-lng');
 $('#map').gmap({
         markers: [{'latitude': $lat,'longitude': $lng}],
-        markerFile: '/wp-content/themes/shark/images/marker.png',
+        markerFile: '/~sharkdesignco/wp-content/themes/shark/images/marker.png',
         markerWidth:77,
         markerHeight:52,
         markerAnchorX:37,
@@ -263,7 +263,7 @@ updateHashMenuState = function(){
 		_navLinks = $('#nav ul a');
 		_navLinks.each(function(){
 			var urlSegments = $(this).attr('href').split('/');
-			
+
 			if(urlSegments[urlSegments.length-1]==currentHash){
 				$('#nav ul li').removeClass('current-menu-item')
 				$(this).parent('li').addClass('current-menu-item');
@@ -348,7 +348,7 @@ scrollToAnchorPage = function(){
    if(location.hash){
     var $hash = location.hash.replace('#','');
     if($fullPageActive){
-    	console.log('scroll to anchor');
+    
     $.fn.fullpage.moveTo($hash,0);
     //$.fn.fullpage.reBuild();
   }
@@ -359,26 +359,26 @@ scrollToAnchorPage = function(){
 
 
 loadContent = function(url,push){
-	console.log('load content')
-
-	//    $('body').prepend('<div id="overlay" />');
 
 
-	if(push){
+	/*
+var _opacity = $firstLoad ? 1: 0;
+$('main').animate({opacity:1}).animate({
+	opacity: _opacity
+},500,function(){
+*/
+
+if(push){
 	history.pushState({}, '', url); //push the url
 	 currentPathname = location.pathname;
 	 updateHashMenuState();
-}
-	if(location.pathname=='/') url=null
+	}
+
+	if(location.pathname=='/' || location.pathname=='/~sharkdesignco/') url=null
 
 	$singlePage=false;
-	////console.log(location.pathname);
-	
-	//if(location.hash && !$firstLoad){
-		//if hash and not first load, just scroll to page
-	//	//console.log(url)
-//	scrollToAnchorPage();
-	//} else {
+
+
 	if(url==null){ //on homepage
 		$('#nav').removeClass("single");
 		if($homeLoaded){
@@ -390,6 +390,7 @@ loadContent = function(url,push){
 		renderPages();
 		} else {
 			//get homepage content with AJAX
+			if(console) console.log('get homepage with AJAX')
 	  $.ajax({
     url:"?action=ajax_get_pages",
     dataType: 'json',
@@ -402,7 +403,6 @@ loadContent = function(url,push){
 	loadedObjs = [];
 	$pages = data;
 	$totalPages = data.length;
-	////console.log($totalPages);
     $loadedPages = 0;
 
     //$pages = pages;
@@ -420,28 +420,36 @@ loadContent = function(url,push){
 	 } else {
 	 	$('#nav').addClass('single');
 	 	//load only the requested url (not homepage)
-	 	console.log('load single')
+	 	if(console) console.log('single page')
 	 	$singlePage=true;
-	 	if(!$firstLoad){
+	 	if(!$firstLoad){  //if single page and not first load, get page
 	 	$totalPages=1;
 	 	loadPage(0,url,false);
-	 } else {
+	 } else { //single page and first load, do nothing but init scripts and preload images
 	 	initPageScripts();
 	 	$firstLoad=false;
+	 	toggleControls();
+	 	preloadImages(showContent);
 	 }
 	 }
-//	}
+	 //end
+
+
+//})
+
+
+	
+
 }
 
 loadPage = function(index,url,home){
-console.log('load page')
 	var $ajaxLoad=true;
 	////console.log('load '+url);
 
 if($pageCache.length>0){ 
 $.each($pageCache, function( key, obj) {
 	if(obj.url == url){ //page is in cache, get the HTML
-		console.log('load from cache')
+	
         $ajaxLoad=false;
 		$loadedObjs.push(obj.html);
 		$loadedPages++;
@@ -466,13 +474,6 @@ $.each($pageCache, function( key, obj) {
 
 //update elements outside of the updatable area
 
-/*
-      			 var $controls = $(data).find('nav#controls');
-      			 var $prev = $(data).find('nav#controls a.prev');
-      			 var $next = $(data).find('nav#controls a.next');
-      			 $('nav#controls').attr('class',$controls.attr('class')); 
-      			 $('nav#controls a.prev').attr('href', $prev.attr('href'));
-      			 $('nav#controls a.next').attr('href', $next.attr('href')); */
 			}
               $loadedObjs.push($page);
               $pageCache.push({home: home, url: url, html: $page}); //push page data to cache
@@ -510,22 +511,30 @@ renderPages = function(){
            $firstLoad = false;
 
 
-	if($loadedObjs.length>1){
+	if($loadedObjs.length>1){ //if homepage, activate fullpage js before showing content
 		activateFullPage(true);
-		$.fn.fullpage.setAutoScrolling(true);
-		console.log('auto scrolling=true')
+		toggleControls();
    		
 } else {
+
+
+toggleControls();
+preloadImages(showContent);
+
+/*$('main').animate({
+         			opacity:1
+         		},500,function(){
+
+         		})
+*/
+
+
 	//activateFullPage(false);
 	//$.fn.fullpage.setAutoScrolling(false);
-	console.log('auto scrolling=false')
 }
-   //	}
 
-rebuildFullPage();
-   		
-  
-   		  $loadedObjs = [];
+//rebuildFullPage();
+   	$loadedObjs = [];
 
 }
 
@@ -538,6 +547,31 @@ initPageScripts = function(){
 	initParallax(); //init parallax
 }
 
+showContent = function(){
+	$('main').animate({
+		opacity:1
+	},400,'easeInOutQuart',function(){
+		//done
+	})
+}
+
+hideContent = function(callback){
+	$('main').animate({
+		opacity:0
+	},400,'easeInOutQuart',function(){
+		callback()
+	})
+}
+
+toggleControls = function(){
+	
+	if($('main .controls').length){
+	
+	$('.controls.duplicate').html($('main .controls').html()).fadeIn(200);
+} else {
+	$('.controls.duplicate').fadeOut(200)
+}
+}
 
 
 //------------- fullpage js -------------
@@ -553,11 +587,11 @@ if($('#fullpage').length && !$fullPageActive){
 	 var $sections = $('.section'),
        $anchors = [];
       
-      /*
+      
         $sections.each(function(){
         $anchors.push($(this).attr('data-anchor'));
         });
-*/
+
 
 $('main').attr('id','fullpage');
         
@@ -583,18 +617,27 @@ $('main').attr('id','fullpage');
 		keyboardScrolling: true,
 		touchSensitivity: 10,
 		continuousVertical: false,
-		animateAnchor: false,
-	//	anchors: $anchors,
+		animateAnchor: true,
+		anchors: $anchors,
     		onLeave: function(index, nextIndex, direction){
          	changeMenuState(nextIndex);
          	},
          	afterRender: function(){
-         		console.log('ready')
+         		
          		initPageScripts();
          		rebuildFullPage();
-         		scrollToAnchorPage();
+         		
          		$fullPageActive = true;
+         		scrollToAnchorPage();
          		$('#overlay').remove();
+         		preloadImages(showContent);
+         		/*
+         		$('main').animate({
+         			opacity:1
+         		},500,function(){
+         			//finished
+         		})
+*/
          			var $h = $('.enlightenment').attr('style').replace(';','').split(' ');
          			initScrollPanel();
 
@@ -677,14 +720,21 @@ sendPushLink = function(e){
   $this = $(e.currentTarget);
   url = $this.attr('href');
 ////console.log(url);
-  loadContent(url,true);
+hideContent(function(){
+	loadContent(url,true);
+})
+  
 }
 initHistoryNavLinks = function(){
 	$('body').on('click','#nav.single ul a',function(e){
+		e.preventDefault();
 		var $index = $('#nav.single ul a').index($(this));
 		changeMenuState($index+1);
 		 url = $(this).attr('href');
-  	loadContent(url,true);
+  	//loadContent(url,true);
+  	hideContent(function(){
+	loadContent(url,true);
+})
 	});
 }
 initHistoryLinks = function(){
@@ -725,6 +775,40 @@ window.onpopstate = function(event) {
 };
 }
 */
+
+
+//------------- Image preloading -------------
+
+function preloadImages(callback) {
+
+var $images = [],
+	$loaded = 0,
+	$preload_bgs = $('.preload').not('img.preload'),
+	$preload_imgs = $('img.preload');
+
+	$preload_bgs.each(function(index) { //get inline background images src
+	  $images.push(this.style.backgroundImage.replace(/.*\s?url\([\'\"]?/, '').replace(/[\'\"]?\).*/, ''));
+	});
+	$preload_imgs.each(function(index){ //get img src
+	  $images.push($(this).attr('src'));
+	 });
+
+var $imageCount = $images.length,
+$loaded=0;
+for (var i = 0; i < $imageCount; i++) {
+var $image = new Image();
+$image.onload = function(){ 
+   if(++$loaded==$imageCount){
+    		callback();
+    	}
+	}
+$image.src = $images[i];  
+}
+//
+}
+
+
+
 
 //------------- Init Site -------------
 

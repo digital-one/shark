@@ -15,9 +15,13 @@ $src = getRetinaSrc($src);
 <!-- content -->
 <section class="content blue">
     <div class="column-wrap">
-    <div class="column"><h3>A Friendly Bunch</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div>
-    <div class="column"><h3>Full of passion</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div>
-    <div class="column"><h3>We love a challenge</h3><p>Lorem ipsum, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </p></div>
+    <?php
+if(get_field('columns',$post->ID)):
+while(the_repeater_field('columns',$post->ID)): 
+?>
+<div class="column"><h3><?php echo get_sub_field('column_heading') ?></h3><?php echo do_shortcode(get_sub_field('column_content')) ?></div>
+<?php endwhile; ?>
+<?php endif; ?>
 </div></section>
 <!-- /content -->
 </div>

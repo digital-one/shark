@@ -36,7 +36,7 @@ $logo_src = getRetinaSrc($src);
          
       endif;
         ?>
- <nav id="controls" <?php if(is_single()): ?> class="show"<?php endif ?>><ul><li class="close"><a href="<?php echo home_url() ?>" class="close push-link">Close</a></li><li><a href="<?php echo $prev_permalink ?>" class="prev push-link">Previous</a></li><li><a href="<?php echo $next_permalink ?>" class="next push-link">Next</a></li></ul></nav>
+ <nav class="controls" <?php if(is_single()): ?> class="show"<?php endif ?>><ul><li class="close"><a href="<?php echo home_url() ?>/#home" class="close push-link">Close</a></li><li><a href="<?php echo $prev_permalink ?>" class="prev push-link">Previous</a></li><li><a href="<?php echo $next_permalink ?>" class="next push-link">Next</a></li></ul></nav>
 
 
   <section class="page-title" style="background-color:<?php echo get_field('primary_colour',$post->ID) ?>;">
@@ -52,8 +52,8 @@ $image1_src = getRetinaSrc($image1_src);
 $image2_src = getRetinaSrc($image2_src);
 ?>
 <section id="background">
-<div class="half column"><div class="cell half-height" style="background-color:<?php echo get_field('secondary_colour',$post->ID) ?>;"><div class="inner"><div><h5 class="underline"><?php echo get_field('second_section_heading',$post->ID) ?></h5><p><?php echo get_field('second_section_text',$post->ID) ?></p></div></div></div><div class="cell half-height image blue" style="background-image:url('<?php echo $image2_src ?>');"><div class="inner"><div></div></div></div></div>
-<div class="half column"><div class="cell image" style="background-image:url('<?php echo $image1_src ?>');"><div class="inner"></div></div></div>
+<div class="half column"><div class="cell half-height" style="background-color:<?php echo get_field('secondary_colour',$post->ID) ?>;"><div class="inner"><div><h5 class="underline"><?php echo get_field('second_section_heading',$post->ID) ?></h5><p><?php echo get_field('second_section_text',$post->ID) ?></p></div></div></div><div class="cell half-height image blue preload" style="background-image:url('<?php echo $image2_src ?>');"><div class="inner"><div></div></div></div></div>
+<div class="half column"><div class="cell image preload" style="background-image:url('<?php echo $image1_src ?>');"><div class="inner"></div></div></div>
     </section>
     <section id="result" class="intro white"><h3><?php echo get_field('third_section_heading',$post->ID) ?></h3><h4 class="underline"><?php echo get_field('third_section__sub_heading',$post->ID) ?></h4>
    <?php    
@@ -98,7 +98,7 @@ $image2_src = getRetinaSrc($image2_src);
 <div class="column"><div class="cell image" style="background-image:url('<?php echo $image2_src ?>');"></div></div>
 <?php endif ?>
     </section>
-<footer id="cta" class="intro" style="background-color:<?php echo $colour ?>;"><h3><?php echo get_field('fourth_section_heading',$post->ID) ?></h3><h4><?php echo get_field('fourth_section_text',$post->ID) ?></h4><a href="/#get-in-touch" class="button push-link">Start your project</a>
+<footer id="cta" class="intro" style="background-color:<?php echo $colour ?>;"><h3><?php echo get_field('fourth_section_heading',$post->ID) ?></h3><h4><?php echo get_field('fourth_section_text',$post->ID) ?></h4><a href="<?php echo home_url() ?>/#get-in-touch" class="button push-link">Start your project</a>
 </footer>
    </div>
 </div>

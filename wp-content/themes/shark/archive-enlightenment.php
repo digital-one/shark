@@ -39,7 +39,7 @@ $src = getRetinaSrc($src);
 </ul>
 
 <footer id="posts-footer">
-<a href="/enlightenment/archive/pge/<?php echo $next_page ?>" class="button more-posts<?php if($next_page > $max_num_pages): ?> end<?php endif ?>">Load more posts</a>
+<a href="<?php echo home_url() ?>/enlightenment/archive/pge/<?php echo $next_page ?>" class="button more-posts<?php if($next_page > $max_num_pages): ?> end<?php endif ?>">Load more posts</a>
 </footer>
 <?php endif ?>
 </section>

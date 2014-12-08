@@ -12,13 +12,13 @@ list($src,$w,$h) = wp_get_attachment_image_src($image_id,'homepage-bg');
 $src = getRetinaSrc($src);
 endif;
 ?>
-<div id="home" class="section" data-anchor="home" data-title="<?php wp_title()?>" style="background-image:url('<?php echo $src ?>');">
+<div id="home" class="section preload" data-anchor="home" data-title="<?php wp_title()?>" style="background-image:url('<?php echo $src ?>');">
     <div class="bg-overlay"></div>
     <!-- caption -->
     <div class="caption">
     	<div>
     <h2 class="underline"><?php echo get_field('caption',$post->ID) ?></h2>
-    <a href="/#our-work" class="button"><?php echo get_field('button_label',$post->ID)?></a>
+    <a href="<?php echo home_url() ?>/#our-work" class="button"><?php echo get_field('button_label',$post->ID)?></a>
 </div>
 </div>
 <!-- /caption -->
