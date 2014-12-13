@@ -65,6 +65,16 @@ a.scroll{
 		@include abs-pos(0,auto,auto,50%);
 		margin-left:-11px;
 		background: url('../images/scroll-icon.png');
+		background-size:100% auto;
+		@media screen and (max-width: $break-xlarge){
+			width:17px;
+			height:37px;
+			margin-left: -8px;
+		}
+	}
+	@media screen and (max-width: $break-xlarge){
+		@include font-size(14);
+		padding-top:42px;
 	}
 	@media screen and (max-width: $break-small){
 		display: none;

@@ -1598,6 +1598,14 @@ section.content .column-wrap div.column p {
   line-height: 66px;
   padding: 0 74px;
 }
+@media screen and (max-width: 1450px) {
+  /* line 161, ../sass/components/_global.scss */
+  .caption .button {
+    height: 52px;
+    line-height: 52px;
+    padding: 0 74px 0 36px;
+  }
+}
 @media screen and (max-width: 660px) {
   /* line 161, ../sass/components/_global.scss */
   .caption .button {
@@ -1608,7 +1616,7 @@ section.content .column-wrap div.column p {
     font-size: 1.4rem;
   }
 }
-/* line 171, ../sass/components/_global.scss */
+/* line 177, ../sass/components/_global.scss */
 .caption .button:hover, .caption .button:active {
   background-color: black;
   background-color: transparent\9;
@@ -1620,16 +1628,16 @@ section.content .column-wrap div.column p {
 .caption .button:hover:nth-child(n), .caption .button:active:nth-child(n) {
   filter: none;
 }
-/* line 175, ../sass/components/_global.scss */
+/* line 181, ../sass/components/_global.scss */
 figcaption .button {
   font-size: 12px;
   font-size: 1.2rem;
 }
-/* line 177, ../sass/components/_global.scss */
+/* line 183, ../sass/components/_global.scss */
 figcaption .button:hover, figcaption .button:active {
   background-color: transparent;
 }
-/* line 181, ../sass/components/_global.scss */
+/* line 187, ../sass/components/_global.scss */
 .button:after {
   content: "";
   display: block;
@@ -1643,12 +1651,12 @@ figcaption .button:hover, figcaption .button:active {
   position: absolute;
   margin-top: -6px;
 }
-/* line 187, ../sass/components/_global.scss */
+/* line 193, ../sass/components/_global.scss */
 .enlightenment .button:after {
   background: none;
 }
 @media screen and (max-width: 660px) {
-  /* line 181, ../sass/components/_global.scss */
+  /* line 187, ../sass/components/_global.scss */
   .button:after {
     right: 11px;
     width: 30px;
@@ -1656,24 +1664,24 @@ figcaption .button:hover, figcaption .button:active {
     background-size: 30px 11px;
   }
 }
-/* line 199, ../sass/components/_global.scss */
+/* line 205, ../sass/components/_global.scss */
 .button:hover, .button:active {
   background-color: rgba(0, 0, 0, 0.15);
 }
-/* line 201, ../sass/components/_global.scss */
+/* line 207, ../sass/components/_global.scss */
 .enlightenment .button:hover, .enlightenment .button:active {
   background-color: white;
   border-color: black;
   color: black !important;
 }
-/* line 207, ../sass/components/_global.scss */
+/* line 213, ../sass/components/_global.scss */
 .enlightenment .button {
   border-color: #605959;
   color: #605959 !important;
   padding: 0 21px;
 }
 
-/* line 214, ../sass/components/_global.scss */
+/* line 220, ../sass/components/_global.scss */
 .underline:after {
   content: "";
   display: block;
@@ -1683,34 +1691,34 @@ figcaption .button:hover, figcaption .button:active {
   margin: 30px auto 0;
 }
 @media screen and (max-width: 1450px) {
-  /* line 214, ../sass/components/_global.scss */
+  /* line 220, ../sass/components/_global.scss */
   .underline:after {
     margin: 20px auto 0;
   }
 }
 @media screen and (max-width: 660px) {
-  /* line 214, ../sass/components/_global.scss */
+  /* line 220, ../sass/components/_global.scss */
   .underline:after {
     margin: 15px auto 0;
     width: 35px;
   }
 }
-/* line 228, ../sass/components/_global.scss */
+/* line 234, ../sass/components/_global.scss */
 .caption .underline:after {
   margin: 50px auto 40px;
 }
 @media screen and (max-width: 660px) {
-  /* line 228, ../sass/components/_global.scss */
+  /* line 234, ../sass/components/_global.scss */
   .caption .underline:after {
     margin: 25px auto 37px;
   }
 }
-/* line 234, ../sass/components/_global.scss */
+/* line 240, ../sass/components/_global.scss */
 .white .underline:after {
   background-color: #00b6f0;
 }
 
-/* line 239, ../sass/components/_global.scss */
+/* line 245, ../sass/components/_global.scss */
 .tooltip-pointer {
   display: inline-block;
   z-index: 9999;
@@ -1731,7 +1739,7 @@ figcaption .button:hover, figcaption .button:active {
   left: 0;
   position: absolute;
 }
-/* line 253, ../sass/components/_global.scss */
+/* line 259, ../sass/components/_global.scss */
 .tooltip-pointer:after {
   content: "";
   width: 16px;
@@ -2127,6 +2135,23 @@ a.scroll:before {
   position: absolute;
   margin-left: -11px;
   background: url("../images/scroll-icon.png");
+  background-size: 100% auto;
+}
+@media screen and (max-width: 1450px) {
+  /* line 60, ../sass/templates/_home.scss */
+  a.scroll:before {
+    width: 17px;
+    height: 37px;
+    margin-left: -8px;
+  }
+}
+@media screen and (max-width: 1450px) {
+  /* line 47, ../sass/templates/_home.scss */
+  a.scroll {
+    font-size: 14px;
+    font-size: 1.4rem;
+    padding-top: 42px;
+  }
 }
 @media screen and (max-width: 660px) {
   /* line 47, ../sass/templates/_home.scss */
