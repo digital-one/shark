@@ -7,10 +7,10 @@ h1,h2,h3,h4,h5{
 	line-height:90%;
 	margin: 0 0 10px;
 	@media screen and (max-width: $break-xlarge){
-		@include font-size(40);
+		@include font-size(35);
 	}
 	@media screen and (max-width: $break-small){
-		@include font-size(25);
+		@include font-size(26);
 		margin-bottom: 7px;
 	}
 }
@@ -22,10 +22,10 @@ h2,h4{
 	color: $grey;
 	@include font-size(18);
 	@media screen and (max-width: $break-xlarge){
-		@include font-size(16);
+		@include font-size(14);
 	}
 	@media screen and (max-width: $break-small){
-		@include font-size(13);
+		@include font-size(12);
 	}
 	text-transform: none;
 	font-style:italic;
@@ -35,13 +35,19 @@ h3{
 	color: white;
 	margin-bottom:16px;
 	@media screen and (max-width: $break-xlarge){
-		@include font-size(20);
+		@include font-size(16);
+	}
+	@media screen and (max-width: $break-small){
+		@include font-size(12);
 	}
 }
 h4{
 	@include font-size(14);
 	color: white;
 	line-height: 120%;
+	@media screen and (max-width: $break-xlarge){
+		@include font-size(13);
+	}
 }
 a{
 	text-decoration: none;

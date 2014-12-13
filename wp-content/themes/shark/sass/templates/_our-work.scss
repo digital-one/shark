@@ -68,10 +68,13 @@ ul#featured-work{
 					h3{
 						@include font-size(18);
 						margin-bottom:10px; 
+						@media screen and (max-width: $break-xlarge){
+							@include font-size(16);
+						}
 					}
 					h4{
 						@include font-size(16);
-						@media screen and (max-width: $break-large){
+						@media screen and (max-width: $break-xlarge){
 							@include font-size(14);
 						}
 						color: white;
@@ -99,7 +102,10 @@ ul#featured-work{
 		div{
 			@extend %preserve-3d;
 			padding-left:240px;
-			@media screen and (max-width: $break-medium){
+			@media screen and (max-width: $break-xlarge){
+				padding-left:200px;
+			}
+			@media screen and (max-width: $break-large){
 				padding-left:48px;
 			}
 			@media screen and (max-width: $break-small){
@@ -114,10 +120,12 @@ ul#featured-work{
 				@include fit-grid(width);
 			}
 			@media screen and (max-width: $break-xlarge){
-				width: 45%;
+				width: 30%;
+				min-width:300px;
 			}
 			@media screen and (max-width: $break-small){
-				width:55%;
+				width:30%;
+				min-width: 250px;
 			}
 		}
 	}
@@ -135,6 +143,9 @@ ul#featured-work{
 		.intro{
 			padding: 6% 12%;
 			@media screen and (max-width: $break-xlarge){
+				padding: 5% 15% 3%;
+			}
+			@media screen and (max-width: $break-large){
 				padding: 4% 8% 2%;
 			}
 			@media screen and (max-width: $break-small){
@@ -146,7 +157,7 @@ ul#featured-work{
 				@include font-size(44);
 				margin-bottom: 4px;
 				@media screen and (max-width: $break-xlarge){
-					@include font-size(38);
+					@include font-size(35);
 				}
 				@media screen and (max-width: $break-small){
 					@include font-size(25);
@@ -157,9 +168,7 @@ ul#featured-work{
 				margin-bottom: 50px;
 				@media screen and (max-width: $break-xlarge){
 					margin-bottom: 30px;
-				}
-				@media screen and (max-width: $break-small){
-					@include font-size(13);
+					@include font-size(14);
 				}
 			}
 		}
@@ -238,12 +247,11 @@ ul#featured-work{
 			font-family: $proximanova-bold;
 			text-transform: uppercase;
 			margin-bottom: 40px;
-			@media screen and (max-width: $break-large){
-				@include font-size(28);
+			@media screen and (max-width: $break-xlarge){
+				@include font-size(25);
 				margin-bottom: 20px;
 			}
 			@media screen and (max-width: $break-small){
-				@include font-size(25);
 				margin-bottom: 30px;
 			}
 		}
@@ -291,7 +299,7 @@ nav#categories{
 	margin-bottom: 40px;
 	li{
 		margin: 0 20px;
-		@media screen and (max-width: $break-small){
+		@media screen and (max-width: $break-xlarge){
 			margin: 0 10px;
 		}
 	}
@@ -299,6 +307,10 @@ nav#categories{
 		display: block;
 		width:50px;
 		height:43px;
+		@media screen and (max-width: $break-xlarge){
+			width:38px;
+			height:33px;
+		}
 		img{
 			@include fit-grid(width);
 		}
@@ -331,15 +343,22 @@ nav#social-share{
 		font-family: $georgia;
 		font-style: italic;
 		@include font-size(16);
+		@media screen and (max-width: $break-xlarge){
+			@include font-size(14);
+		}
 	}
 	li{
 		margin:0 4px;
 		a{
 			width:30px;
 			height: 30px;
+			@media screen and (max-width: $break-xlarge){
+				width:22px;
+				height:22px;
+			}
 			@extend %ir;
 			display: block;
-			background-size: 30px 30px;
+			background-size: 100% auto;
 			background-image:url('../images/facebook-share.png');
 			background-position: center center;
 			background-repeat: no-repeat;

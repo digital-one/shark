@@ -35,6 +35,9 @@
 					font-style: normal;
 					@include font-size(16);
 					margin-bottom: 4px;
+					@media screen and (max-width: $break-xlarge){
+						@include font-size(14);
+					}
 				}
 				p{
 					margin-bottom: 0;

@@ -145,6 +145,13 @@ section.content{
 	font-family: $proximanova-bold;
 	text-transform:uppercase;
 	position:relative;
+	@include font-size(16);
+	@media screen and (max-width: $break-xlarge){
+		@include font-size(14);
+		padding: 0 66px 0 16px;
+		height:42px;
+		line-height: 42px;
+	}
 	@media screen and (max-width: $break-small){
 		padding: 0 51px 0 15px;
 		height:40px;
@@ -171,7 +178,6 @@ section.content{
 			background-color: transparent;
 		}
 	}
-	@include font-size(16);
 	&:after{
 		content:"";
 		display: block;

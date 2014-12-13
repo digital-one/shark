@@ -12,7 +12,7 @@ nav#nav{
     	position: relative;
     	transform: none;
     	//@include rgba-bg(39,39,41,$dark-grey,.9);
-    	background-color: black;
+    	background-color: transparent;
     	top:0;
     	//display: block;
     }
@@ -24,6 +24,9 @@ nav#nav{
     	height:40px;
     	background-color: $blue;
     	z-index: 1;
+    	@media screen and (max-width: $break-xlarge){
+    		height:36px;
+    	}
     }
 	ul{
 		position:relative;
@@ -51,6 +54,11 @@ nav#nav{
 				&:active{
 					background-color: $blue;
 				}
+				@media screen and (max-width: $break-xlarge){
+    				@include font-size(16);
+    				height:36px;
+    				line-height:41px;
+   				}
 			}
 		}
 	}

@@ -31,7 +31,7 @@ $src = getRetinaSrc($src);
         $src = getRetinaSrc($src);
         ?>
         <li class="item item-<?php echo $c ?>">
-<div class="handle hover"><div><img src="<?php echo $src ?>" alt="<?php echo $term->name ?>" /><h3><?php echo $term->name ?></h3><h4 class="underline"><?php echo get_field('sub_heading',$term) ?></h4></div></div>
+<div class="handle hover"><div><img src="<?php echo $src ?>" alt="<?php echo $term->name ?>" /><h3><span><?php echo $term->name ?></span></h3><h4 class="underline"><?php echo get_field('sub_heading',$term) ?></h4></div></div>
 <div class="main"><p><?php echo $term->description ?></p><a href="" class="button">Read Case Study</a></div><aside><ul><li>Market Analysis</li><li>Predatory Thinking</li></ul></aside>
 </li>
 <?php $c++; ?>

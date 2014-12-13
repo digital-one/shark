@@ -24,9 +24,10 @@
     <body>
     <div id="page-wrap" class="page-wrap" <?php if(is_single()): ?> class="show-controls"<?php endif ?>>
    
-      <nav class="controls duplicate"></nav>
-
+    
+<?php if(!is_single()): ?>
         <h1 id="home-link"><img src="<?php echo get_template_directory_uri(); ?>/images/shark.svg" alt="Shark Design" /></h1>
+    <?php endif; ?>
                 <header id="header">
 
      <a href="" id="mobile-menu">Menu</a>           
@@ -69,7 +70,7 @@
         </header>
     
   <!--/header-->
-      
+       <nav class="controls duplicate"></nav> 
 
            
   <!--main-->

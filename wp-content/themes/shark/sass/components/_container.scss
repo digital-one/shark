@@ -3,17 +3,24 @@
 	width:100%;
 	height:100%;
 	position: relative;
-	@media screen and (max-width: $break-large){
-		padding-left: 48px;
-	}
 	@media screen and (max-width: $break-small){
-		padding-left:0px;
+		height:auto;
 	}
 	main{
 		padding:0 0 0 239px;
 		width:100%;
 		height:100%;
 		@include opacity(0);
+		@media screen and (max-width: $break-xlarge){
+			padding-left: 199px;
+		}
+		@media screen and (max-width: $break-large){
+			padding-left: 48px;
+		}
+		@media screen and (max-width: $break-small){
+			padding-left: 0;
+			height:auto;
+		}
 	}
 	.section{
 		height:100%;
@@ -51,5 +58,8 @@
 	position: relative;
 	width:100%;
     height: 771px; 
+    @media screen and (max-width: $break-small){
+    	height:auto;
+    }
     overflow: hidden;
 }

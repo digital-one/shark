@@ -22,11 +22,16 @@
 	}
 	h2{
 		display:block;
-		@include font-size-vw(5,72);
+		@include font-size(72);
 		//padding: 0 6%;
 		letter-spacing:-1px;
-		@media screen and (max-width: $break-large){
-			@include font-size-vw(6,60);
+		@media screen and (max-width: $break-xlarge){
+			@include font-size(54);
+			padding:0 20px;
+		}
+		@media screen and (max-width: $break-small){
+			@include font-size(40);
+			padding:0;
 		}
 		color: white; 
 		font-style: normal;
