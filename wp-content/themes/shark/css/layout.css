@@ -1226,7 +1226,7 @@ nav.social li a {
   background-image: url("../images/facebook.png");
   background-position: 0 0;
   background-repeat: no-repeat;
-  background-size: 19px 19px;
+  background-size: 100% auto;
 }
 /* line 81, ../sass/components/_navigation.scss */
 nav.social li a.twitter {
@@ -1239,6 +1239,13 @@ nav.social li a.linkedin {
 /* line 87, ../sass/components/_navigation.scss */
 nav.social li a.email {
   background-image: url("../images/email.png");
+}
+@media screen and (max-width: 1450px) {
+  /* line 72, ../sass/components/_navigation.scss */
+  nav.social li a {
+    width: 15px;
+    height: 15px;
+  }
 }
 
 /* line 1, ../sass/components/_typography.scss */

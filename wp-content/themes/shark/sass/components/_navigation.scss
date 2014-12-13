@@ -77,7 +77,7 @@ nav.social{
 			background-image:url('../images/facebook.png');
 			background-position:0 0;
 			background-repeat: no-repeat;
-			background-size: 19px 19px;
+			background-size: 100% auto;
 			&.twitter{
 				background-image:url('../images/twitter.png');	
 			}
@@ -86,6 +86,10 @@ nav.social{
 			}
 			&.email{
 				background-image:url('../images/email.png');	
+			}
+			@media screen and (max-width: $break-xlarge){
+				width:15px;
+				height:15px;
 			}
 		}
 	}
