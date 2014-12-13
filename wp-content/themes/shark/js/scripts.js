@@ -30,6 +30,7 @@ var isMobile = $(window).width() <= 660,
 	isHiResDesktop = $(window).width() > 1450,
 	$fullPageActive = false,
 	$initFullPageJS = false,
+	$scrollbarActive = false,
 	$pageCache = [],
 	$loadedObjs = [],
 	$loadedPages = 0,
@@ -162,19 +163,20 @@ $('.tooltip').on('mouseleave',function(){
 //------------- Sector panel -------------
 
 
-resetSectorMenu = function(e){
-	e.preventDefault();
+resetSectorMenu = function(animate){
+	var $speed = animate ? 200 : 0;
 	hideSectorClose();
 	var $activeIndex = $items.index($('#sectors li.item.active')),
 		$move = $activeIndex*20,
 		$item = $('#sectors li.item').eq($activeIndex);
-
+		console.log($activeIndex)
+		$item.removeClass('active');
 		$('.main,aside',$item).animate({
 			opacity:0
-		},100,function(){
+		},$speed,function(){
 			$item.animate({
 		left: $move+'%'
-	},200,"easeOutQuad",function(){
+	},$speed,"easeOutQuad",function(){
 		//done;
 		$items.not($item).fadeIn(200);
 		
@@ -192,7 +194,11 @@ positionSectorClose = function(animate){
 		$close.animate({
 		top:'-'+$height+'px'
 	},$speed,"easeOutQuad",function(){
-	$close.off('click',resetSectorMenu).on('click',resetSectorMenu);	
+	$close.off('click');
+	$close.on('click',function(e){
+			e.preventDefault();
+		resetSectorMenu(true);
+	});	
 	})
 
 	}
@@ -209,6 +215,9 @@ hideSectorClose = function(){
 	})
 }
 
+resetDesktopSectorAccordion = function(){
+
+}
 moveDesktopSectorAccordion = function(e){
 	destroySectorClick();
 	showSectorClose();
@@ -232,6 +241,7 @@ activateSectorClick  = function(){
 	$handles = '#sectors .handle';
 	$items = $('#sectors li.item');
 	$close = $('#sectors a.close');
+	$items.removeAttr('style');
 	$('body').off('click',$handles, moveMobileSectorAccordion);
 	$('body').off('click',$handles, moveDesktopSectorAccordion).on('click',$handles, moveDesktopSectorAccordion);
 
@@ -257,6 +267,7 @@ activateMobileSectorClick = function(){
 	$handles = '#sectors .handle',
 	$items = $('#sectors li.item'),
 	$close = $('#sectors a.close');
+	$items.removeAttr('style');
 	$('body').off('click',$handles, moveDesktopSectorAccordion);
 	$('body').off('click',$handles,moveMobileSectorAccordion).on('click',$handles,moveMobileSectorAccordion);
 }
@@ -410,7 +421,6 @@ scrollToAnchorPage = function(){
 
 loadContent = function(url,push){
 
-
 	/*
 var _opacity = $firstLoad ? 1: 0;
 $('main').animate({opacity:1}).animate({
@@ -430,6 +440,8 @@ if(push){
 
 
 	if(url==null){ //on homepage
+		//changeMenuState(0);
+		$('#nav ul li:first').addClass('current-menu-item');
 		$('#nav').removeClass("single");
 		if($homeLoaded){
 			//console.log('home loaded');
@@ -642,7 +654,7 @@ activateFullPage = function($scrolling){
 
 if($('#fullpage').length && !$fullPageActive && !isMobile){
 
-//console.log('activate fullpage!!!')
+
 	 var $sections = $('.section'),
        $anchors = [];
 
@@ -712,20 +724,33 @@ $.fn.fullpage.reBuild()
 }
 }
 destroyFullPage = function(){
+$('.section').css("height", "auto");
+		$('#fullpage').css({'height': 'auto'})
 	if($fullPageActive){
 		$.fn.fullpage.destroy('all');
 		$fullPageActive=false;
-		$('.section').removeAttr('style');
-		$('#fullpage').removeAttr('style');
+		//$('.section').attr("style", {height: "auto"})
+		//$('#fullpage').attr("style", {height: "auto"})
+		
+		
 	}
 }
 
+destroyScrollPanel = function(){
+if($('#enlightenment-page').length){
+	$('.scroll-area').perfectScrollbar('destroy').removeAttr('style');
+	$scrollbarActive = false;
+}
+}
+
 initScrollPanel = function(){
-	if($('#enlightenment-page').length){
+	if($('#enlightenment-page').length && !$scrollbarActive){
 	var $height = $('#enlightenment-page').attr('style').replace(';','').split(' ');
 	$('.scroll-area').css({ height: $height[1]})
 	$('.scroll-area').perfectScrollbar();
+	$scrollbarActive = true;
 }
+if($scrollbarActive) refreshScrollPanel();
 }
 refreshScrollPanel = function(){
 	if($('#enlightenment-page').length){
@@ -741,7 +766,6 @@ refreshScrollPanel = function(){
 //------------- History -------------
 
 activateHistoryActions = function(){
-	////console.log('activate history');
 	initPopState();
 	initHistoryLinks();
 	initHistoryNavLinks();
@@ -961,10 +985,13 @@ refreshPage = function(){
 	positionSectorClose(false);
 	//toggle fullscreen
 	if(!isMobile){
-		refreshScrollPanel();
+		initScrollPanel();
 		activateFullPage(true);
+		resetSectorMenu(false);
 	} else {
 		destroyFullPage();
+		destroyScrollPanel();
+		
 	}
 }
 

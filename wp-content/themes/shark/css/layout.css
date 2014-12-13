@@ -1289,15 +1289,8 @@ h2, h4 {
     font-size: 1.4rem;
   }
 }
-@media screen and (max-width: 660px) {
-  /* line 20, ../sass/components/_typography.scss */
-  h2, h4 {
-    font-size: 12px;
-    font-size: 1.2rem;
-  }
-}
 
-/* line 33, ../sass/components/_typography.scss */
+/* line 30, ../sass/components/_typography.scss */
 h3 {
   font-size: 22px;
   font-size: 2.2rem;
@@ -1305,21 +1298,14 @@ h3 {
   margin-bottom: 16px;
 }
 @media screen and (max-width: 1450px) {
-  /* line 33, ../sass/components/_typography.scss */
+  /* line 30, ../sass/components/_typography.scss */
   h3 {
     font-size: 16px;
     font-size: 1.6rem;
   }
 }
-@media screen and (max-width: 660px) {
-  /* line 33, ../sass/components/_typography.scss */
-  h3 {
-    font-size: 12px;
-    font-size: 1.2rem;
-  }
-}
 
-/* line 44, ../sass/components/_typography.scss */
+/* line 38, ../sass/components/_typography.scss */
 h4 {
   font-size: 14px;
   font-size: 1.4rem;
@@ -1327,49 +1313,49 @@ h4 {
   line-height: 120%;
 }
 @media screen and (max-width: 1450px) {
-  /* line 44, ../sass/components/_typography.scss */
+  /* line 38, ../sass/components/_typography.scss */
   h4 {
     font-size: 13px;
     font-size: 1.3rem;
   }
 }
 
-/* line 52, ../sass/components/_typography.scss */
+/* line 46, ../sass/components/_typography.scss */
 a {
   text-decoration: none;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-/* line 55, ../sass/components/_typography.scss */
+/* line 49, ../sass/components/_typography.scss */
 a:link, a:visited {
   color: #00b6f0;
 }
-/* line 58, ../sass/components/_typography.scss */
+/* line 52, ../sass/components/_typography.scss */
 a:hover, a:active {
   color: #605959;
 }
 
-/* line 62, ../sass/components/_typography.scss */
+/* line 56, ../sass/components/_typography.scss */
 small {
   font-size: 14px;
   font-size: 1.4rem;
   display: block;
 }
 @media screen and (max-width: 1450px) {
-  /* line 62, ../sass/components/_typography.scss */
+  /* line 56, ../sass/components/_typography.scss */
   small {
     font-size: 12px;
     font-size: 1.2rem;
   }
 }
 
-/* line 69, ../sass/components/_typography.scss */
+/* line 63, ../sass/components/_typography.scss */
 p {
   margin-bottom: 30px;
 }
 
-/* line 72, ../sass/components/_typography.scss */
+/* line 66, ../sass/components/_typography.scss */
 address {
   font-style: normal;
   margin-bottom: 3px;
