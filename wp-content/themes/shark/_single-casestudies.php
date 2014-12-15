@@ -36,7 +36,7 @@ $logo_src = getRetinaSrc($src);
          
       endif;
         ?>
- <nav id="controls" <?php if(is_single()): ?> class="show"<?php endif ?>><ul><li class="close"><a href="<?php echo home_url() ?>" class="close push-link">Close</a></li><li><a href="<?php echo $prev_permalink ?>" class="prev push-link">Previous</a></li><li><a href="<?php echo $next_permalink ?>" class="next push-link">Next</a></li></ul></nav>
+ <nav id="controls" <?php if(is_single()): ?> class="show"<?php endif ?>><ul><li class="close"><a href="<?php echo home_url() ?>/#our-work" class="close push-link">Close</a></li><li><a href="<?php echo $prev_permalink ?>" class="prev push-link">Previous</a></li><li><a href="<?php echo $next_permalink ?>" class="next push-link">Next</a></li></ul></nav>
 
 
   <section class="page-title" style="background-color:<?php echo get_field('primary_colour',$post->ID) ?>;">

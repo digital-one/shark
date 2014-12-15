@@ -29,13 +29,13 @@ ul#featured-work{
 		}
 		figure{
 			@include abs-pos(0,0,0,0);
-			 -webkit-transition: -webkit-transform 0.5s;
+			// -webkit-transition: -webkit-transform 0.5s;
 			text-align: center;
 			background-position: center center;
 			background-repeat:no-repeat;
 			.bg{
 				@include abs-pos(-1px,-1px,-1px,-1px);
-				@include transition(transform 0.2s ease);
+				@include transition(transform 0.4s ease);
 				z-index: 1;
 				@include bg-cover;
 			}

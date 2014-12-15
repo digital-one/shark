@@ -10,6 +10,7 @@
     $args = array(
           'post_type' => 'casestudies',
           'orderby' => 'menu_order',
+          'order' => 'ASC',
           'post_status' => 'publish',
           'numberposts' => 6
         );

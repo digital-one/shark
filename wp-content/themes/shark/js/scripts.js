@@ -169,7 +169,6 @@ resetSectorMenu = function(animate){
 	var $activeIndex = $items.index($('#sectors li.item.active')),
 		$move = $activeIndex*20,
 		$item = $('#sectors li.item').eq($activeIndex);
-		console.log($activeIndex)
 		$item.removeClass('active');
 		$('.main,aside',$item).animate({
 			opacity:0
@@ -178,7 +177,7 @@ resetSectorMenu = function(animate){
 		left: $move+'%'
 	},$speed,"easeOutQuad",function(){
 		//done;
-		$items.not($item).fadeIn(200);
+		$items.not($item).fadeIn(200,"easeInQuad");
 		
 		$item.removeClass('active');
 		$('.handle',$item).addClass('hover');
@@ -228,7 +227,7 @@ moveDesktopSectorAccordion = function(e){
 	////console.log($position)
 	$parent.addClass('active');
 	$('.handle',$parent).removeClass('hover');
-	$items.not($parent).fadeOut(100);
+	$items.not($parent).fadeOut(100,"easeOutQuad");
 	$parent.animate({
 		left:'0%'
 	},200,"easeOutQuad",function(){
@@ -252,7 +251,6 @@ destroySectorClick = function(){
 moveMobileSectorAccordion = function(e){
 	e.preventDefault();
 		var $parent = $(this).parent('li');
-		console.log($parent);
 		if($parent.hasClass('active')){
 			$parent.removeClass('active');
 			$('.main,aside',$parent).slideUp(200,"easeOutQuad")
@@ -366,8 +364,8 @@ openTabletMenu  = function(){
 	$('#header').animate({
 		width: $width+'px'
 	},200,"easeOutQuad",function(){
-		$('#nav').fadeIn(300);
-		$('#header #contacts').fadeIn(300);
+		$('#nav').fadeIn(300,"easeInQuad");
+		$('#header #contacts').fadeIn(300,"easeInQuad");
 	})
 	setContentPosition('open');
 }
@@ -404,12 +402,10 @@ destroyDesktopMenu = function(){
 }
 
 scrollToAnchorPage = function(){
-	
   //move page to requested anchor link
    if(location.hash){
     var $hash = location.hash.replace('#','');
     if($fullPageActive){
-    
     $.fn.fullpage.moveTo($hash,0);
     //$.fn.fullpage.reBuild();
   }
@@ -418,29 +414,42 @@ scrollToAnchorPage = function(){
 
 //------------- Load pages -------------
 
+showOverlay = function(status){
+	switch(status){
+		case 'true':
+		$('body').prepend('<div id="overlay" />');
+		$('#overlay').css({
+			'display':'block',
+			'position':'fixed',
+			'left':0,
+			'top':0,
+			'width': '100%',
+			'height': $(document).height(),
+			'z-index':9999,
+			'opacity':0
+		})
+		break;
+		case 'false':
+		$('#overlay').remove();
+		break;
+	}
+}
 
 loadContent = function(url,push){
-
-	/*
-var _opacity = $firstLoad ? 1: 0;
-$('main').animate({opacity:1}).animate({
-	opacity: _opacity
-},500,function(){
-*/
 
 if(push){
 	history.pushState({}, '', url); //push the url
 	 currentPathname = location.pathname;
 	 updateHashMenuState();
 	}
-
+showOverlay('true');
 	if(location.pathname=='/' || location.pathname=='/~sharkdesignco/') url=null
 
 	$singlePage=false;
 
 
 	if(url==null){ //on homepage
-		//changeMenuState(0);
+		$('#home-link').fadeIn(200,"easeInQuad");
 		$('#nav ul li:first').addClass('current-menu-item');
 		$('#nav').removeClass("single");
 		if($homeLoaded){
@@ -452,7 +461,6 @@ if(push){
 		renderPages();
 		} else {
 			//get homepage content with AJAX
-			if(console) console.log('get homepage with AJAX')
 	  $.ajax({
     url:"?action=ajax_get_pages",
     dataType: 'json',
@@ -482,16 +490,18 @@ if(push){
 	 } else {
 	 	$('#nav').addClass('single');
 	 	//load only the requested url (not homepage)
-	 	if(console) console.log('single page')
+	 	//if(console) console.log('single page')
+	 	$('#home-link').fadeOut(200,"easeOutQuad");
 	 	$singlePage=true;
 	 	if(!$firstLoad){  //if single page and not first load, get page
 	 	$totalPages=1;
 	 	loadPage(0,url,false);
 	 } else { //single page and first load, do nothing but init scripts and preload images
 	 	initPageScripts();
-	 	$firstLoad=false;
+	 	
 	 	toggleControls();
 	 	preloadImages(showContent);
+	 	//$firstLoad=false;
 	 }
 	 }
 	 //end
@@ -532,6 +542,8 @@ $.each($pageCache, function( key, obj) {
 			
 			if(index==0){ //if first page, change the page title
 				 $title = $page.attr('data-title');
+				 $homelink = $(data).find('#home-link');
+				 $('#home-link').attr('style',$homelink.attr('style'));
       			 document.title = $title;
 
 //update elements outside of the updatable area
@@ -570,7 +582,7 @@ renderPages = function(){
             $('main').append($loadedObjs[i])
         }
     
-           $firstLoad = false;
+         
 
 
 	if($loadedObjs.length>1){ //if homepage, activate fullpage js before showing content
@@ -582,6 +594,7 @@ renderPages = function(){
          	scrollToAnchorPage();
          	$('#overlay').remove();
          	preloadImages(showContent);
+         	 // $firstLoad = false;
 		}
 		
    		
@@ -618,11 +631,16 @@ initPageScripts = function(){
 }
 
 showContent = function(){
-	$('main').animate({
+	var _target = $firstLoad ? '#page-wrap' : 'main';
+	if($firstLoad)$('main').css({opacity:1});
+	$(_target).animate({
 		opacity:1
 	},400,'easeInOutQuart',function(){
-		//done
+		if($firstLoad) $('#preloader-screen').hide();
+		$firstLoad = false;
 	})
+	showOverlay('false');
+
 }
 
 hideContent = function(callback){
@@ -637,9 +655,9 @@ toggleControls = function(){
 	
 	if($('main .controls').length){
 	
-	$('.controls.duplicate').html($('main .controls').html()).fadeIn(200);
+	$('.controls.duplicate').html($('main .controls').html()).fadeIn(200,"easeInQuad");
 } else {
-	$('.controls.duplicate').fadeOut(200)
+	$('.controls.duplicate').fadeOut(200,"easeOutQuad")
 }
 }
 
@@ -661,7 +679,6 @@ if($('#fullpage').length && !$fullPageActive && !isMobile){
       	$sections.each(function(){
         $anchors.push($(this).attr('data-anchor'));
         });
-
 
 $('main').attr('id','fullpage');
         
@@ -958,7 +975,7 @@ switchAccordion = function(){
 
 initPage = function(){
 
-	loadContent(null, true); 
+	loadContent(location.href, true); 
 
 	if(!isMobile && Modernizr.history){
 		activateHistoryActions(); //browser history supported, activate js

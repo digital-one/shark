@@ -162,12 +162,12 @@ section.content{
 		height:66px;
 		line-height: 66px;
 		padding: 0 74px;
-@media screen and (max-width: $break-xlarge){
-		height: 52px;
-    	line-height: 52px;
-    	padding: 0 74px 0 36px;
+		@include rgba-bg(0,0,0,#000000,.3);
+		@media screen and (max-width: $break-xlarge){
+			height: 52px;
+    		line-height: 52px;
+    		padding: 0 74px 0 36px;
 		}
-
 		@media screen and (max-width: $break-small){
 			padding: 0 51px 0 15px;
 			height:40px;
@@ -175,7 +175,7 @@ section.content{
 			@include font-size(14);
 		}
 		&:hover,&:active{
-			@include rgba-bg(0,0,0,#000000,.3);
+			@include rgba-bg(0,0,0,#000000,.5);
 		}
 	}
 	figcaption &{

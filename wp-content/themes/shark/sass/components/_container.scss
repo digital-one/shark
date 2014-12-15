@@ -2,14 +2,21 @@
 	//padding:0 0 0 239px;
 	width:100%;
 	height:100%;
+	display:block;
+	@include opacity(0);
 	position: relative;
+	z-index: 2;
 	@media screen and (max-width: $break-small){
 		height:auto;
 	}
 	main{
 		padding:0 0 0 239px;
+		background-color: white;
 		width:100%;
 		height:100%;
+		display: block;
+		z-index: 3;
+		position: relative;
 		@include opacity(0);
 		@media screen and (max-width: $break-xlarge){
 			padding-left: 199px;
@@ -63,3 +70,24 @@
     }
     overflow: hidden;
 }
+
+	#preloader-screen{
+		width:100%;
+		height:100%;
+		position:fixed;
+		background-color: #c0e6f6;
+		text-align: center;
+		left:0;
+		top:0;
+		display: block;
+		z-index: 1;
+		span{
+			@include vertical-align;
+			width: 115px;
+			height: 77px;
+			display: inline-block;
+			background:url('../images/shark.svg') left top no-repeat;
+			background-size: 100% auto;
+			@extend %ir;
+		}
+	}

@@ -785,7 +785,7 @@ header#header #contacts, nav#nav, section.page-title, section.banner, section.co
 }
 
 /* line 9, ../sass/helpers/_placeholders.scss */
-header#header a#mobile-menu, nav.social li a, nav#sectors a.close, nav#social-share li a, nav.controls ul li a {
+#preloader-screen span, header#header a#mobile-menu, nav.social li a, nav#sectors a.close, nav#social-share li a, nav.controls ul li a {
   overflow: hidden;
   text-indent: -10000px;
 }
@@ -853,7 +853,13 @@ body {
 #page-wrap {
   width: 100%;
   height: 100%;
+  display: block;
+  opacity: 0;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  filter: alpha(opacity=0);
   position: relative;
+  z-index: 2;
 }
 @media screen and (max-width: 660px) {
   /* line 1, ../sass/components/_container.scss */
@@ -861,36 +867,40 @@ body {
     height: auto;
   }
 }
-/* line 9, ../sass/components/_container.scss */
+/* line 12, ../sass/components/_container.scss */
 #page-wrap main {
   padding: 0 0 0 239px;
+  background-color: white;
   width: 100%;
   height: 100%;
+  display: block;
+  z-index: 3;
+  position: relative;
   opacity: 0;
   -moz-opacity: 0;
   -khtml-opacity: 0;
   filter: alpha(opacity=0);
 }
 @media screen and (max-width: 1450px) {
-  /* line 9, ../sass/components/_container.scss */
+  /* line 12, ../sass/components/_container.scss */
   #page-wrap main {
     padding-left: 199px;
   }
 }
 @media screen and (max-width: 1020px) {
-  /* line 9, ../sass/components/_container.scss */
+  /* line 12, ../sass/components/_container.scss */
   #page-wrap main {
     padding-left: 48px;
   }
 }
 @media screen and (max-width: 660px) {
-  /* line 9, ../sass/components/_container.scss */
+  /* line 12, ../sass/components/_container.scss */
   #page-wrap main {
     padding-left: 0;
     height: auto;
   }
 }
-/* line 25, ../sass/components/_container.scss */
+/* line 32, ../sass/components/_container.scss */
 #page-wrap .section {
   height: 100%;
   width: 100%;
@@ -898,29 +908,29 @@ body {
   position: relative;
   z-index: 997;
 }
-/* line 31, ../sass/components/_container.scss */
+/* line 38, ../sass/components/_container.scss */
 #page-wrap .section.scrollable {
   height: auto !important;
 }
-/* line 34, ../sass/components/_container.scss */
+/* line 41, ../sass/components/_container.scss */
 #page-wrap .section.enlightenment {
   height: auto !important;
   overflow: visible !important;
 }
 @media screen and (max-width: 660px) {
-  /* line 25, ../sass/components/_container.scss */
+  /* line 32, ../sass/components/_container.scss */
   #page-wrap .section {
     height: auto;
   }
 }
 @media screen and (max-width: 660px) {
-  /* line 41, ../sass/components/_container.scss */
+  /* line 48, ../sass/components/_container.scss */
   #page-wrap .section#home {
     height: 500px;
   }
 }
 
-/* line 48, ../sass/components/_container.scss */
+/* line 55, ../sass/components/_container.scss */
 #overlay {
   display: block;
   width: 100%;
@@ -934,7 +944,7 @@ body {
   position: relative;
 }
 
-/* line 57, ../sass/components/_container.scss */
+/* line 64, ../sass/components/_container.scss */
 .scroll-area {
   position: relative;
   width: 100%;
@@ -942,10 +952,36 @@ body {
   overflow: hidden;
 }
 @media screen and (max-width: 660px) {
-  /* line 57, ../sass/components/_container.scss */
+  /* line 64, ../sass/components/_container.scss */
   .scroll-area {
     height: auto;
   }
+}
+
+/* line 74, ../sass/components/_container.scss */
+#preloader-screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #c0e6f6;
+  text-align: center;
+  left: 0;
+  top: 0;
+  display: block;
+  z-index: 1;
+}
+/* line 84, ../sass/components/_container.scss */
+#preloader-screen span {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 115px;
+  height: 77px;
+  display: inline-block;
+  background: url("../images/shark.svg") left top no-repeat;
+  background-size: 100% auto;
 }
 
 /* line 1, ../sass/components/_header.scss */
@@ -1604,6 +1640,15 @@ section.content .column-wrap div.column p {
   height: 66px;
   line-height: 66px;
   padding: 0 74px;
+  background-color: black;
+  background-color: transparent\9;
+  background-color: rgba(0, 0, 0, 0.3);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#$code+$hex,endColorstr=#$code+$hex);
+  zoom: 1;
+}
+/* line 26, ../sass/helpers/mixins/_rgba-bg.scss */
+.caption .button:nth-child(n) {
+  filter: none;
 }
 @media screen and (max-width: 1450px) {
   /* line 161, ../sass/components/_global.scss */
@@ -1627,7 +1672,7 @@ section.content .column-wrap div.column p {
 .caption .button:hover, .caption .button:active {
   background-color: black;
   background-color: transparent\9;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#$code+$hex,endColorstr=#$code+$hex);
   zoom: 1;
 }
@@ -2216,7 +2261,18 @@ nav#sectors .underline:after {
   width: 30px;
   margin: 20px auto 0;
 }
-/* line 33, ../sass/templates/_what-we-do.scss */
+@media screen and (max-width: 1450px) {
+  /* line 28, ../sass/templates/_what-we-do.scss */
+  nav#sectors .underline:after {
+    top: auto;
+    right: auto;
+    bottom: 0;
+    left: 50%;
+    position: absolute;
+    margin-left: -15px;
+  }
+}
+/* line 37, ../sass/templates/_what-we-do.scss */
 nav#sectors ul {
   z-index: 999;
   position: relative;
@@ -2224,7 +2280,7 @@ nav#sectors ul {
   height: 100%;
   display: block;
 }
-/* line 41, ../sass/templates/_what-we-do.scss */
+/* line 45, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item {
   width: 100%;
   display: block;
@@ -2237,23 +2293,23 @@ nav#sectors ul li.item {
   left: 0;
   position: absolute;
 }
-/* line 48, ../sass/templates/_what-we-do.scss */
+/* line 52, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle, nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   float: left;
 }
 @media screen and (max-width: 660px) {
-  /* line 48, ../sass/templates/_what-we-do.scss */
+  /* line 52, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle, nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     float: none;
   }
 }
 @media screen and (max-width: 660px) {
-  /* line 41, ../sass/templates/_what-we-do.scss */
+  /* line 45, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item {
     position: relative;
   }
 }
-/* line 57, ../sass/templates/_what-we-do.scss */
+/* line 61, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle {
   -webkit-transition: background-color 0.3s ease-in-out;
   -moz-transition: background-color 0.3s ease-in-out;
@@ -2263,20 +2319,20 @@ nav#sectors ul li.item .handle {
   height: 100%;
   padding: 0 15px;
 }
-/* line 63, ../sass/templates/_what-we-do.scss */
+/* line 67, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle:last-child {
   border-right: none;
 }
-/* line 66, ../sass/templates/_what-we-do.scss */
+/* line 70, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle.hover {
   cursor: pointer;
 }
-/* line 68, ../sass/templates/_what-we-do.scss */
+/* line 72, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle.hover:hover, nav#sectors ul li.item .handle.hover:active {
   background-color: #00a3d6;
 }
 @media screen and (max-width: 660px) {
-  /* line 57, ../sass/templates/_what-we-do.scss */
+  /* line 61, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle {
     width: 100%;
     height: 200px;
@@ -2285,7 +2341,7 @@ nav#sectors ul li.item .handle.hover:hover, nav#sectors ul li.item .handle.hover
     border-right: none;
   }
 }
-/* line 79, ../sass/templates/_what-we-do.scss */
+/* line 83, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div {
   position: relative;
   top: 50%;
@@ -2297,24 +2353,24 @@ nav#sectors ul li.item .handle div {
   position: relative;
 }
 @media screen and (max-width: 1450px) {
-  /* line 79, ../sass/templates/_what-we-do.scss */
+  /* line 83, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div {
     padding-top: 52px;
   }
 }
 @media screen and (max-width: 660px) {
-  /* line 79, ../sass/templates/_what-we-do.scss */
+  /* line 83, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div {
     padding-top: 95px;
   }
 }
-/* line 91, ../sass/templates/_what-we-do.scss */
+/* line 95, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div h3 {
   margin: 30px 0 10px;
   font-size: 20px;
   font-size: 2rem;
 }
-/* line 94, ../sass/templates/_what-we-do.scss */
+/* line 97, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div h3 span {
   position: relative;
   top: 50%;
@@ -2323,14 +2379,14 @@ nav#sectors ul li.item .handle div h3 span {
   transform: translateY(-50%);
 }
 @media screen and (max-width: 1450px) {
-  /* line 91, ../sass/templates/_what-we-do.scss */
+  /* line 95, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 {
     height: 60px;
     margin: 0;
     font-size: 16px;
     font-size: 1.6rem;
   }
-  /* line 102, ../sass/templates/_what-we-do.scss */
+  /* line 105, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 span {
     display: block;
     position: relative;
@@ -2341,7 +2397,7 @@ nav#sectors ul li.item .handle div h3 span {
   }
 }
 @media screen and (max-width: 1450px) and (max-width: 660px) {
-  /* line 102, ../sass/templates/_what-we-do.scss */
+  /* line 105, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 span {
     transform: none;
     top: 0;
@@ -2349,13 +2405,13 @@ nav#sectors ul li.item .handle div h3 span {
 }
 
 @media screen and (max-width: 660px) {
-  /* line 91, ../sass/templates/_what-we-do.scss */
+  /* line 95, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div h3 {
     height: auto;
     margin-bottom: 2px;
   }
 }
-/* line 116, ../sass/templates/_what-we-do.scss */
+/* line 119, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .handle div img {
   width: 88px;
   height: 76px;
@@ -2368,54 +2424,54 @@ nav#sectors ul li.item .handle div img {
   margin-left: -44px;
 }
 @media screen and (min-width: 661px) and (max-width: 1450px) {
-  /* line 116, ../sass/templates/_what-we-do.scss */
+  /* line 119, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .handle div img {
     width: 60px;
     height: 52px;
     margin-left: -30px;
   }
 }
-/* line 130, ../sass/templates/_what-we-do.scss */
+/* line 133, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-2 {
   left: 20%;
 }
 @media screen and (max-width: 660px) {
-  /* line 130, ../sass/templates/_what-we-do.scss */
+  /* line 133, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-2 {
     left: 0;
   }
 }
-/* line 136, ../sass/templates/_what-we-do.scss */
+/* line 139, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-3 {
   left: 40%;
 }
 @media screen and (max-width: 660px) {
-  /* line 136, ../sass/templates/_what-we-do.scss */
+  /* line 139, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-3 {
     left: 0;
   }
 }
-/* line 142, ../sass/templates/_what-we-do.scss */
+/* line 145, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-4 {
   left: 60%;
 }
 @media screen and (max-width: 660px) {
-  /* line 142, ../sass/templates/_what-we-do.scss */
+  /* line 145, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-4 {
     left: 0;
   }
 }
-/* line 148, ../sass/templates/_what-we-do.scss */
+/* line 151, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item.item-5 {
   left: 80%;
 }
 @media screen and (max-width: 660px) {
-  /* line 148, ../sass/templates/_what-we-do.scss */
+  /* line 151, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item.item-5 {
     left: 0;
   }
 }
-/* line 154, ../sass/templates/_what-we-do.scss */
+/* line 157, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   width: 60%;
   height: 100%;
@@ -2424,7 +2480,7 @@ nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   border-left: 1px solid white;
 }
 @media screen and (min-width: 661px) {
-  /* line 154, ../sass/templates/_what-we-do.scss */
+  /* line 157, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     opacity: 0;
     -moz-opacity: 0;
@@ -2433,7 +2489,7 @@ nav#sectors ul li.item .main, nav#sectors ul li.item aside {
   }
 }
 @media screen and (max-width: 660px) {
-  /* line 154, ../sass/templates/_what-we-do.scss */
+  /* line 157, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     display: none;
     width: 100%;
@@ -2441,30 +2497,30 @@ nav#sectors ul li.item .main, nav#sectors ul li.item aside {
     border: 0;
   }
 }
-/* line 171, ../sass/templates/_what-we-do.scss */
+/* line 174, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item aside {
   width: 20%;
 }
 @media screen and (max-width: 660px) {
-  /* line 171, ../sass/templates/_what-we-do.scss */
+  /* line 174, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item aside {
     width: 100%;
     border-bottom: 1px solid white;
   }
 }
-/* line 178, ../sass/templates/_what-we-do.scss */
+/* line 181, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item aside ul li {
   padding-left: 30px;
   margin-bottom: 5px;
   position: relative;
 }
 @media screen and (max-width: 1450px) {
-  /* line 178, ../sass/templates/_what-we-do.scss */
+  /* line 181, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item aside ul li {
     padding-left: 20px;
   }
 }
-/* line 185, ../sass/templates/_what-we-do.scss */
+/* line 188, ../sass/templates/_what-we-do.scss */
 nav#sectors ul li.item aside ul li:before {
   content: "";
   width: 15px;
@@ -2478,7 +2534,7 @@ nav#sectors ul li.item aside ul li:before {
   position: absolute;
 }
 @media screen and (min-width: 661px) and (max-width: 1450px) {
-  /* line 185, ../sass/templates/_what-we-do.scss */
+  /* line 188, ../sass/templates/_what-we-do.scss */
   nav#sectors ul li.item aside ul li:before {
     width: 11px;
     height: 12px;
@@ -2533,7 +2589,6 @@ ul#featured-work li figure {
   bottom: 0;
   left: 0;
   position: absolute;
-  -webkit-transition: -webkit-transform 0.5s;
   text-align: center;
   background-position: center center;
   background-repeat: no-repeat;
@@ -2545,9 +2600,9 @@ ul#featured-work li figure .bg {
   bottom: -1px;
   left: -1px;
   position: absolute;
-  -webkit-transition: -webkit-transform 0.2s ease;
-  -moz-transition: -moz-transform 0.2s ease;
-  transition: transform 0.2s ease;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  -moz-transition: -moz-transform 0.4s ease;
+  transition: transform 0.4s ease;
   z-index: 1;
   background-position: center center;
   background-repeat: no-repeat;

@@ -28,6 +28,10 @@ nav#sectors{
 		&:after{
 			width: 30px;	
 			margin: 20px auto 0;
+			@media screen and (max-width: $break-xlarge){
+				@include abs-pos(auto,auto,0,50%);
+				margin-left:-15px;
+			}
 		}
 	}
 	ul{
@@ -90,7 +94,6 @@ nav#sectors{
 					}
 					h3{
 						margin:30px 0 10px;
-
 						span{
 							@include vertical-align;
 						}
