@@ -32,7 +32,15 @@ $src = getRetinaSrc($src);
         ?>
         <li class="item item-<?php echo $c ?>">
 <div class="handle hover"><div><img src="<?php echo $src ?>" alt="<?php echo $term->name ?>" /><h3 class="underline"><span><?php echo $term->name ?></span></h3><?php /*<h4 class="underline"><?php echo get_field('sub_heading',$term) ?></h4>*/ ?></div></div>
-<div class="main"><p><?php echo $term->description ?></p><a href="" class="button">Read Case Study</a></div><aside><ul><li>Market Analysis</li><li>Predatory Thinking</li></ul></aside> 
+<div class="main"><p><?php echo $term->description ?></p><a href="" class="button">Read Case Study</a></div><aside>
+<?php if(get_field('category_services_rptr', $term)): ?>
+    <ul>
+<?php while(the_repeater_field('category_services_rptr',$term)): ?>
+<li><?php echo get_sub_field('category_service')?></li>
+<?php endwhile; ?>
+</ul>
+<?php endif ?>
+</aside> 
 </li>
 <?php $c++; ?>
 <?php endforeach; ?>

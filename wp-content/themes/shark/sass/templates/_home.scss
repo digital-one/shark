@@ -46,16 +46,16 @@
 }
 a.scroll{
 	display:inline-block;
-	@include font-size(16);
+	@include font-size(14);
 	color: white;
 	font-family: $proximanova-bold;
 	text-transform: uppercase;
 	text-align: center;
-	width:80px;
+	width:140px;
 	height: auto;
 	padding:56px 0 0;
 	@include abs-pos(auto,auto,6%,50%);
-	margin-left:-40px;
+	margin-left:-70px;
 	z-index:998;
 	&:before{
 		content:"";

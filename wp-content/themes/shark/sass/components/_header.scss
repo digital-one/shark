@@ -85,6 +85,8 @@ header#header{
 	z-index:999;
 	width: 115px;
 	height: 77px;
+	-webkit-animation-name: pulse;
+    animation-name: pulse;
 	display: block;
 	right:30px;
 	top:30px;

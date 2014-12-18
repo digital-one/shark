@@ -22,7 +22,7 @@ endif;
 </div>
 </div>
 <!-- /caption -->
-<a class="scroll">Scroll</a>
+<a class="scroll">Scroll to explore</a>
 </div>
 <!--/home-->
 <?php get_footer() ?>

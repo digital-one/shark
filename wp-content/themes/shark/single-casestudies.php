@@ -71,9 +71,9 @@ $image2_src = getRetinaSrc($image2_src);
 <p><?php echo get_field('third_section_text',$post->ID) ?></p>
         <nav id="social-share">
 <span>Share this</span>
-<ul><li><a href=""></a></li>
-    <li><a href="" class="twitter"></a></li>
-    <li><a href="" class="email"></a></li>
+<ul><li><a href="http://www.facebook.com/share.php?u=<?php echo get_permalink($post->ID)?>&amp;title=<?php echo urlencode($post->post_title)?>" target="_blank">Facebook</a></li>
+    <li><a href="http://twitter.com/home?status=<?php echo urlencode($post->post_title)?>+<?php echo get_permalink($post->ID)?>" class="twitter" target="_blank">Twitter</a></li>
+    <li><a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=<?php echo get_permalink($post->ID)?>&amp;title=<?php echo urlencode($post->post_title)?>&amp;source=<?php echo get_permalink($post->ID)?>" class="linkedin" target="_blank">Linkedin</a></li>
 </ul>
 </nav>
 </section>

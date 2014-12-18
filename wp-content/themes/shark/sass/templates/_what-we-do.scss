@@ -106,13 +106,13 @@ nav#sectors{
 								display: block;
 								@include vertical-align;
 								@media screen and (max-width: $break-small){
-									transform: none;
-									top:0;
+									//transform: none;
+									//top:0;
 								}
 							}
 						}
 						@media screen and (max-width: $break-small){
-							height: auto;
+							//height: auto;
 							margin-bottom: 2px;
 						}
 					}

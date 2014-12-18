@@ -45,6 +45,11 @@
 			}
 		}
 	}
+	#posts-container{
+		@extend %clearfix;
+		display: block;
+		width: 100%;
+	}
 	footer#posts-footer{
 		width: 100%;
 		display: block;

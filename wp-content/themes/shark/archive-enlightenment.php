@@ -28,6 +28,7 @@
 
     if($items = get_posts($args)):
             ?>
+          <div id="posts-container">
         <ul id="posts">
     <?php foreach($items as $item): ?>
        <?php
@@ -37,7 +38,7 @@ $src = getRetinaSrc($src);
  <li><figure><img src="<?php echo $src ?>" /></figure><figcaption><h4><?php echo $item->post_title ?></h4><?php echo $item->post_content ?></figcaption></li>
 <?php endforeach ?>
 </ul>
-
+</div>
 <footer id="posts-footer">
 <a href="<?php echo home_url() ?>/enlightenment/archive/pge/<?php echo $next_page ?>" class="button more-posts<?php if($next_page > $max_num_pages): ?> end<?php endif ?>">Load more posts</a>
 </footer>

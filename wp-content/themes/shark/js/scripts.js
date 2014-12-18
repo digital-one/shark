@@ -31,6 +31,7 @@ var isMobile = $(window).width() <= 660,
 	$fullPageActive = false,
 	$initFullPageJS = false,
 	$scrollbarActive = false,
+	$masonryActive = false,
 	$pageCache = [],
 	$loadedObjs = [],
 	$loadedPages = 0,
@@ -39,7 +40,11 @@ var isMobile = $(window).width() <= 660,
 	$singlePage=false,
 	$firstLoad=true,
 	$homeLoaded=false,
+	$historyActive = !isMobile && Modernizr.history,
 	$container,
+	isIE9 = $('html').hasClass('ie9'),
+	isIE8 = $('html').hasClass('ie8'),
+	isHome = false,
 	currentPathname = null;
 
 	//tooltip variables
@@ -107,7 +112,7 @@ morePostsClick = function(e){
             $this.attr('href',$btn.attr('href')); //update the paging link
              $this.attr('class',$btn.attr('class'));
            		var $items = $obj.children();
-           		if(isMobile){
+           		if(isMobile || isIE9){
            			$('#posts').append($items);
            		} else {
                $container.append($items).masonry('appended',$items);
@@ -116,14 +121,18 @@ morePostsClick = function(e){
 }
 
 initMasonry = function(){
-	//if($('#enlightenment').length){
+	if($('#enlightenment-page').length){
 		$container = $('#posts'); //masonry element
+		if($masonryActive){
+			$container.masonry('destroy');
+			$masonryActive=false;
+		}
     $container.masonry({
-      itemSelector: 'li',
-      isAnimated: !Modernizr.csstransitions
+      itemSelector:"li"//,
+     // isAnimated: !Modernizr.csstransitions
     });
-
-//}	
+    $masonryActive = true;
+}	
 }
 initMorePostsClick = function(){
 	$('body').on('click','a.more-posts', morePostsClick);
@@ -178,24 +187,23 @@ resetSectorMenu = function(animate){
 	},$speed,"easeOutQuad",function(){
 		//done;
 		$items.not($item).fadeIn(200,"easeInQuad");
-		
 		$item.removeClass('active');
 		$('.handle',$item).addClass('hover');
 		activateSectorClick();
 	})
-		})
+	})
 }
 
 positionSectorClose = function(animate){
 	var $speed = animate ? 100 : 0;
 	if($close.hasClass('active')){
-				var $height = $close.height();
+		var $height = $close.height();
 		$close.animate({
 		top:'-'+$height+'px'
 	},$speed,"easeOutQuad",function(){
 	$close.off('click');
 	$close.on('click',function(e){
-			e.preventDefault();
+		e.preventDefault();
 		resetSectorMenu(true);
 	});	
 	})
@@ -218,10 +226,11 @@ resetDesktopSectorAccordion = function(){
 
 }
 moveDesktopSectorAccordion = function(e){
-	destroySectorClick();
-	showSectorClose();
 	$items = $('#sectors li.item');
 	$close = $('#sectors a.close');
+	destroySectorClick();
+	showSectorClose();
+	
 	var $parent = $(this).parent('li');
 	var $position = $parent.position();
 	////console.log($position)
@@ -437,18 +446,19 @@ showOverlay = function(status){
 
 loadContent = function(url,push){
 
-if(push){
+if(push && $historyActive){
 	history.pushState({}, '', url); //push the url
 	 currentPathname = location.pathname;
-	 updateHashMenuState();
+	// updateHashMenuState();
 	}
 showOverlay('true');
 	if(location.pathname=='/' || location.pathname=='/~sharkdesignco/') url=null
 
 	$singlePage=false;
-
+	isHome = false;
 
 	if(url==null){ //on homepage
+		isHome = true;
 		$('#home-link').fadeIn(200,"easeInQuad");
 		$('#nav ul li:first').addClass('current-menu-item');
 		$('#nav').removeClass("single");
@@ -541,10 +551,10 @@ $.each($pageCache, function( key, obj) {
 			var $page = $(data).find('.section');
 			
 			if(index==0){ //if first page, change the page title
-				 $title = $page.attr('data-title');
+
 				 $homelink = $(data).find('#home-link');
 				 $('#home-link').attr('style',$homelink.attr('style'));
-      			 document.title = $title;
+
 
 //update elements outside of the updatable area
 
@@ -583,7 +593,8 @@ renderPages = function(){
         }
     
          
-
+ 	var $title = $loadedObjs[0].attr('data-title');
+				  document.title = $title;
 
 	if($loadedObjs.length>1){ //if homepage, activate fullpage js before showing content
 		if(!isMobile){
@@ -624,14 +635,14 @@ preloadImages(showContent);
 initPageScripts = function(){
 	//console.log('init scripts')
 	initMap(); //init map
-	if(!isMobile) initMasonry(); //init masonry
+	if(!isMobile && !isIE9) initMasonry(); //init masonry
 	initMorePostsClick();
 	initTooltip(); //init tooltip
 	initParallax(); //init parallax
 }
 
 showContent = function(){
-	var _target = $firstLoad ? '#page-wrap' : 'main';
+	var _target = $firstLoad  ? '#page-wrap' : 'main';
 	if($firstLoad)$('main').css({opacity:1});
 	$(_target).animate({
 		opacity:1
@@ -686,7 +697,7 @@ $('main').attr('id','fullpage');
 		
 		verticalCentered: false,
 		resize : false,
-		scrollingSpeed: 1100,
+		scrollingSpeed: 900,
 		//easing: 'easeInOutQuart',
 		easing: 'easeInOutExpo',
 		navigation: false,
@@ -726,9 +737,9 @@ $('main').attr('id','fullpage');
          			//finished
          		})
 */
-         			var $h = $('.enlightenment').attr('style').replace(';','').split(' ');
+         		//	var $h = $('.enlightenment').attr('style').replace(';','').split(' ');
          			initScrollPanel();
-
+					
          	}
          
     	});	
@@ -761,19 +772,25 @@ if($('#enlightenment-page').length){
 }
 
 initScrollPanel = function(){
-	if($('#enlightenment-page').length && !$scrollbarActive){
-	var $height = $('#enlightenment-page').attr('style').replace(';','').split(' ');
-	$('.scroll-area').css({ height: $height[1]})
-	$('.scroll-area').perfectScrollbar();
+
+	if($('#enlightenment-page').length){
+		destroyScrollPanel();
+		var obj = document.getElementById("enlightenment-page"),
+		$height = obj.style.height;
+
+	$('.scroll-area').css({ height: $height})
+	if(!$scrollbarActive) $('.scroll-area').perfectScrollbar();
 	$scrollbarActive = true;
-}
-if($scrollbarActive) refreshScrollPanel();
+	refreshScrollPanel();
+	}
+//if($scrollbarActive) refreshScrollPanel();
 }
 refreshScrollPanel = function(){
-	if($('#enlightenment-page').length){
+	if($('#enlightenment-page').length && $scrollbarActive){
 		if($('#enlightenment-page').attr('style')){
-	var $height = $('#enlightenment-page').attr('style').replace(';','').split(' ');
-	$('.scroll-area').css({ height: $height[1]})
+	var obj = document.getElementById("enlightenment-page"),
+		$height = obj.style.height;
+	$('.scroll-area').css({ height: $height})
 }
 	$('.scroll-area').perfectScrollbar('update');
 	}
@@ -786,7 +803,6 @@ activateHistoryActions = function(){
 	initPopState();
 	initHistoryLinks();
 	initHistoryNavLinks();
-	convertNavLinksToHash();
 	//loadContent(location.href, true);
 }
 
@@ -987,7 +1003,7 @@ initPage = function(){
 	}
 	switchMenu();
 	switchAccordion();
-
+	convertNavLinksToHash();
 }
 
 refreshPage = function(){
@@ -995,9 +1011,10 @@ refreshPage = function(){
 	isTablet = $(window).width() > 660 && $(window).width() <= 1020;
 	isDesktop = $(window).width() > 1020;
 	isHiResDesktop = $(window).width() > 1450;
+	$historyActive = !isMobile && Modernizr.history;
 	switchMenu();
 	switchAccordion();
-	
+	//rebuildFullPage();
 	moveMenuState();
 	positionSectorClose(false);
 	//toggle fullscreen
@@ -1008,7 +1025,7 @@ refreshPage = function(){
 	} else {
 		destroyFullPage();
 		destroyScrollPanel();
-		
+		destroyHistoryActions();
 	}
 }
 

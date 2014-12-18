@@ -352,6 +352,7 @@ nav#social-share{
 		a{
 			width:30px;
 			height: 30px;
+			@extend %ir;
 			@media screen and (max-width: $break-xlarge){
 				width:22px;
 				height:22px;
@@ -367,6 +368,9 @@ nav#social-share{
 			}
 			&.email{
 				background-image:url('../images/email-share.png');
+			}
+			&.linkedin{
+				background-image:url('../images/linkedin-share.png');
 			}
 		}
 	}

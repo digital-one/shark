@@ -1,7 +1,7 @@
 </main> <!--/main-->
 
 </div> <!-- /page wrap -->
-<div id="preloader-screen"><span id="logo">Shark Design &amp; Marketing</span></div> 
+<?php if(is_front_page()):?><div id="preloader-screen"><span id="logo" class="pulse">Shark Design &amp; Marketing</span></div> <?php endif ?>
 <!--scripts-->
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
 <!-- Load jQuery from a local copy if loading from Google fails -->
