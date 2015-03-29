@@ -1,0 +1,55 @@
+/*** band signup page styles ***/
+
+h1#bandSignupDefaultHeading { 
+	background:#00B2F0 URL(../images/h1_bk.gif) no-repeat;
+	color:#FFFFFF;
+	font-size:16px;
+	font-weight:normal;
+	height:16px;
+	margin:0px;
+	padding:9px 0px 9px 15px;
+	}
+
+#bandSignupDefault {
+	background-color: #ffffff;
+	height: 1%;
+	height:280px;
+ 	}
+
+#bandSignupDefault input:focus, #bandSignupDefault textarea:focus {
+	background: #ffffff;
+	}
+
+#bandSignupDefault LABEL.inputLabel {
+	width: 180px;
+	padding-top:0px;
+	}
+
+#bandSignupDefault input {
+	float:right;
+	}
+
+#bandSignupDefault select {
+	width: 220px;
+	float:right;
+	}
+
+#bandSignupContent fieldset{
+	margin:0px;
+	}
+
+#bandSignupContent fieldset textarea{
+	width:426px;
+	}
+
+#bandSignupContent fieldset p{
+	padding:10px 0px 5px 0px;
+	}
+
+#bandSignupContent div.buttonRow{
+	padding:10px 0px 0px 0px;
+	}
+
+#bandSignupDefault div.mainContent {
+	padding-top:10px;
+	}

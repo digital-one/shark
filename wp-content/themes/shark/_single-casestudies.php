@@ -48,8 +48,8 @@ $logo_src = getRetinaSrc($src);
  <?php
 list($image1_src,$w,$h) = wp_get_attachment_image_src(get_field('second_section_image_1',$post->ID),'portfolio-column-full-height');
 list($image2_src,$w,$h) = wp_get_attachment_image_src(get_field('second_section_image_2',$post->ID),'portfolio-column-half-height');
-$image1_src = getRetinaSrc($image1_src);
-$image2_src = getRetinaSrc($image2_src);
+//$image1_src = getRetinaSrc($image1_src);
+//$image2_src = getRetinaSrc($image2_src);
 ?>
 <section id="background">
 <div class="half column"><div class="cell half-height" style="background-color:<?php echo get_field('secondary_colour',$post->ID) ?>;"><div class="inner"><div><h5 class="underline"><?php echo get_field('second_section_heading',$post->ID) ?></h5><p><?php echo get_field('second_section_text',$post->ID) ?></p></div></div></div><div class="cell half-height image blue" style="background-image:url('<?php echo $image2_src ?>');"><div class="inner"><div></div></div></div></div>
@@ -62,7 +62,8 @@ $image2_src = getRetinaSrc($image2_src);
      <?php foreach($terms as $term): ?>
      <?php
      list($src,$w,$h) = wp_get_attachment_image_src(get_field('colour_icon',$term),'sector-icon');
-     $icon_src = getRetinaSrc($src);
+    // $icon_src = getRetinaSrc($src);
+     $icon_src = $src;
      ?>
  <li><span class="tooltip" title="<?php echo $term->name ?>"><img src="<?php echo $icon_src ?>" alt="<?php echo $term->name ?>" /></span></li>
 <?php endforeach ?>
@@ -86,14 +87,14 @@ $image2_src = getRetinaSrc($image2_src);
   $colour  = !empty($colour3) ? $colour3 : $colour2;
 if(!empty($image1)): 
 list($image1_src,$w,$h) = wp_get_attachment_image_src(get_field('third_section_image_1',$post->ID),'portfolio-full-width');
-$image1_src = getRetinaSrc($image1_src);
+//$image1_src = getRetinaSrc($image1_src);
 ?>
 <div class="column"><div class="cell image" style="background-image:url('<?php echo $image1_src ?>');"></div></div>
 <?php endif ?>
 <?php
 if(!empty($image2)): 
 list($image2_src,$w,$h) = wp_get_attachment_image_src(get_field('third_section_image_2',$post->ID),'portfolio-full-width');
-$image2_src = getRetinaSrc($image2_src);
+//$image2_src = getRetinaSrc($image2_src);
 ?>
 <div class="column"><div class="cell image" style="background-image:url('<?php echo $image2_src ?>');"></div></div>
 <?php endif ?>

@@ -2,6 +2,7 @@
 // Theme support
 add_theme_support('post-thumbnails');
 add_image_size('homepage-bg', 1680, 1080, true);
+add_image_size('homepage-bg-mobile',933,600,true);
 add_image_size('page-letterbox-image', 1680, 390, true);
 add_image_size('page-letterbox-tn', 300, 70, true);
 add_image_size('portfolio-tn', 600, 400, true);
@@ -23,6 +24,7 @@ function custom_image_sizes($sizes) {
 	 //unset( $sizes['full'] ); // removes full size if needed
 $myimgsizes = array(
 	"homepage-bg" => __("Homepage Background" ),
+  "homepage-bg-mobile" => __("Homepage Background Mobile" ),
   "page-letterbox-image" => __("Page Letterbox Image" ),
   "portfolio-tn" => __("Portfolio Thumbnail" ),
   "page-letterbox-tn" => __("Page Letterbox Thumbnail"),

@@ -4,17 +4,14 @@ nav#nav{
 		background-color: transparent;
 	}
     @extend %full-width;
-    @include vertical-align;
+    @media screen and (min-width: $break-large+1){
+    	@include vertical-align;
+	}
     @media screen and (max-width: $break-large){
-    	display: none;
-    }
-    @media screen and (max-width: $break-small){
     	position: relative;
-    	transform: none;
-    	//@include rgba-bg(39,39,41,$dark-grey,.9);
+    	display: none;
     	background-color: transparent;
-    	top:0;
-    	//display: block;
+    	top:auto;
     }
     position:relative;
     .highlight{
@@ -58,6 +55,9 @@ nav#nav{
     				@include font-size(16);
     				height:36px;
     				line-height:41px;
+   				}
+   				@media screen and (max-width: $break-large){
+   					padding: 0 0 0 22px;
    				}
 			}
 		}

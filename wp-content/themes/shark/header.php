@@ -10,6 +10,8 @@
         <title><?php wp_title() ?></title> 
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+        <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicon-32x32.png" sizes="32x32" />
+        <link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/images/favicon-16x16.png" sizes="16x16" />
         <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
         
         <script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>
@@ -22,11 +24,12 @@
         <?php wp_head() ?>
     </head>
     <body>
+        <div id="page-wrap-outer">
     <div id="page-wrap" class="page-wrap" <?php if(is_single()): ?> class="show-controls"<?php endif ?>> 
-   
+   <a id="top"></a>
     
 <?php if(!is_single()): ?>
-    <h1 id="home-link" ><img src="<?php echo get_template_directory_uri(); ?>/images/shark.svg" alt="Shark Design" /></h1>
+    <h1 id="home-link" ><a href="<?php echo home_url() ?>/#home" title="<?php get_bloginfo('name'); ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/shark.svg" alt="Shark Design" /></a></h1>
  <?php endif; ?>
         <header id="header">
     <a href="" id="mobile-menu">Menu</a>           
@@ -60,7 +63,6 @@
 <ul><li><a href="https://www.facebook.com/Sharkdesign1" target="_blank" class="facebook">Facebook</a></li>
     <li><a href="https://twitter.com/Sharkdesign1" target="_blank" class="twitter">Twitter</a></li>   
     <li><a href="https://www.linkedin.com/company/shark-design-and-marketing" target="_blank" class="linkedin">Linkedin</a></li>
-    <li><a href="mailto:enquiries@sharkdesign.co.uk" target="_blank" class="email">Email</a></li>
 </ul>
 </nav>
 <small><a href="tel:01422376446">01422 376446</a>

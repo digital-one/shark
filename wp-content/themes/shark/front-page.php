@@ -8,11 +8,15 @@ $min=0;
 $max=count($images)-1;
 $index = rand($min,$max);
 $image_id = $images[$index]['slide_image'];
-list($src,$w,$h) = wp_get_attachment_image_src($image_id,'homepage-bg');
-$src = getRetinaSrc($src);
+$image_size = 'homepage-bg';
+if ( wp_is_mobile() ):
+$image_size = 'homepage-bg-mobile';
+endif;
+list($src,$w,$h) = wp_get_attachment_image_src($image_id,$image_size);
+//$src = getRetinaSrc($src);
 endif;
 ?>
-<div id="home" class="section preload" data-anchor="home" data-title="<?php wp_title()?>" style="background-image:url('<?php echo $src ?>');">
+<div id="home" class="section preload-home" data-anchor="home" data-title="<?php wp_title()?>" style="background-image:url('<?php echo $src ?>');">
     <div class="bg-overlay"></div>
     <!-- caption -->
     <div class="caption">

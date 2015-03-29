@@ -1,0 +1,48 @@
+#testimonialDefault{}
+
+#testimonialDefault h1{
+	background:#00B2F0 URL(../images/h1_bk.gif) no-repeat;
+	color:#FFFFFF;
+	font-size:16px;
+	font-weight:normal;
+	height:16px;
+	margin:0px;
+	padding:9px 0px 9px 15px;
+}
+
+#testimonialDefault div#productsListingListingTopLinks, #testimonialDefault div#productsListingTopNumber{
+	margin: 10px 0px 0px 0px;
+	padding: 0px 15px 0px 15px;
+}
+
+
+#hints {
+margin: 10px 0px 0px 0px;
+padding: 0px 15px 0px 15px;
+height:1%;
+font-weight:bold;
+line-height:16px;
+}
+
+#hints .hint{
+	margin: 10px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-weight:normal;
+}
+
+#hints div{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	font-weight:normal;
+	font-weight:bold;
+}
+#hints div p{
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#hintImage {
+margin: 0;
+padding: 0;
+text-align: center;
+}

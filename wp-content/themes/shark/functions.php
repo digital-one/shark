@@ -22,7 +22,7 @@ get_template_part('functions/sidebars');
 get_template_part('functions/options');
 get_template_part('functions/image-sizes');
 get_template_part('functions/menus');
-get_template_part('functions/retina-images');
+// get_template_part('functions/retina-images');
 get_template_part('functions/svg-support');
 get_template_part('functions/post-types');
 get_template_part('functions/enqueue-post-scripts');

@@ -2,7 +2,7 @@
 	@include bg-cover;
 	@extend %clearfix;
 	@media screen and (max-width: $break-small){
-		height:500px !important; 
+		height:480px !important; 
 	}
 }
 .bg-overlay{
@@ -54,7 +54,7 @@ a.scroll{
 	width:140px;
 	height: auto;
 	padding:56px 0 0;
-	@include abs-pos(auto,auto,6%,50%);
+	@include abs-pos(auto,auto,20px,50%);
 	margin-left:-70px;
 	z-index:998;
 	&:before{

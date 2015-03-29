@@ -52,27 +52,46 @@ aside{
 section.page-title{
 	background-color:white;
 	@extend %full-width;
-	height: 27%;
-	@media screen and (min-height: 1000px){
+	height: 30%;
+	box-sizing:border-box;
+	@media screen and (min-width: $break-small+1) and (max-width: $break-large){
+		padding-top:70px;
 		height: 32%;
 	}
 	@media screen and (max-width: $break-small){
 		height: 134px;
 	}
 	position: relative;
-	div{
-		@include vertical-align;
+	.vcenter{
+     		position: relative;	
+			width: 100%;
+     		height: 100%;
+			&:before{
+     			content: "";
+     			display: inline-block;
+     			vertical-align: middle;
+     			height: 100%;
+     			margin-right: -0.25em;
+			}
+			div{
+				display: inline-block;
+     			width:99%;
+     			vertical-align: middle;
+     			text-align: center;
+     		}
+     	}
+	/*div{
+		//@include vertical-align; 
 		text-align: center;
-	}
+	}*/
 	#work-single &{
-		height:50%;
+		height:380px; 
 		@media screen and (max-width: $break-small){
 			height: 250px;
+			top: 120px;
 		}
 		background-color: $light-grey;
-		@media screen and (min-height: 1000px){
-			height:25%;
-		}
+		
 	}
 }
 section.banner{
@@ -80,8 +99,8 @@ section.banner{
 	@include bg-cover;
 	background-color: #ccc;
 	height:36%;
-	@media screen and (min-height: 1000px){
-		height: 41%;
+	@media screen and (max-width: $break-large){
+		height:36%;
 	}
 	@media screen and (max-width: $break-small){
 		height:250px;
@@ -91,9 +110,9 @@ section.content{
 	//background-color:white;
 	@extend %full-width;
 	@extend .clearfix;
-	height:37%;
-	@media screen and (min-height: 1000px){
-		height: 27%;
+	height:34%;
+	@media screen and (max-width: $break-large){
+		height:32%;
 	}
 	@media screen and (max-width: $break-small){
 		height: auto;

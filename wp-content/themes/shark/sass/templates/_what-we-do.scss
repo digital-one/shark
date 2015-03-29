@@ -53,10 +53,17 @@ nav#sectors{
 				float: left;
 				@media screen and (max-width: $break-small){
 					float:none;
+					text-align: center;
 				}
 			}
 			@media screen and (max-width: $break-small){
 				position: relative;
+			}
+			.button{
+				@media screen and (max-width: $break-small){
+					display: inline-block;
+					margin:0 auto;
+				}
 			}
 			.handle{
 				@include transition(background-color 0.3s ease-in-out);
@@ -122,6 +129,9 @@ nav#sectors{
 						display: block;
 						@include abs-pos(0,auto,auto,50%);
 						margin-left:-44px;
+						@media screen and (max-width: $break-small){
+							margin-top:10px;
+						}
 						@media screen and (min-width: $break-small+1) and (max-width: $break-xlarge){
 							width:60px;
 							height: 52px;
@@ -180,24 +190,35 @@ nav#sectors{
 				ul{
 					li{
 						padding-left:30px;
-						margin-bottom: 5px;
+						margin-bottom: 10px;
 						position:relative;
+						line-height: 120%;
 						@media screen and (max-width: $break-xlarge){
 							padding-left:20px;
 						}
-						&:before{
-							content:"";
-							width:15px;
-							height:16px;
-							display: block;
-							background:url('../images/tick.png') center center no-repeat;
-							@include abs-pos(2px,auto,auto,0);
-							@media screen and (min-width: $break-small+1) and (max-width: $break-xlarge){
-								width:11px;
-								height:12px;
-								background-size: 11px 12px;
+						span{
+							display:block;
+							position: relative;
+							@media screen and (max-width: $break-small){
+								display:inline-block;
+								margin:0 auto;
+								height:16px;
+								line-height: 16px;
 							}
-						}
+							&:before{
+								content:"";
+								width:15px;
+								height:16px;
+								display: block;
+								background:url('../images/tick.png') center center no-repeat;
+								@include abs-pos(2px,auto,auto,-25px);
+								@media screen and (min-width: $break-small+1) and (max-width: $break-xlarge){
+									width:11px;
+									height:12px;
+									background-size: 11px 12px;
+								}
+							}
+						}	
 					}
 				}
 			}

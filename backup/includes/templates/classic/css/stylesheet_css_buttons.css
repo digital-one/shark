@@ -1,0 +1,120 @@
+/**
+ * CSS Buttons Stylesheet
+ *
+ * Thanks to paulm for much of the content of the CSS buttons code
+ *
+ * @package templateSystem
+ * @copyright Copyright 2003-2005 Zen Cart Development Team
+ * @copyright Portions Copyright 2003 osCommerce
+ * @license http://www.zen-cart.com/license/2_0.txt GNU Public License V2.0
+ * @version $Id: stylesheet_css_buttons.css 4567 2006-09-20 01:55:24Z birdbrain $
+ */
+
+/* css buttons */
+.cssButton, .cssButtonHover {
+background: url(../images/button_100.png) no-repeat;
+color : #fff;
+border: 0px outset #F4F4F4;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+text-align:center;
+white-space: nowrap;
+text-decoration: none;
+font-weight: normal;
+padding: 6px 6px 6px 6px;
+display: block;
+/*border-spacing: 1px;*/
+/*margin-left: auto;
+margin-right: auto;*/
+/*display: block;*/
+/*vertical-align: top;*/
+/*line-height: 130%;*/
+/*cursor: pointer;*/
+}
+
+
+.button_prev, .button_prevHover {
+width:80px;
+text-align:left;
+background: none;
+padding: 6px 0px 6px 0px;
+}
+
+.button_next, .button_nextHover {
+width:80px;
+text-align:right;
+background: none;
+padding: 6px 0px 6px 0px;
+}
+
+
+.cssButtonHover {
+color: #333;
+text-decoration: none;
+}
+/* adding the styles below might be needed if the default button width is changed */
+/* .button_continue_shopping, .button_shipping_estimator {width: 150px;} */
+.small_delete, .button_prev, .button_next, .button_search  {width: 7em;}
+.button_sold_out_sm, .button_sold_out, .button_update_cart, .button_checkout, .button_login {width: 10em;}
+.button_return_to_product_list, .button_add_selected {width: 22em;}
+.button_in_cart{width: 19em;}  
+.button_submit {width: 18em;}
+.button_update_cart {color: red;}
+.button_update_cartHover {color: #003D00;}
+/*.innerbox#headernavcenter .boxtext .button_search {display:inline;}*/
+
+.button_in_cart {
+width:100px;
+background: url(../images/button_100.png) no-repeat;
+border:0px solid #ff0000;
+margin: 5px 0px 0px 0px;
+padding: 4px 0px 8px 0px;
+}
+
+.button_reviews, .button_reviewsHover {
+width:100px;
+background: url(../images/button_100.png) no-repeat;
+}
+
+.button_TellAFriend{
+width:100px;
+text-align:center;
+background: url(../images/button_100.png) no-repeat;
+padding: 6px 0px 6px 0px;
+}
+
+.button_view_hints{
+width:100px;
+text-align:center;
+background: url(../images/button_100.png) no-repeat;
+padding: 5px 0px 6px 0px;
+}
+
+.button_back, .button_hints, .button_update, .button_view, .button_continue_checkout, .button_login, .button_submit, .small_edit, .button_delete, .button_continue, .button_add_address, .button_send, .button_search, .button_write_review, .button_goto_prod_details, .button_read_reviews, .button_reviews,.button_goto_prod_details, .button_checkout, .button_confirm_order, .button_logoff, .button_sold_out_sm, .button_sold_out
+{
+width:100px;
+text-align:center;
+background: url(../images/button_100.png) no-repeat;
+padding: 5px 0px 6px 0px;
+}
+
+.button_sold_out_sm, .button_sold_out
+{
+color:#ff0000;
+}
+
+span.button_sold_out_sm
+{
+position:absolute;
+right:10px;
+top:115px;
+z-index:10;
+}
+
+.button_continue_shopping, .button_shipping_estimator
+{
+width:150px;
+text-align:center;
+background: url(../images/button_150.png) no-repeat;
+padding: 5px 0px 6px 0px;
+}

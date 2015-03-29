@@ -1,6 +1,6 @@
 ul#featured-work{
-	height:73%;
-	@media screen and (min-height: 1000px){
+	height:70%;
+	@media screen and (max-width: $break-large){
 		height: 68%;
 	}
 	@media screen and (max-width: $break-small){
@@ -35,7 +35,7 @@ ul#featured-work{
 			background-repeat:no-repeat;
 			.bg{
 				@include abs-pos(-1px,-1px,-1px,-1px);
-				@include transition(transform 0.4s ease);
+				@include transition(transform 0.6s ease);
 				z-index: 1;
 				@include bg-cover;
 			}
@@ -64,7 +64,10 @@ ul#featured-work{
 					height: 100%;
 				}
 				div{
-					@include vertical-align;
+					html.csstransforms3d &{
+						@include vertical-align;
+					}
+					
 					h3{
 						@include font-size(18);
 						margin-bottom:10px; 
@@ -90,27 +93,64 @@ ul#featured-work{
 	
 	.page-title{
 		position: fixed;
+		//vertical-align: middle;
 		width: 100%;
 		left:0;
-		top:0;
+		top: 0;
+		/*
+		-webkit-transform:translateZ(1px);
+    	-moz-transform:translateZ(1px);
+    	-o-transform:translateZ(1px);
+    	transform:translateZ(1px);
+    	*/
+		@media screen and (max-width: $break-large){
+			//top: 70px !important;    
+		}
+		//padding-top:70px;
 		z-index: 997;
+		
+		.vcenter{
+     		position: relative;	
+			width: 100%;
+     		height: 380px;
+     		@media screen and (max-width: $break-large){
+     			height:310px;
+     		}
+     		@media screen and (max-width: $break-small){
+     			height:250px;
+     		}
+			&:before{
+     			content: "";
+     			display: inline-block;
+     			vertical-align: middle;
+     			height: 100%;
+     			margin-right: -0.25em;
+			}
+			div{
+				display: inline-block;
+     			width:99%;
+     			vertical-align: middle;
+     			//@extend %preserve-3d;
+				padding-left:240px;
+				@media screen and (max-width: $break-xlarge){
+					padding-left:200px;
+				}
+				@media screen and (max-width: $break-large){
+					padding-left:48px;
+				}
+				@media screen and (max-width: $break-small){
+					padding-left:0;
+				}
+			}
+		}
+		
 		@media screen and (max-width: $break-small){
 			position: relative;
 			left:auto;
 			top:auto;
 		}
 		div{
-			@extend %preserve-3d;
-			padding-left:240px;
-			@media screen and (max-width: $break-xlarge){
-				padding-left:200px;
-			}
-			@media screen and (max-width: $break-large){
-				padding-left:48px;
-			}
-			@media screen and (max-width: $break-small){
-				padding-left:0;
-			}
+			
 		}
 		h1{
 			width: 45%;
@@ -130,26 +170,36 @@ ul#featured-work{
 		}
 	}
 	.content{
-		margin-top:50vh;
+		margin-top: 310px; //margin-top:50vh;
 		@media screen and (max-width: $break-small){
-			margin-top: 0;
+			margin-top: 120px;
 		}
-		@media screen and (min-height: 1000px){
-			margin-top: 25vh
-		}
+		/* @media screen and (min-height: 1000px){
+			margin-top: 250px;
+		} */
 		background-color: white;
-		position: relative;
+		-webkit-transform: translate3d(0,0,0);
+		/*
+		-webkit-transform:translateZ(1px);
+		-moz-transform:translateZ(1px);
+		-o-transform:translateZ(1px);
+		transform:translateZ(1px);
+		*/
+		position: relative; 
 		z-index: 998;
 		.intro{
 			padding: 6% 12%;
+			p:last-child{
+				margin-bottom: 0;
+			}
 			@media screen and (max-width: $break-xlarge){
-				padding: 5% 15% 3%;
+				padding: 5% 15%;
 			}
 			@media screen and (max-width: $break-large){
-				padding: 4% 8% 2%;
+				padding: 4% 8%;
 			}
 			@media screen and (max-width: $break-small){
-				padding: 60px 30px 30px;
+				padding: 30px 30px 30px;
 			}
 			text-align: center;
 			@extend %full-width;
@@ -195,6 +245,7 @@ ul#featured-work{
 	display: block;
 	width:100%;
 	height:100%;
+	position: relative;
 	@media screen and (max-width: $break-small){
 		float:none;
 	}
@@ -222,7 +273,43 @@ ul#featured-work{
 				position: relative;
 				padding: 60px 30px 30px;
 			}
-			div{
+			div.vcenter-wrap{
+				text-align: center;
+				width:100%;
+				&:before{
+					content:"";
+					height:100%;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				height:100%;
+				display: inline-block;
+
+			}
+			div.vcenter-inner{
+				width:98%;
+				display: inline-block;
+				vertical-align: middle;
+				text-align: center;
+				padding:0 14%;
+				@media screen and (max-width: $break-large){
+					padding:0 8%;
+				}
+				@media screen and (max-width: $break-small){
+ 					@include reset-vertical-align;
+ 					padding:0;
+				}
+				p{
+					text-align: left;
+					&:last-child{
+						margin-bottom: 0;
+					}
+					@media screen and (max-width: $break-small){
+						text-align: center;
+					}
+				}
+			}
+			div.vertical-align{
 				@include vertical-align;
 				text-align: center;
 				padding:0 14%;
@@ -302,6 +389,9 @@ nav#categories{
 		@media screen and (max-width: $break-xlarge){
 			margin: 0 10px;
 		}
+		@media screen and (max-width: $break-small){
+			margin: 0 5px;
+		}
 	}
 	a,span{
 		display: block;
@@ -378,6 +468,10 @@ nav#social-share{
 nav.controls{
 	width:70px;
 	z-index:9999;
+	-webkit-transform:translateZ(1px);
+    -moz-transform:translateZ(1px);
+    -o-transform:translateZ(1px);
+    transform:translateZ(1px);
 	position:fixed; 
 	display: none;
 	&.show{
@@ -391,8 +485,11 @@ nav.controls{
 	@media screen and (max-width: $break-small){
 		width:100%;
 		height:50px;
+		top:70px;
+		z-index: 999;
 		background-color:#b8b8b8;
-		position: relative; 
+		position:fixed;
+		left:0;
 	}
 	ul{
 		li{
@@ -450,3 +547,32 @@ nav.controls{
 		}
 	}
 }
+video {
+  width: 100%    !important;
+  height: auto   !important;
+  display: block;
+  position: relative;
+  @include bg-cover;
+  border:none;
+}
+a.video-control{
+  	display: block;
+  	@include transition(background-color 0.2s ease-in-out);
+  	width:50px;
+  	height:50px;
+  	background-size: 100px 50px;
+  	background-color: black;
+  	background-image:url('../images/play-pause-btn.png');
+  	background-position:left top;
+  	background-repeat: no-repeat;
+  	cursor:pointer;
+  	@include abs-pos(auto,auto,20px,20px);
+  	z-index: 999;
+  	@extend %ir;
+  	&:hover,&:active{
+  		background-color: $blue;
+  	}
+  	&.play{
+  		background-position: right top;
+  	}
+  }

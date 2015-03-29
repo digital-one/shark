@@ -1,0 +1,327 @@
+---------------
+Jul 14 2008 10:06 -- inspect
+CURL problems detected:  28 => connect() timed out!
+
+---------------
+Jul 14 2008 10:06 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 28 => connect() timed out!
+
+---------------
+Jul 14 2008 10:06 -- inspect
+CURL problems detected:  7 => 
+
+---------------
+Jul 14 2008 10:06 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:06 -- inspect
+System Inspection Results: 
+------------------------------
+NA: Webserver => Apache/2.0.52 (CentOS)
+NA: HTTP Host => www.sharkdesign.co.uk
+NA: Path_Translated => /home/sharkdesiguk/public_html/zc_install/index.php
+NA: Real Path => /home/sharkdesiguk/public_html
+NA: PHP O/S => Linux
+NA: PHP API Mode => apache2handler
+NA: PHP Max Execution Time per page => 30
+NA: Disabled PHP Functions => proc_open,exec,system,proc_open,popen,escapeshellcmd,escapeshellarg,disk_free_space,shell_exec,passthru
+WARN: Register Globals => <span class='errors'>ON</span>
+OK: MySQL Support => ON
+OK: MySQL Version => 4.1.20-log
+OK: PHP Version => 4.4.7
+OK: PHP Safe Mode => OFF
+OK: PHP Sessions Support => ON
+OK: PHP Session.AutoStart => OFF
+OK: PHP session.use_trans_sid => OFF
+OK: Suggested SQL Cache Folder => /home/sharkdesiguk/public_html/cache
+OK: PHP magic_quotes_runtime setting => OFF
+OK: PHP magic_quotes_sybase setting => OFF
+OK: PHP GD Support => ON
+OK: GD Version => GD bundled (2.0.28 compatible)
+OK: PHP ZLIB Compression Support => ON
+OK: PHP OpenSSL Support => ON
+OK: PHP cURL Support => ON
+WARN: CURL NON-SSL Capability => CURL problems detected:  28 => connect() timed out!
+WARN: CURL SSL Capability => CURL requires SSL support. Please notify webmaster or hosting company. 28 => connect() timed out!
+WARN: CURL NON-SSL Capability via Proxy => CURL problems detected:  7 => 
+WARN: CURL SSL Capability via Proxy => CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+OK: PHP Upload Support => ON  upload_max_filesize=2M;  post_max_size=8M
+OK: PHP Upload TMP dir => 
+NA: PHP include_path => .:/usr/share/pear
+NA: PHP SMTP destination => localhost
+NA: PHP sendmail path => /usr/sbin/sendmail -t -i
+NA: PHP sendmail 'from' => 
+FAIL: PHP open_basedir restrictions => /home/sharkdesiguk/public_html/
+WARN: PHP Output Buffering (gzip) => OFF
+OK: PHP XML Support => ON
+OK: PHP Session.Save_Path => /home/sharkdesiguk/public_html/cache-->Writeable
+OK: includes/configure.php =>  Writeable
+OK: admin/includes/configure.php =>  Writeable
+OK: cache => OK 777 read/write/execute
+OK: images => OK 777 read/write/execute (INCLUDE SUBDIRECTORIES TOO)
+OK: includes/languages/english/html_includes => OK 777 read/write (INCLUDE SUBDIRECTORIES TOO)
+OK: media => OK 777 read/write/execute
+OK: pub => OK 777 read/write/execute
+OK: admin/backups => OK 777 read/write
+OK: admin/images/graphs => OK 777 read/write/execute
+PHP Extensions compiled: yp, xml, wddx, tokenizer, standard, sockets, shmop, session, posix, overload, mysql, mbstring, magickwand, iconv, gmp, gettext, gd, dio, dbx, dba, curl, ctype, calendar, bz2, bcmath, zlib, pcre, openssl, apache2handler
+------------------------------
+
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL problems detected:  7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL problems detected:  7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+System Inspection Results: 
+------------------------------
+NA: Webserver => Apache/2.0.52 (CentOS)
+NA: HTTP Host => www.sharkdesign.co.uk
+NA: Path_Translated => /home/sharkdesiguk/public_html/zc_install/index.php
+NA: Real Path => /home/sharkdesiguk/public_html
+NA: PHP O/S => Linux
+NA: PHP API Mode => apache2handler
+NA: PHP Max Execution Time per page => 30
+NA: Disabled PHP Functions => proc_open,exec,system,proc_open,popen,escapeshellcmd,escapeshellarg,disk_free_space,shell_exec,passthru
+WARN: Register Globals => <span class='errors'>ON</span>
+OK: MySQL Support => ON
+OK: MySQL Version => 4.1.20-log
+OK: PHP Version => 4.4.7
+OK: PHP Safe Mode => OFF
+OK: PHP Sessions Support => ON
+OK: PHP Session.AutoStart => OFF
+OK: PHP session.use_trans_sid => OFF
+OK: Suggested SQL Cache Folder => /home/sharkdesiguk/public_html/cache
+OK: PHP magic_quotes_runtime setting => OFF
+OK: PHP magic_quotes_sybase setting => OFF
+OK: PHP GD Support => ON
+OK: GD Version => GD bundled (2.0.28 compatible)
+OK: PHP ZLIB Compression Support => ON
+OK: PHP OpenSSL Support => ON
+OK: PHP cURL Support => ON
+WARN: CURL NON-SSL Capability => CURL problems detected:  7 => 
+WARN: CURL SSL Capability => CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+WARN: CURL NON-SSL Capability via Proxy => CURL problems detected:  7 => 
+WARN: CURL SSL Capability via Proxy => CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+OK: PHP Upload Support => ON  upload_max_filesize=2M;  post_max_size=8M
+OK: PHP Upload TMP dir => 
+NA: PHP include_path => .:/usr/share/pear
+NA: PHP SMTP destination => localhost
+NA: PHP sendmail path => /usr/sbin/sendmail -t -i
+NA: PHP sendmail 'from' => 
+FAIL: PHP open_basedir restrictions => /home/sharkdesiguk/public_html/
+WARN: PHP Output Buffering (gzip) => OFF
+OK: PHP XML Support => ON
+OK: PHP Session.Save_Path => /home/sharkdesiguk/public_html/cache-->Writeable
+OK: includes/configure.php =>  Writeable
+OK: admin/includes/configure.php =>  Writeable
+OK: cache => OK 777 read/write/execute
+OK: images => OK 777 read/write/execute (INCLUDE SUBDIRECTORIES TOO)
+OK: includes/languages/english/html_includes => OK 777 read/write (INCLUDE SUBDIRECTORIES TOO)
+OK: media => OK 777 read/write/execute
+OK: pub => OK 777 read/write/execute
+OK: admin/backups => OK 777 read/write
+OK: admin/images/graphs => OK 777 read/write/execute
+PHP Extensions compiled: yp, xml, wddx, tokenizer, standard, sockets, shmop, session, posix, overload, mysql, mbstring, magickwand, iconv, gmp, gettext, gd, dio, dbx, dba, curl, ctype, calendar, bz2, bcmath, zlib, pcre, openssl, apache2handler
+------------------------------
+
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL problems detected:  28 => connect() timed out!
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL problems detected:  7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:21 -- inspect
+System Inspection Results: 
+------------------------------
+NA: Webserver => Apache/2.0.52 (CentOS)
+NA: HTTP Host => www.sharkdesign.co.uk
+NA: Path_Translated => /home/sharkdesiguk/public_html/zc_install/index.php
+NA: Real Path => /home/sharkdesiguk/public_html
+NA: PHP O/S => Linux
+NA: PHP API Mode => apache2handler
+NA: PHP Max Execution Time per page => 30
+NA: Disabled PHP Functions => proc_open,exec,system,proc_open,popen,escapeshellcmd,escapeshellarg,disk_free_space,shell_exec,passthru
+WARN: Register Globals => <span class='errors'>ON</span>
+OK: MySQL Support => ON
+OK: MySQL Version => 4.1.20-log
+OK: PHP Version => 4.4.7
+OK: PHP Safe Mode => OFF
+OK: PHP Sessions Support => ON
+OK: PHP Session.AutoStart => OFF
+OK: PHP session.use_trans_sid => OFF
+OK: Suggested SQL Cache Folder => /home/sharkdesiguk/public_html/cache
+OK: PHP magic_quotes_runtime setting => OFF
+OK: PHP magic_quotes_sybase setting => OFF
+OK: PHP GD Support => ON
+OK: GD Version => GD bundled (2.0.28 compatible)
+OK: PHP ZLIB Compression Support => ON
+OK: PHP OpenSSL Support => ON
+OK: PHP cURL Support => ON
+WARN: CURL NON-SSL Capability => CURL problems detected:  28 => connect() timed out!
+WARN: CURL SSL Capability => CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+WARN: CURL NON-SSL Capability via Proxy => CURL problems detected:  7 => 
+WARN: CURL SSL Capability via Proxy => CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+OK: PHP Upload Support => ON  upload_max_filesize=2M;  post_max_size=8M
+OK: PHP Upload TMP dir => 
+NA: PHP include_path => .:/usr/share/pear
+NA: PHP SMTP destination => localhost
+NA: PHP sendmail path => /usr/sbin/sendmail -t -i
+NA: PHP sendmail 'from' => 
+FAIL: PHP open_basedir restrictions => /home/sharkdesiguk/public_html/
+WARN: PHP Output Buffering (gzip) => OFF
+OK: PHP XML Support => ON
+OK: PHP Session.Save_Path => /home/sharkdesiguk/public_html/cache-->Writeable
+OK: includes/configure.php =>  Writeable
+OK: admin/includes/configure.php =>  Writeable
+OK: cache => OK 777 read/write/execute
+OK: images => OK 777 read/write/execute (INCLUDE SUBDIRECTORIES TOO)
+OK: includes/languages/english/html_includes => OK 777 read/write (INCLUDE SUBDIRECTORIES TOO)
+OK: media => OK 777 read/write/execute
+OK: pub => OK 777 read/write/execute
+OK: admin/backups => OK 777 read/write
+OK: admin/images/graphs => OK 777 read/write/execute
+PHP Extensions compiled: yp, xml, wddx, tokenizer, standard, sockets, shmop, session, posix, overload, mysql, mbstring, magickwand, iconv, gmp, gettext, gd, dio, dbx, dba, curl, ctype, calendar, bz2, bcmath, zlib, pcre, openssl, apache2handler
+------------------------------
+
+
+---------------
+Jul 14 2008 10:23 -- inspect
+CURL problems detected:  7 => 
+
+---------------
+Jul 14 2008 10:23 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:23 -- inspect
+CURL problems detected:  7 => 
+
+---------------
+Jul 14 2008 10:23 -- inspect
+CURL requires SSL support. Please notify webmaster or hosting company. 7 => 
+
+---------------
+Jul 14 2008 10:24 -- database_setup
+FATAL: Connection to Database failed - Access denied for user 'sharkdesignuk'@'localhost' (using password: YES)
+
+---------------
+Jul 14 2008 10:24 -- database_setup1
+Installer - Page: database_setup -- collected information: Array
+(
+    [language] => english
+    [DIR_FS_SQL_CACHE] => /home/sharkdesiguk/public_html/cache
+    [DB_TYPE] => mysql
+    [DB_PREFIX] => 
+    [DB_SERVER] => localhost
+    [DB_SERVER_USERNAME] => sharkdesignuk
+    [DB_SERVER_PASSWORD] => Y3pNM05UTXpNMlE9
+    [DB_DATABASE] => sharkdesignuk
+    [STORE_SESSIONS] => db
+    [USE_PCONNECT] => 
+    [SQL_CACHE_METHOD] => none
+)
+
+
+---------------
+Jul 14 2008 10:26 -- database_setup
+FATAL: Connection to Database failed - Access denied for user 'sharkdesiguk'@'localhost' (using password: NO)
+
+---------------
+Jul 14 2008 10:26 -- database_setup1
+Installer - Page: database_setup -- collected information: Array
+(
+    [language] => english
+    [DIR_FS_SQL_CACHE] => /home/sharkdesiguk/public_html/cache
+    [DB_TYPE] => mysql
+    [DB_PREFIX] => 
+    [DB_SERVER] => localhost
+    [DB_SERVER_USERNAME] => sharkdesiguk
+    [DB_SERVER_PASSWORD] => 
+    [DB_DATABASE] => sharkdesiguk
+    [STORE_SESSIONS] => db
+    [USE_PCONNECT] => 
+    [SQL_CACHE_METHOD] => none
+)
+
+
+---------------
+Jul 14 2008 10:26 -- database_setup1
+Installer - Page: database_setup -- collected information: Array
+(
+    [language] => english
+    [DIR_FS_SQL_CACHE] => /home/sharkdesiguk/public_html/cache
+    [DB_TYPE] => mysql
+    [DB_PREFIX] => 
+    [DB_SERVER] => localhost
+    [DB_SERVER_USERNAME] => sharkdesignuk
+    [DB_SERVER_PASSWORD] => 
+    [DB_DATABASE] => sharkdesiguk
+    [STORE_SESSIONS] => db
+    [USE_PCONNECT] => 
+    [SQL_CACHE_METHOD] => none
+)
+
+
+---------------
+Jul 14 2008 10:28 -- database_setup1
+Installer - Page: database_setup -- collected information: Array
+(
+    [language] => english
+    [DIR_FS_SQL_CACHE] => /home/sharkdesiguk/public_html/cache
+    [DB_TYPE] => mysql
+    [DB_PREFIX] => 
+    [DB_SERVER] => localhost
+    [DB_SERVER_USERNAME] => sharkdesignuk
+    [DB_SERVER_PASSWORD] => 
+    [DB_DATABASE] => sharkdesiguk
+    [STORE_SESSIONS] => db
+    [USE_PCONNECT] => 
+    [SQL_CACHE_METHOD] => none
+)
+
+
+---------------
+Jul 14 2008 10:30 -- database_setup1
+Installer - Page: database_setup -- collected information: Array
+(
+    [language] => english
+    [DIR_FS_SQL_CACHE] => /home/sharkdesiguk/public_html/cache
+    [DB_TYPE] => mysql
+    [DB_PREFIX] => 
+    [DB_SERVER] => localhost
+    [DB_SERVER_USERNAME] => swimbabes
+    [DB_SERVER_PASSWORD] => Y3pNM05UTXpNMlE9
+    [DB_DATABASE] => swimbabes
+    [STORE_SESSIONS] => db
+    [USE_PCONNECT] => 
+    [SQL_CACHE_METHOD] => none
+)
+
+

@@ -1,0 +1,100 @@
+2008-08-06 10:34:42
+-------------------
+(live transaction) --> https://api-3t.paypal.com/nvp
+Request Headers: 
+Array
+(
+    [0] => Content-Type: text/namevalue
+    [1] => X-VPS-Timeout: 45
+    [2] => X-VPS-VIT-Client-Type: PHP/cURL
+    [3] => X-VPS-VIT-Integration-Product: PHP::Zen Cart - WPP-NVP
+    [4] => X-VPS-VIT-Integration-Version: 1.3.8a
+)
+
+
+Request Parameters: {SetExpressCheckout} 
+Array
+(
+    [LOCALECODE] => GB
+    [PAYMENTACTION] => Sale
+    [ADDROVERRIDE] => 1
+    [SHIPTONAME] => Lee Boothroyd
+    [SHIPTOSTREET] => 20 Luton Street
+    [SHIPTOSTREET2] => cowsersley
+    [SHIPTOCITY] => Huddersfield
+    [SHIPTOZIP] => HD45uq
+    [SHIPTOSTATE] => West Yorkshire
+    [SHIPTOCOUNTRYCODE] => GB
+    [EMAIL] => lee@leeboothroyd.co.uk
+    [PHONENUM] => 01484 000000
+    [AMT] => 20.00
+    [RETURNURL] => http://www.sharkdesign.co.uk/ipn_main_handler.php?type=ec
+    [CANCELURL] => http://www.sharkdesign.co.uk/index_new.php?main_page=checkout_shipping&amp;ec_cancel=1
+    [PAGESTYLE] => Primary
+    [METHOD] => SetExpressCheckout
+    [CURRENCYCODE] => GBP
+    [USER] => swimbabes_api1.tiscali.co.uk
+    [PWD] => ****************
+    [VERSION] => 3.2
+    [SIGNATURE] => ****************************************************GVHp
+)
+
+
+Response: 
+Array
+(
+    [] => 
+    [CURL_ERRORS] => (28) connect() timed out!
+)
+
+(28) connect() timed out!
+Array
+(
+    [url] => https://api-3t.paypal.com/nvp
+    [http_code] => 0
+    [header_size] => 0
+    [request_size] => 0
+    [filetime] => -1
+    [ssl_verify_result] => 0
+    [redirect_count] => 0
+    [total_time] => 0
+    [namelookup_time] => 4.7E-05
+    [connect_time] => 0
+    [pretransfer_time] => 0
+    [size_upload] => 0
+    [size_download] => 0
+    [speed_download] => 0
+    [speed_upload] => 0
+    [download_content_length] => 0
+    [upload_content_length] => 0
+    [starttransfer_time] => 0
+    [redirect_time] => 0
+)
+
+
+SetExpressCheckout, Elapsed: 60007ms -- Failed
+(28) connect() timed out!
+Array
+(
+    [url] => https://api-3t.paypal.com/nvp
+    [http_code] => 0
+    [header_size] => 0
+    [request_size] => 0
+    [filetime] => -1
+    [ssl_verify_result] => 0
+    [redirect_count] => 0
+    [total_time] => 0
+    [namelookup_time] => 4.7E-05
+    [connect_time] => 0
+    [pretransfer_time] => 0
+    [size_upload] => 0
+    [size_download] => 0
+    [speed_download] => 0
+    [speed_upload] => 0
+    [download_content_length] => 0
+    [upload_content_length] => 0
+    [starttransfer_time] => 0
+    [redirect_time] => 0
+)
+
+

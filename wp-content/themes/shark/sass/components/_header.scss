@@ -1,6 +1,6 @@
 header#header{
 	position: fixed;
-	z-index: 998;
+	z-index: 9998;
 	top:0;
 	left:0;
 	display: block;
@@ -8,19 +8,31 @@ header#header{
 	width:240px;
 	height:100%;
 	overflow:visible;
+	-webkit-transform:translateZ(1px);
+    -moz-transform:translateZ(1px);
+    -o-transform:translateZ(1px);
+    transform:translateZ(1px);
 	@extend .clearfix;
 	@media screen and (max-width: $break-xlarge){
 		width:200px;
 	}
 	@media screen and (max-width: $break-large){
-		width:50px;
-	}
-	@media screen and (max-width: $break-small){
 		width:100%;
-		min-height:70px;
+		min-height:70px; 
 		padding:70px 0 0;
 		height: auto;
-		position:relative;
+		position:fixed;
+		top:0;
+		left:0;
+
+	}
+	@media screen and (max-width: $break-small){
+		//position:relative;
+		//top:auto;
+		//left:auto;
+	}
+	a#top{
+		display:none;
 	}
 	#contacts{
 		@extend %full-width;
@@ -43,6 +55,7 @@ header#header{
 		}
 		@media screen and (max-width: $break-large){
 			display: none;
+			padding: 0 0 0 22px;
 		}
 
 	}
@@ -67,9 +80,9 @@ header#header{
     		width:30px;
     		height:20px;
     	}
-    	@media screen and (max-width: $break-small){
+    	@media screen and (max-width: $break-large){
     		width:35px;
-    		height:23px;
+    		height:24px;
     		background:url('../images/mobile-menu.png') center center no-repeat;
     		background-size:100% auto;
     		@include abs-pos(24px,auto,auto,20px);
@@ -82,7 +95,11 @@ header#header{
 }
 #home-link{
 	position: fixed;
-	z-index:999;
+	z-index:99999;
+	-webkit-transform:translateZ(1px);
+    -moz-transform:translateZ(1px);
+    -o-transform:translateZ(1px);
+    transform:translateZ(1px);
 	width: 115px;
 	height: 77px;
 	-webkit-animation-name: pulse;
@@ -98,7 +115,7 @@ header#header{
 		width:86px;
 		height:58px;
 	}
-	@media screen and (max-width: $break-small){
+	@media screen and (max-width: $break-large){
 		width:66px;
 		height:45px;
 		right:20px;

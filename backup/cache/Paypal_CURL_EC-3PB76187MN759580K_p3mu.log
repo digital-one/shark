@@ -1,0 +1,50 @@
+2008-09-09 05:13:06
+-------------------
+(live transaction) --> https://api-3t.paypal.com/nvp
+Request Headers: 
+Array
+(
+    [0] => Content-Type: text/namevalue
+    [1] => X-VPS-Timeout: 45
+    [2] => X-VPS-VIT-Client-Type: PHP/cURL
+    [3] => X-VPS-VIT-Integration-Product: PHP::Zen Cart - WPP-NVP
+    [4] => X-VPS-VIT-Integration-Version: 1.3.8a
+)
+
+
+Request Parameters: {SetExpressCheckout} 
+Array
+(
+    [LOCALECODE] => GB
+    [PAYMENTACTION] => Sale
+    [NOSHIPPING] => 1
+    [EMAIL] => andrew.mccaul@sharkdesign.co.uk
+    [PHONENUM] => bla
+    [AMT] => 92.00
+    [RETURNURL] => http://www.sharkdesign.co.uk/ipn_main_handler.php?type=ec
+    [CANCELURL] => http://www.sharkdesign.co.uk/index_new.php?main_page=checkout_shipping&amp;ec_cancel=1
+    [PAGESTYLE] => Primary
+    [METHOD] => SetExpressCheckout
+    [CURRENCYCODE] => GBP
+    [USER] => swimbabes_api1.tiscali.co.uk
+    [PWD] => ****************
+    [VERSION] => 3.2
+    [SIGNATURE] => ****************************************************GVHp
+)
+
+
+Response: 
+Array
+(
+    [TOKEN] => EC-3PB76187MN759580K
+    [TIMESTAMP] => 2008-09-09T16:13:05Z
+    [CORRELATIONID] => fc1521a2457a
+    [ACK] => Success
+    [VERSION] => 3.2
+    [BUILD] => 682716
+    [CURL_ERRORS] => 
+)
+
+
+SetExpressCheckout, Elapsed: 2192ms -- Success
+

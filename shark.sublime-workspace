@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"rem",
+				"removeAttr"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"reb",
+				"reBuild"
+			],
+			[
 				"text",
 				"text-align"
 			],
@@ -30,10 +42,6 @@
 			[
 				"enlight",
 				"enlightenment-page"
-			],
-			[
-				"ba",
-				"background-color"
 			],
 			[
 				"mob",
@@ -506,166 +514,48 @@
 			[
 				"text-",
 				"text-align"
-			],
-			[
-				"v",
-				"vertical-align"
-			],
-			[
-				"ty",
-				"typeof"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "wp-content/themes/shark/template-contact.php",
-			"settings":
-			{
-				"buffer_size": 962,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/sass/_variables.scss",
-			"settings":
-			{
-				"buffer_size": 2138,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/header.php",
-			"settings":
-			{
-				"buffer_size": 2723,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "wp-content/themes/shark/js/scripts.js",
 			"settings":
 			{
-				"buffer_size": 23552,
+				"buffer_size": 29013,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "wp-content/themes/shark/sass/components/_container.scss",
+			"file": "wp-content/themes/shark/functions/retina-images.php",
 			"settings":
 			{
-				"buffer_size": 1677,
+				"buffer_size": 2967,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "h1,h2,h3,h4,h5{\n	font-family: $proximanova-bold;\n	text-transform:uppercase;\n	@include font-size(46);\n	color: $blue;\n	font-weight:normal;\n	line-height:90%;\n	margin: 0 0 10px;\n	@media screen and (max-width: $break-xlarge){\n		@include font-size(35);\n	}\n	@media screen and (max-width: $break-small){\n		@include font-size(26);\n		margin-bottom: 7px;\n	}\n}\nh1{\n	letter-spacing:-1px;\n}\nh2,h4{\n	font-family: $georgia;	\n	color: $grey;\n	@include font-size(18);\n	@media screen and (max-width: $break-xlarge){\n		@include font-size(14);\n	}\n	text-transform: none;\n	font-style:italic;\n}\nh3{\n	@include font-size(22);\n	color: white;\n	margin-bottom:16px;\n	@media screen and (max-width: $break-xlarge){\n		@include font-size(16);\n	}\n}\nh4{\n	@include font-size(14);\n	color: white;\n	line-height: 120%;\n	@media screen and (max-width: $break-xlarge){\n		@include font-size(13);\n	}\n}\na{\n	text-decoration: none;\n	@include transition(all 0.3s ease-in-out);\n	&:link,&:visited{\n		color:$blue;\n	}\n	&:hover,&:active{\n		color: $grey;\n	}\n}\nsmall{\n	@include font-size(14);\n	display:block;\n	@media screen and (max-width: $break-xlarge){\n		@include font-size(12);\n	}\n}\np{\n	margin-bottom: 30px;\n}\naddress{\n	font-style:normal;\n	margin-bottom: 3px;\n}",
-			"file": "wp-content/themes/shark/sass/components/_typography.scss",
-			"file_size": 1206,
-			"file_write_time": 1418498287000000,
+			"file": "wp-content/themes/shark/post_types/enlightenment.php",
 			"settings":
 			{
-				"buffer_size": 1207,
+				"buffer_size": 4314,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "wp-content/themes/shark/sass/templates/_enlightenment.scss",
+			"file": "wp-content/themes/shark/functions.php",
 			"settings":
 			{
-				"buffer_size": 1393,
+				"buffer_size": 4533,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "wp-content/themes/shark/sass/templates/_what-we-do.scss",
+			"file": "wp-content/themes/shark/index.php",
 			"settings":
 			{
-				"buffer_size": 4344,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/sass/templates/_home.scss",
-			"settings":
-			{
-				"buffer_size": 1623,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/sass/components/_navigation.scss",
-			"settings":
-			{
-				"buffer_size": 1948,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/template-what-we-do.php",
-			"settings":
-			{
-				"buffer_size": 1748,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<?php\n//\n// Case Studies Post Type related functions.\n//\n\nadd_action('init', 'create_cpt_casestudies');\nadd_filter(\"manage_edit-casestudies_columns\", \"add_cpt_casestudies_columns\");   \nadd_action(\"manage_casestudies_posts_custom_column\",  \"add_cpt_casestudies_custom_columns\",10,2); \n//add_action('init', 'add_cpt_casestudies_rewrite_rules');\n//add_filter('query_vars', 'add_cpt_casestudies_query_vars');\n\n/*\nadd_action('admin_init', 'ci_add_cpt_gallery_meta');\nadd_action('save_post', 'ci_update_cpt_gallery_meta');\n*/\n\nif( !function_exists('create_cpt_casestudies') ):\nfunction create_cpt_casestudies(){\n	$labels = array(\n		'name' => _x('Case Studies', 'post type general name', 'dc_theme'),\n		'singular_name' => _x('Case Study', 'post type singular name', 'br_theme'),\n		'add_new' => __('New Case Study', 'dc_theme'),\n		'add_new_item' => __('Add New Case Study', 'br_theme'),\n		'edit_item' => __('Edit Case Study', 'br_theme'),\n		'new_item' => __('New Case Study', 'br_theme'),\n		'view_item' => __('View Case Study', 'br_theme'),\n		'search_items' => __('Search Case Studies', 'br_theme'),\n		'not_found' =>  __('No Case Studies Found', 'br_theme'),\n		'not_found_in_trash' => __('No case studies found in the trash', 'br_theme'), \n		'parent_item_colon' => __('Parent Case Studies Item:', 'br_theme')\n	);\n\n	$args = array(\n		'labels' => $labels,\n		'singular_label' => __('casestudies', 'br_theme'),\n		'public' => true,\n		'show_ui' => true,\n		'capability_type' => 'post',\n		'hierarchical' => false,\n		'has_archive' => true,\n		'rewrite' => array('slug' => 'case-studies/archive'),\n		'menu_position' => 5,\n		'taxonomies' => array('casestudies-category'),\n		'supports' => array('title', 'editor', 'excerpt', 'thumbnail','post-thumbnails','page-attributes')\n		\n	);\n\n	register_post_type( 'casestudies' , $args );\n}\n\n\n\nadd_action( 'init', 'cpt_casestudies_taxonomies');\n\n\nif( !function_exists('cpt_casestudies_taxonomies') ):\nfunction cpt_casestudies_taxonomies() {\n	//\n	// Create all taxonomies here.\n	//\n	$labels = array(\n		'name' => _x( 'Case Study Categories', 'taxonomy general name', 'dc_theme' ),\n		'singular_name' => _x( 'Case Study Category', 'taxonomy singular name', 'dc_theme' ),\n		'search_items' =>  __( 'Search Case Study Categories', 'dc_theme' ),\n		'all_items' => __( 'All Case Study Categories', 'dc_theme' ),\n		'parent_item' => __( 'Parent Case Study Categories', 'dc_theme' ),\n		'parent_item_colon' => __( 'Parent Case Study Categories:', 'dc_theme' ),\n		'edit_item' => __( 'Edit Case Study Category', 'dc_theme' ), \n		'update_item' => __( 'Update Case Study Category', 'dc_theme' ),\n		'add_new_item' => __( 'Add Case Study Category', 'dc_theme' ),\n		'new_item_name' => __( 'New Category Name', 'dc_theme' ),\n	); 	\n	register_taxonomy(\n		\"casestudies_category\", \n		\"casestudies\", \n		array(\n			\"hierarchical\" => true, \n			\"labels\" => $labels,\n			'rewrite' => array('slug' => 'case-studies/category'),\n			'query_var' => true,\n                        'public' => true,\n                        'publicly_queryable' => true,\n                        'exclude_from_search' => FALSE,\n		));\n\n}\nendif;\n\n\nfunction add_cpt_casestudies_columns($columns){\n        $columns = array(\n           \"cb\" => \"<input type=\\\"checkbox\\\" />\",\n           \"title\" => \"Project\",\n           \"client\" => \"Client\",\n           \"sector\" =>\"Categories/Sectors\",\n           \"date\" => \"Publish Date\"\n        );  \n	return $columns;\n}\n\nfunction add_cpt_casestudies_custom_columns($column,$id){\n        global $post;\n        switch ($column){\n        		case \"client\":\n        		echo get_field('client',$id);\n        		break;\n				 case \"sector\":\n                 $terms = get_the_terms( $id, 'casestudies_category');\n                $list=\"\";\n                foreach($terms as $term):\n                    if(!empty($list)) $list.=\", \";\n                    $list.= $term->name;\n                endforeach;\n                echo $list;\n                break;	               \n 			}\n			} \n\nfunction add_cpt_casestudies_rewrite_rules(){ \n\nadd_rewrite_rule('^news-casestudiess/casestudiess/archive/yr/([^/]*)/?', 'index.php?pagename=news-casestudiess/casestudiess&yr=$matches[1]','top');\n\n}\n\nfunction add_cpt_casestudies_query_vars($public_query_vars) {\n	  $public_query_vars[] = \"yr\";\n	return $public_query_vars; \n}\n\nendif;\n\n?>\n",
-			"file": "wp-content/themes/shark/post_types/case-studies.php",
-			"file_size": 4294,
-			"file_write_time": 1417622594000000,
-			"settings":
-			{
-				"buffer_size": 4292,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/template-our-work.php",
-			"settings":
-			{
-				"buffer_size": 1335,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/_single-casestudies.php",
-			"settings":
-			{
-				"buffer_size": 5381,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/single-casestudies.php",
-			"settings":
-			{
-				"buffer_size": 5438,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/css/layout.css",
-			"settings":
-			{
-				"buffer_size": 79220,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/footer.php",
-			"settings":
-			{
-				"buffer_size": 1250,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "wp-content/themes/shark/sass/components/_header.scss",
-			"settings":
-			{
-				"buffer_size": 2036,
+				"buffer_size": 30,
 				"line_ending": "Unix"
 			}
 		}
@@ -698,46 +588,59 @@
 	},
 	"file_history":
 	[
-		"/Applications/MAMP/htdocs/shark/shark.sql",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_our-work.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_header.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/helpers/mixins/_vertical-align.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/style.css",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/footer.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/page.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/css/nanoscroller.css",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/post_types/case-studies.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/helpers/mixins/_box-shadow.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/helpers/mixins/_abs-pos.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/image-sizes.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/archive-enlightenment.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/single-casestudies.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_home.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/template-what-we-do.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/_base.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_typography.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_what-we-do.scss",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/scripts.js",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_enlightenment.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/post_types/enlightenment.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_typography.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/css/layout.css",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/_base.scss",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/front-page.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/_variables.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/header.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/nanoscroller.js",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/_single-casestudies.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/retina-images.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_what-we-do.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/page.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/template-what-we-do.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/template-our-work.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/template-contact.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/template-enlightenment.php",
-		"/Applications/MAMP/htdocs/shark/templates/sass/components/_container.scss",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/post_types/enlightenment.php",
-		"/Applications/MAMP/htdocs/shark/templates/get-in-touch.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/image-sizes.php",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/css/layout.css",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/single-casestudies.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_navigation.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_header.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/components/_global.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/_single-casestudies.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/front-page.php",
+		"/Volumes/Macintosh HD/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/mail.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_our-work.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/footer.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/shortcodes.php",
+		"/Applications/MAMP/htdocs/coyote/blonde_fury/index.html",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_home.scss",
+		"/Applications/MAMP/htdocs/shark/templates/css/layout.css",
+		"/Applications/MAMP/htdocs/shark/wp-content/index.php",
+		"/Applications/MAMP/htdocs/shark/wp-config.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/header.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/retina-images.php",
+		"/Applications/MAMP/htdocs/shark/templates/single-casestudies.php",
+		"/Applications/MAMP/htdocs/shark/shark.sql",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/templates/_enlightenment.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/jquery.gmap.js",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/template-enlightenment.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/jquery.infinitescroll.min.js",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/imagesLoaded.min.js",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/helpers/mixins/_vertical-align.scss",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/perfect-scrollbar.css",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/jquery.slimscroll.min.js",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/sass/_variables.scss",
+		"/Applications/MAMP/htdocs/first10/njoy/wp-content/themes/njoy/functions/menus.php",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/style.css",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/css/nanoscroller.css",
+		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/js/nanoscroller.js",
+		"/Applications/MAMP/htdocs/shark/templates/sass/components/_container.scss",
+		"/Applications/MAMP/htdocs/shark/templates/get-in-touch.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/menus.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/css/editor-style.css",
-		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/post_types/case-studies.php",
-		"/Applications/MAMP/htdocs/shark/wp-config.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/enqueue-post-scripts.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/post-types.php",
 		"/Applications/MAMP/htdocs/shark/wp-content/themes/shark/functions/enqueue-admin-scripts.php",
@@ -812,20 +715,7 @@
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_variables.scss",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/scripts.js",
 		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/css/layout.css",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/js/jquery.gmap.route.js",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/images/bowman-riley-home.svg",
-		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_navigation.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/build/sass/components/_header.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_global.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/taxonomy-people_category.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/utility-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/components/_forms.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/page-case-studies.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/includes/case-studies-nav.php",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/_base.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/sass/templates/_all.scss",
-		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/template-awards.php"
+		"/Applications/MAMP/htdocs/bowman-riley/wp-content/themes/bowmanriley/css/layout.css"
 	],
 	"find":
 	{
@@ -833,7 +723,7 @@
 	},
 	"find_in_files":
 	{
-		"height": 93.0,
+		"height": 0.0,
 		"where_history":
 		[
 			"",
@@ -846,134 +736,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"initScrollPanel",
-			"http://shark.localhost",
-			"firstLoad",
-			"showContent",
 			"loadContent",
-			"showContent",
-			"loadContent",
-			"firstLoad",
-			"showContent",
-			"console",
-			"showOverlay",
-			"loadContent",
-			"showContent",
-			"overlay",
-			"showContent",
-			"$('main')",
-			"overlay",
-			"loadContent",
-			"fadeIn",
-			"fadeOut",
-			"easeOutQuad",
-			"fadeOut",
-			"close",
-			"fadeIn",
-			"Quad",
-			"single page",
-			"document",
-			"underline",
-			"scrollToAnchorPage",
-			".social",
-			"nav.social",
-			"rebuild",
-			"resetSectorMenu",
-			"resetSectorMenu()",
-			"resetSectorMenu",
-			"resetSector",
-			"hideSectorClose",
-			"activateMobileSectorClick",
-			"Sector",
-			"loadContent",
-			"current-menu-item",
-			"loadContent",
-			"moveMenuState",
-			"current-menu",
-			"activateFullPage",
-			"current-menu-item",
-			"destroyScrollPanel",
-			"refreshScrollPanel",
-			"initScrollPanel",
-			"perfect",
-			"removeAttr",
-			"main",
-			"activateHistoryActions",
-			"destroyFullPage",
-			"activateHistoryActions",
-			"initHistoryNavLinks",
-			"hideContent",
-			"main",
-			"loadContent",
-			"desktopNavClickAction",
-			"current-menu-item",
-			".single",
-			"$('body')",
-			"scrollToAnchorPage",
-			"moveTo",
-			"loadContent",
-			"updateHashMenuState",
-			"moveMenuState",
-			"changeMenuState",
-			"highlight",
-			"#nav",
-			"click",
-			"changeMenuState",
-			"moveMenuState",
-			"State",
-			"#nav",
-			"toAnchor",
-			"single",
-			"initHistoryNavLinks",
-			"#nav",
-			"moveMenuState",
-			"highlight",
-			"loadContent",
-			"switchAccordion",
-			"activateSectorClick",
-			"sector",
-			"destroyFullPage",
-			"initMasonry",
-			"initMasonry ",
+			"sendPushLink",
+			"push-link",
+			"pushstate",
+			"currentPathname",
+			"popState",
+			"pus",
+			"push",
+			"currentTarget",
+			"morePostsClick",
 			"masonry",
-			".scroll-area",
-			"scroll-area",
-			"refreshScrollPanel",
-			"initScrollPanel",
-			"scroll-area",
-			"perfect",
+			"style",
+			".section",
+			"remove",
+			"slim",
+			"preload",
+			"scrollingSpeed",
+			"scrollSpeed",
+			"scrollspeed",
+			"destroy",
+			"scrollingSpeed",
+			".fullpage",
+			"scrollTo",
+			"==2",
+			"== 2",
 			"loadContent",
-			"activateFullPage",
-			"loadContent",
-			"activateSectorClick",
-			"switchAccordion",
-			"convertNavLinksToHash",
-			"initHistory",
-			"initHistoryNavLinks",
-			"activateHistoryActions",
-			"is desktop",
-			"active tab",
-			"isDesktop",
-			"mobile-menu",
-			"$close",
-			"destroyDesktopMenu",
-			"activateTabletMenu",
-			"duplicate",
-			"categories",
-			"close",
-			"positionSectorClose",
-			"close",
+			"scroll",
+			"attr",
 			"tick",
-			"activateSectorClick",
-			"sector",
-			"close",
-			"changeMenuState",
-			"state",
-			"more-post",
-			".get",
-			"enlightenment",
+			"find",
+			"mobileNavClickAction",
+			"MobileMenu",
+			"Mobile",
+			"initPageScripts",
+			"initPage",
+			"activate",
+			"caption",
 			"console.log",
-			"http://shark.localhost"
+			"moveTo",
+			"scrollToAnchorPage",
+			"activateFullPage",
+			"moveTo",
+			"activateFullPage",
+			"initPostLoad",
+			"loadNewPosts",
+			"}\nactivateDesktopMenu",
+			"resize",
+			"activateMobileMenu",
+			"switchMenu",
+			"activateMobileMenu",
+			"$.fn",
+			"desktopNavClickAction",
+			"desktop",
+			"$.fn.fullpage.moveTo",
+			" $.fn.fullpage.moveTo",
+			"fullpage",
+			"scrollToAnchorPage",
+			"fullpage",
+			"desktopNavClickAction",
+			"console",
+			"caption",
+			"-webkit-overflow-scrolling:",
+			"-webkit-overflow-scrolling: touch;",
+			"$.scrollTo",
+			"initPageScripts",
+			"initPage",
+			"switchMenu",
+			"activateMobileMenu",
+			"mobileNavClickAction",
+			"vh",
+			"$.scroll",
+			"~",
+			"#contacts",
+			"header",
+			"click",
+			"work-single",
+			"'scroll',",
+			"scroll",
+			"highlight",
+			"showContent =",
+			"preloadImages",
+			"preload",
+			"map",
+			"activateMobileMenu",
+			"caption",
+			"initPageScripts",
+			"showContent =",
+			"function showContent",
+			"showContent",
+			"loadPages",
+			"load",
+			"preloadImages",
+			"preload",
+			"load",
+			"activateMobileMenu",
+			"caption",
+			"initParallax",
+			"isTouchDevice",
+			"initParallax",
+			"parallax",
+			"showContent",
+			"single",
+			"destroyFullPage",
+			"fullpage",
+			"fullpage.destroy()",
+			"showContent",
+			"renderContent",
+			"Lighter",
+			"page-title",
+			"column",
+			"getRetinaSrc",
+			"console",
+			"showContent",
+			"loadContent",
+			"$.scrollTo",
+			"scrollTo",
+			"slice",
+			"$.scrollTo",
+			"controls",
+			"nav",
+			"mobileNavClickAction",
+			"#nav",
+			"mobile",
+			"scrollTo",
+			"ajax",
+			"mobileNavIconClickAction",
+			"expanded",
+			"destroyMobileMenu"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1124,49 +1014,49 @@
 			[
 				{
 					"buffer": 0,
-					"file": "wp-content/themes/shark/template-contact.php",
+					"file": "wp-content/themes/shark/js/scripts.js",
 					"settings":
 					{
-						"buffer_size": 962,
+						"buffer_size": 29013,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								647,
-								915
+								17720,
+								17687
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 9642.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "wp-content/themes/shark/sass/_variables.scss",
+					"file": "wp-content/themes/shark/functions/retina-images.php",
 					"settings":
 					{
-						"buffer_size": 2138,
+						"buffer_size": 2967,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2024,
-								2024
+								421,
+								261
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
@@ -1178,399 +1068,72 @@
 				},
 				{
 					"buffer": 2,
-					"file": "wp-content/themes/shark/header.php",
+					"file": "wp-content/themes/shark/post_types/enlightenment.php",
 					"settings":
 					{
-						"buffer_size": 2723,
+						"buffer_size": 4314,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1311,
-								1311
+								294,
+								107
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 46.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "wp-content/themes/shark/js/scripts.js",
+					"file": "wp-content/themes/shark/functions.php",
 					"settings":
 					{
-						"buffer_size": 23552,
+						"buffer_size": 4533,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18142,
-								18142
+								1185,
+								1108
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 10270.0,
+						"translation.x": 10.0,
+						"translation.y": 1196.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "wp-content/themes/shark/sass/components/_container.scss",
+					"file": "wp-content/themes/shark/index.php",
 					"settings":
 					{
-						"buffer_size": 1677,
+						"buffer_size": 30,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1670,
-								1670
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 271.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "wp-content/themes/shark/sass/components/_typography.scss",
-					"settings":
-					{
-						"buffer_size": 1207,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								634,
-								634
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "wp-content/themes/shark/sass/templates/_enlightenment.scss",
-					"settings":
-					{
-						"buffer_size": 1393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								836,
-								836
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "wp-content/themes/shark/sass/templates/_what-we-do.scss",
-					"settings":
-					{
-						"buffer_size": 4344,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								130,
-								130
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 42.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "wp-content/themes/shark/sass/templates/_home.scss",
-					"settings":
-					{
-						"buffer_size": 1623,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								561,
-								561
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 8.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "wp-content/themes/shark/sass/components/_navigation.scss",
-					"settings":
-					{
-						"buffer_size": 1948,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1640,
-								1640
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 280.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "wp-content/themes/shark/template-what-we-do.php",
-					"settings":
-					{
-						"buffer_size": 1748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1416,
-								1416
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "wp-content/themes/shark/post_types/case-studies.php",
-					"settings":
-					{
-						"buffer_size": 4292,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3826,
-								3826
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 886.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "wp-content/themes/shark/template-our-work.php",
-					"settings":
-					{
-						"buffer_size": 1335,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								499,
-								499
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "wp-content/themes/shark/_single-casestudies.php",
-					"settings":
-					{
-						"buffer_size": 5381,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1346,
-								1312
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 134.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "wp-content/themes/shark/single-casestudies.php",
-					"settings":
-					{
-						"buffer_size": 5438,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1349,
-								1349
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "wp-content/themes/shark/css/layout.css",
-					"settings":
-					{
-						"buffer_size": 79220,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20320,
-								20432
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 12741.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"file": "wp-content/themes/shark/footer.php",
-					"settings":
-					{
-						"buffer_size": 1250,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								120,
-								120
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1579,32 +1142,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 17,
-					"file": "wp-content/themes/shark/sass/components/_header.scss",
-					"settings":
-					{
-						"buffer_size": 2036,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1734,
-								1779
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 466.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

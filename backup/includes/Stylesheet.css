@@ -1,0 +1,386 @@
+body {
+font-family:Verdana,Tahoma,sans-serif;
+font-size:10px;
+margin-top:0px;
+text-align:center;
+height: 100%;
+width: 98%;
+background: URL(../images/shark_stripe_4.gif) repeat-x;
+}
+
+#container{
+margin-left:auto;
+margin-right:auto;
+padding:0px;
+width:790px;
+height:529px;
+background-color:#fff;
+}
+
+html>body #container{
+margin-left:auto;
+margin-right:auto;
+padding:0px;
+width:800px;
+height:539px;
+background-color:#fff;
+}
+
+#body{
+margin:0px;
+padding:0px;
+width:780px;
+height:519px;
+background-color:#333;
+border:10px solid #fff;
+background: URL(../images/shark_background.jpg);
+}
+
+span {display:none;}
+
+.clear {
+font-family:Verdana,Tahoma,sans-serif;
+font-size:10px;
+color:#000;
+display:none;
+}
+
+#menu{
+padding:0px;
+margin-top:90px;
+margin-left:20px;
+width:170px;
+height:333px;
+float:left;
+}
+
+html>body #menu{
+margin-top:90px;
+margin-left:40px;
+}
+
+#menu ul{
+list-style: none;
+margin:0px;
+padding:0px;
+}
+
+#menu li{
+margin:0px;
+padding:0px;
+padding-bottom:0px;
+height:18px;
+color:#fff;
+font-family:verdana;
+border:0px solid #ff0000;
+display: inline;
+}
+
+html>body #menu li{
+margin:0px;
+padding:0px;
+padding-bottom:0px;
+height:18px;
+color:#fff;
+font-family:verdana;
+border:0px solid #ff0000;
+display: block;
+}
+
+#menu li.off {height:21px;width:165px;display:block;}
+#menu li.off2 {height:20px;width:165px;display:block;}
+#menu li.logo {height:45px;width:165px;background: URL(../images/shark_logo.jpg);}
+#menu li.who {height:21px;width:165px;background: URL(../images/shark_who_we_are.jpg);}
+#menu li.what {height:21px;width:165px;background: URL(../images/shark_what_we_do.jpg);}
+#menu li.recent {height:21px;width:165px;background: URL(../images/shark_recent_work.jpg);}
+	#menu li.tf {height:21px;width:165px;background: URL(../images/shark_thomas_fisher.jpg);}
+	#menu li.wl {height:21px;width:165px;background: URL(../images/shark_wl.jpg);}
+	#menu li.sg {height:21px;width:165px;background: URL(../images/shark_select_group.jpg);}
+	#menu li.cg {height:21px;width:165px;background: URL(../images/shark_chapel_grange.jpg);}
+	#menu li.ls {height:21px;width:165px;background: URL(../images/shark_lawnscience.jpg);}
+	#menu li.tp {height:21px;width:165px;background: URL(../images/shark_team_parker.jpg);}
+#menu li.links {height:20px;width:165px;background: URL(../images/client_list.jpg);}
+#menu li.touch {height:20px;width:165px;background: URL(../images/shark_get_in_touch.jpg) no-repeat;}
+
+#menu li.logo a {display:block;height:18px;width:165px;}
+#menu li.logo a:hover {display:block;height:18px;width:165px;}
+
+#menu li.who a {display:block;height:21px;width:165px;}
+#menu li.who a:hover {height:21px;width:165px;background: URL(../images/shark_who_we_are_on.jpg);}
+#menu li.who_on {height:21px;width:165px;background: URL(../images/shark_who_we_are_on.jpg);}
+#menu li.who_on a {display:block;height:21px;width:165px;}
+
+#menu li.what a {display:block;height:21px;width:165px;}
+#menu li.what a:hover {height:21px;width:165px;background: URL(../images/shark_what_we_do_on.jpg);}
+#menu li.what_on {height:21px;width:165px;background: URL(../images/shark_what_we_do_on.jpg);}
+#menu li.what_on a {display:block;height:21px;width:165px;}
+
+#menu li.recent a {display:block;height:21px;width:165px;}
+#menu li.recent a:hover {height:21px;width:165px;background: URL(../images/shark_recent_work_on.jpg);}
+#menu li.recent_on {height:21px;width:165px;background: URL(../images/shark_recent_work_on.jpg);}
+#menu li.recent_on a {display:block;height:21px;width:165px;}
+
+#menu li.tf a {display:block;height:21px;width:165px;}
+#menu li.tf a:hover {height:21px;width:165px;background: URL(../images/shark_thomas_fisher_on.jpg);}
+#menu li.tf_on {height:21px;width:165px;background: URL(../images/shark_thomas_fisher_on.jpg);}
+#menu li.tf_on a {display:block;height:21px;width:165px;}
+
+#menu li.wl a {display:block;height:21px;width:165px;}
+#menu li.wl a:hover {height:21px;width:165px;background: URL(../images/shark_wl_on.jpg);}
+#menu li.wl_on {height:21px;width:165px;background: URL(../images/shark_wl_on.jpg);}
+#menu li.wl_on a {display:block;height:21px;width:165px;}
+
+#menu li.sg a {display:block;height:21px;width:165px;}
+#menu li.sg a:hover {height:21px;width:165px;background: URL(../images/shark_select_group_on.jpg);}
+#menu li.sg_on {height:21px;width:165px;background: URL(../images/shark_select_group_on.jpg);}
+#menu li.sg_on a {display:block;height:21px;width:165px;}
+
+#menu li.cg a {display:block;height:21px;width:165px;}
+#menu li.cg a:hover {height:21px;width:165px;background: URL(../images/shark_chapel_grange_on.jpg);}
+#menu li.cg_on {height:21px;width:165px;background: URL(../images/shark_chapel_grange_on.jpg);}
+#menu li.cg_on a {display:block;height:21px;width:165px;}
+
+#menu li.ls a {display:block;height:21px;width:165px;}
+#menu li.ls a:hover {height:21px;width:165px;background: URL(../images/shark_lawnscience_on.jpg);}
+#menu li.ls_on {height:21px;width:165px;background: URL(../images/shark_lawnscience_on.jpg);}
+#menu li.ls_on a {display:block;height:21px;width:165px;}
+
+#menu li.tp a {display:block;height:21px;width:165px;}
+#menu li.tp a:hover {height:21px;width:165px;background: URL(../images/shark_team_parker_on.jpg);}
+#menu li.tp_on {height:21px;width:165px;background: URL(../images/shark_team_parker_on.jpg);}
+#menu li.tp_on a {display:block;height:21px;width:165px;}
+
+#menu li.links a {display:block;height:20px;width:165px;}
+#menu li.links a:hover {height:20px;width:165px;background: URL(../images/client_list_on.jpg);}
+#menu li.links_on {height:20px;width:165px;background: URL(../images/client_list_on.jpg);}
+#menu li.links_on a {display:block;height:20px;width:165px;}
+
+#menu li.touch a {display:block;height:20px;width:165px;}
+#menu li.touch a:hover {height:20px;width:165px;background: URL(../images/shark_get_in_touch_on.jpg) no-repeat;}
+#menu li.touch_on {height:20px;width:165px;background: URL(../images/shark_get_in_touch_on.jpg) no-repeat;}
+#menu li.touch_on a {display:block;height:20px;width:165px;}
+
+#menu div ul{
+list-style: none;
+margin-top:59px;
+padding:0px;
+}
+
+#content{
+padding:0px;
+margin-top:90px;
+margin-right:20px;
+width:470px;
+height:333px;
+float:right;
+}
+
+#content h3{
+padding:0px;
+margin:0px;
+width:470px;
+height:333px;
+}
+
+#content h3 a{border:0px solid #ff0000;display:block;width:340px;height:22px;position:relative;top:100px;left:50px;}
+#content h3 a:hover{border:0px solid #ff0000;display:block;width:340px;height:22px;position:relative;top:100px;left:50px;}
+
+html>body #content h3 a{border:0px solid #ff0000;display:block;width:340px;height:22px;position:relative;top:100px;left:105px;}
+html>body #content h3 a:hover{border:0px solid #ff0000;display:block;width:340px;height:22px;position:relative;top:100px;left:105px;}
+
+#content p{
+padding:0px;
+padding-top:30px;
+margin:0px;
+font-size:14px;
+font-weight:normal;
+color:#fff;
+font-family:verdana;
+text-align:center;
+}
+
+#sub_navi {padding:0px;margin:0px;width:470px;border:0px solid #ff0000;}
+
+#sub_navi .page {
+padding:0px;
+margin:0px;
+margin-top:10px;
+float:left;
+text-align:left;
+width:351px;
+border:0px solid #ff0000;
+}
+
+#sub_navi .page ul{
+list-style: none;
+margin:0px;
+margin-left:17px;
+padding:0px;
+}
+
+#sub_navi .page li{
+margin:0px;
+margin-left:3px;
+padding:0px;
+border:0px solid #0000ff;
+float: left;
+width:11px;
+}
+
+#sub_navi .page li.one a{width:11px;height:14px;background: URL(../images/shark_01.jpg) no-repeat;display:block;}
+#sub_navi .page li.one a:hover{width:11px;height:14px;background: URL(../images/shark_01_on.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.two a{width:11px;height:14px;background: URL(../images/shark_02.jpg) no-repeat;display:block;}
+#sub_navi .page li.two a:hover{width:11px;height:14px;background: URL(../images/shark_02_on.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.three a{width:11px;height:14px;background: URL(../images/shark_03.jpg) no-repeat;display:block;}
+#sub_navi .page li.three a:hover{width:11px;height:14px;background: URL(../images/shark_03_on.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.four a{width:11px;height:14px;background: URL(../images/shark_04.jpg) no-repeat;display:block;}
+#sub_navi .page li.four a:hover{width:11px;height:14px;background: URL(../images/shark_04_on.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.five a{width:11px;height:14px;background: URL(../images/shark_05.jpg) no-repeat;display:block;}
+#sub_navi .page li.five a:hover{width:11px;height:14px;background: URL(../images/shark_05_on.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.six a{width:11px;height:14px;background: URL(../images/shark_06.jpg) no-repeat;display:block;}
+#sub_navi .page li.six a:hover{width:11px;height:14px;background: URL(../images/shark_06_on.jpg) no-repeat;display:block;}
+
+
+#sub_navi .page li.one_on a{width:11px;height:14px;background: URL(../images/shark_01_on.jpg) no-repeat;display:block;}
+#sub_navi .page li.one_on a:hover{width:11px;height:14px;background: URL(../images/shark_01.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.two_on a{width:11px;height:14px;background: URL(../images/shark_02_on.jpg) no-repeat;display:block;}
+#sub_navi .page li.two_on a:hover{width:11px;height:14px;background: URL(../images/shark_02.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.three_on a{width:11px;height:14px;background: URL(../images/shark_03_on.jpg) no-repeat;display:block;}
+#sub_navi .page li.three_on a:hover{width:11px;height:14px;background: URL(../images/shark_03.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.four_on a{width:11px;height:14px;background: URL(../images/shark_04_on.jpg) no-repeat;display:block;}
+#sub_navi .page li.four_on a:hover{width:11px;height:14px;background: URL(../images/shark_04.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.five_on a{width:11px;height:14px;background: URL(../images/shark_05_on.jpg) no-repeat;display:block;}
+#sub_navi .page li.five_on a:hover{width:11px;height:14px;background: URL(../images/shark_05.jpg) no-repeat;display:block;}
+
+#sub_navi .page li.six_on a{width:11px;height:14px;background: URL(../images/shark_06_on.jpg) no-repeat;display:block;}
+#sub_navi .page li.six_on a:hover{width:11px;height:14px;background: URL(../images/shark_06.jpg) no-repeat;display:block;}
+
+
+#sub_navi .selected {color:#fff;text-decoration:none;}
+
+#sub_navi .web {
+padding:0px;
+margin:0px;
+margin-top:10px;
+margin-right:20px;
+float:left;
+text-align:right;
+width:99px;
+border:0px solid #ff0000;
+}
+
+#sub_navi .web a{width:99px;height:14px;background: URL(../images/shark_launch.jpg) no-repeat;display:block;}
+#sub_navi .web a:hover{width:99px;height:14px;background: URL(../images/shark_launch_on.jpg) no-repeat;display:block;}
+
+#sub_navi .webs {
+padding:0px;
+margin:0px;
+margin-top:10px;
+margin-right:20px;
+float:left;
+text-align:right;
+width:99px;
+border:0px solid #ff0000;
+}
+
+#sub_navi .webs a{width:99px;height:14px;background: URL(../images/shark_services.jpg) no-repeat;display:block;}
+#sub_navi .webs a:hover{width:99px;height:14px;background: URL(../images/shark_services_on.jpg) no-repeat;display:block;}
+
+#address {
+text-align:center;
+color:#999;
+margin-left:auto;
+margin-right:auto;
+padding:0px;
+width:760px;
+}
+
+html>body #address{
+width:780px;
+}
+
+#address p.left {text-align:left;padding:0px;margin:0px;float:left;width:170px;}
+#address p.right {text-align:right;padding:0px;margin:0px;float:right;width:490px;}
+
+html>body #address p.left {text-align:left;padding:0px;margin:0px;float:left;width:180px;}
+html>body #address p.right {text-align:right;padding:0px;margin:0px;float:right;width:600px;}
+
+#footer_text{
+margin-left:auto;
+margin-right:auto;
+margin-top:400px;
+padding:0px;
+text-align:center;
+color:#999;
+width:900px;
+}
+
+#footer_text div.left{
+margin:0px;
+padding:0px;
+float:left;
+width:298px;
+}
+#footer_text div.left H1{
+padding:0px;
+padding-left:20px;
+margin:0px;
+font-size: 15px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+text-align:left;
+}
+#footer_text div.left p{text-align:left;padding:0px;margin:20px;}
+
+#footer_text div.center{
+margin:0px;
+padding:0px;
+border-right:1px solid #333;
+border-left:1px solid #333;
+float:left;
+width:298px;
+}
+#footer_text div.center H1{
+padding:0px;
+padding-left:20px;
+margin:0px;
+font-size: 15px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+text-align:left;
+}
+#footer_text div.center p{text-align:left;padding:0px;margin:20px;}
+
+#footer_text div.right{
+margin:0px;
+padding:0px;
+float:left;
+width:297px;
+}
+#footer_text div.right H1{
+padding:0px;
+padding-left:20px;
+margin:0px;
+font-size: 15px;
+font-family:Arial, Helvetica, sans-serif;
+font-weight:normal;
+text-align:left;
+}
+#footer_text div.right p{text-align:left;padding:0px;margin:20px;}
+
+#ffscrollbarfix {
+	position: absolute;
+	top: 0;
+	bottom: -0.1px;
+	width: 1em;
+	z-index: -1;
+}

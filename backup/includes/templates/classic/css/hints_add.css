@@ -1,0 +1,40 @@
+#testimonialDefault{margin:0 5px;padding:8px;font-size:1.2em;text-align:left;}
+#testimonialDefault h1{margin:0;padding:10px 0;font-size:1.5em;font-weight:700;}
+
+fieldset {display:block; background: #fff; border:1px solid #B6ABD5; padding:5px; font-family:verdana, sans-serif; }
+fieldset#personal {background: url(../images/personal.png) no-repeat top right}
+fieldset#contact {background: url(../images/contact.png) no-repeat top right}
+fieldset#secure {background: url(../images/secure.png) no-repeat top right}
+fieldset#news {background: url(../images/news.png) no-repeat top right}
+fieldset#age {background: url(../images/age.png) no-repeat top right}
+fieldset#opt {background:#F9F4EC;}
+fieldset#write{background: url(../images/write.png) no-repeat top right }
+legend {font-family:verdana, arial, helvetica, sans-serif; font-size:1.1em; color: #000; font-weight:bold; margin-bottom:5px; padding:3px; background:#fff url(../images/form.png) repeat-x center left;}
+select {margin:0;background:#fff;}
+textarea {margin: auto; padding:0.5em; float: left;	display: block; width: 75%; border:1px solid #B6ABD5; overflow:auto; background:#fff url(../images/t_input.png) repeat-x bottom left;}
+option {background:#fff; color:navy;}
+optgroup {background:#fff; color:navy; font-family:verdana, arial, helvetica, sans-serif;}
+optgroup option {background:#fff; color:navy;}
+
+label.inputLabel {
+	width: 11em;
+	float: left;
+	color: navy;
+	}
+	
+input:focus, select:focus, textarea:focus {
+	background: #fff;
+	}
+		
+LABEL.checkboxLabel, LABEL.radioButtonLabel {
+	margin: 0.5em 0.3em;
+	color: navy;
+	}
+	
+.hiddenField {
+	display: none;
+}
+.visibleField {
+	display: inline;
+}
+	

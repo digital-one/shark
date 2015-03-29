@@ -1,0 +1,232 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=$CHARSET" />
+<base href="$BASE_HREF" />
+<style type="text/css">
+.order-detail-area {background-color:#ffffff; border:0px #ffffff; padding:0px; margin:0px; font-size:12px; color:#666666;}
+.product-details {font-size:12px;}
+.product-details-num {font-size:12px; font-weight:bold;}
+
+.order-totals-area {background-color:#ffffff; border:0px #ffffff; padding:0px; margin:0px; font-size:12px; color:#666666;}
+.order-totals-text {font-size:12px; font-weight:bold;}
+.order-totals-num {font-size:12px; }
+</style>
+</head>
+	<body bgcolor="#ffffff" style="margin:0px;background:#ffffff;">
+
+	<table width="98%" cellpadding="0" cellspacing="0" bgcolor="#ffffff" border="0">
+		<tr>
+			<td>
+			<table width="570" align="center" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff">
+				<tr>
+					<td colspan="5" width="570" height="10" bgcolor="#ffffff"></td>
+				</tr>
+				<tr>
+					<td colspan="5" width="570" height="102" bgcolor="#018dc8"><a href="http://www.swimbabes.co.uk" title="swimbabes"><img src="email/header.gif" alt="swimbabes - The shop for little swimmers" width="570" height="109" border="0" /></td>
+				</tr>
+				<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="3" width="510" align="left">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<br />
+<font color="#00baf2" style="color:#00baf2;"><strong>$EMAIL_TEXT_HEADER $INTRO_STORE_NAME</strong></font>
+<br />
+<br />
+<strong>Dear $EMAIL_FIRST_NAME $EMAIL_LAST_NAME,</strong>
+<br /><br />
+$EMAIL_THANKS_FOR_SHOPPING
+<br />
+$EMAIL_DETAILS_FOLLOW
+<br /><br />
+$INTRO_ORDER_NUM_TITLE <strong>$INTRO_ORDER_NUMBER</strong>
+<br />
+$INTRO_DATE_TITLE $INTRO_DATE_ORDERED
+<br />
+<br />
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#00baf2;line-height:16px;font-family:arial;"><a href="$INTRO_URL_VALUE" style="color:#00baf2;text-decoration:underline;"><i>$INTRO_URL_TEXT</i></a></font>
+</font>
+
+					</td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+<!-- HR LINE BREAK START -->
+				<tr>
+					<td width="30" height="20" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="20" border="0" /></td>
+					<td colspan="3" height="20" width="510"><hr style="border-bottom:1px solid #ccc;border-top:1px solid #efefef;border-left:1px solid #ccc;border-right:1px solid #ccc;"/></td>
+					<td width="30" height="20" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="20" border="0" /></td>
+				</tr>
+<!-- HR LINE BREAK END -->
+
+
+				<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="2" width="480" align="left" valign="top">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<strong>$PRODUCTS_TITLE</strong>
+<br />
+<div class="order-detail-area">
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+$PRODUCTS_DETAIL
+</font>
+</div>
+<br />
+</font>
+					</td>
+					<td width="30"></td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+
+<!-- HR LINE BREAK START -->
+				<tr>
+					<td width="30" height="20" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="20" border="0" /></td>
+					<td colspan="3" height="20" width="510"><hr style="border-bottom:1px solid #ccc;border-top:1px solid #efefef;border-left:1px solid #ccc;border-right:1px solid #ccc;"/></td>
+					<td width="30" height="20" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="20" border="0" /></td>
+				</tr>
+<!-- HR LINE BREAK END -->
+
+				<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="2" width="480" align="left" valign="top">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<div class="order-total-area">$ORDER_TOTALS</div>
+<br />
+</font>
+					</td>
+					<td width="30"></td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+				<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="3" width="510" align="left">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<strong>Customers Comments:</strong>
+<br />
+$ORDER_COMMENTS
+</font>
+		
+					</td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+<!-- HR LINE BREAK START -->
+				<tr>
+					<td width="30" height="20" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="20" border="0" /></td>
+					<td colspan="3" height="20" width="510"><hr style="border-bottom:1px solid #ccc;border-top:1px solid #efefef;border-left:1px solid #ccc;border-right:1px solid #ccc;"/></td>
+					<td width="30" height="20" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="20" border="0" /></td>
+				</tr>
+<!-- HR LINE BREAK END -->
+
+			<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="3" width="510" align="left">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<font color="#00baf2" style="color:#00baf2;"><strong>$HEADING_ADDRESS_INFORMATION</strong></font>
+</font>
+		
+					</td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+<!-- HR LINE BREAK START -->
+				<tr>
+					<td width="30" height="20" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="20" border="0" /></td>
+					<td colspan="3" height="20" width="510"><hr style="border-bottom:1px solid #ccc;border-top:1px solid #efefef;border-left:1px solid #ccc;border-right:1px solid #ccc;"/></td>
+					<td width="30" height="20" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="20" border="0" /></td>
+				</tr>
+<!-- HR LINE BREAK END -->
+
+
+				<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td width="255" align="left" valign="top">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<strong>$ADDRESS_DELIVERY_TITLE</strong>
+<br />
+$ADDRESS_DELIVERY_DETAIL
+<br /><br />
+
+<strong>$SHIPPING_METHOD_TITLE</strong>
+<br />
+$SHIPPING_METHOD_DETAIL
+<br /><br />
+
+<strong>$PAYMENT_METHOD_TITLE</strong>
+<br />
+$PAYMENT_METHOD_DETAIL
+<br /><br />
+</font>					
+
+					</td>
+					<td width="225" align="left" valign="top">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+<strong>$ADDRESS_BILLING_TITLE</strong>
+<br />
+$ADDRESS_BILLING_DETAIL
+<br /><br />
+</font>
+	
+					</td>
+					<td width="30"></td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+			<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="3" width="510" align="left">
+
+<font color="#666666" size="1" face="arial" style="font-size:12px;color:#666666;line-height:16px;font-family:arial;">
+$PAYMENT_METHOD_FOOTER
+</font>
+		
+					</td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+
+<!-- HR LINE BREAK START -->
+				<tr>
+					<td width="30" height="20" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="20" border="0" /></td>
+					<td colspan="3" height="20" width="510"><hr style="border-bottom:1px solid #ccc;border-top:1px solid #efefef;border-left:1px solid #ccc;border-right:1px solid #ccc;"/></td>
+					<td width="30" height="20" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="20" border="0" /></td>
+				</tr>
+<!-- HR LINE BREAK END -->
+
+				<tr>
+					<td width="30" height="100%" background="email/left_grad.gif" style="background:URL(email/left_grad.gif) repeat-y;"><img src="email/left_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+					<td colspan="3" width="510" align="left">
+
+<font color="#666666" size="1" face="arial" style="font-size:11px;color:#666666;line-height:12px;font-family:arial;">
+$EMAIL_FOOTER_COPYRIGHT
+<br /><br />
+$EMAIL_DISCLAIMER
+<br /><br />
+$EMAIL_SPAM_DISCLAIMER
+<br /><br />
+$EXTRA_INFO
+<br />
+</font>			
+					</td>
+					<td width="30" height="100%" background="email/right_grad.gif" style="background:URL(email/right_grad.gif) repeat-y;"><img src="email/right_grad.gif" alt="" width="30" height="100%" border="0" /></td>
+				</tr>
+
+<!-- BOTTOM FOOTER START -->
+				<tr>
+					<td colspan="5" width="570" height="30" bgcolor="#018dc8"><img src="email/footer.gif" alt="swimbabes - The shop for little swimmers" width="570" height="30" border="0" /></td>
+				</tr>
+<!-- BOTTOM FOOTER END -->
+
+			</table>
+	</table>
+
+	</body>
+</html>

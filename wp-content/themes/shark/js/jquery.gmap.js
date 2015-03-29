@@ -25,6 +25,7 @@ $.fn.gmap = function(options){
 		travelMode: 'DRIVING',
 		route: false,
 		scrollwheel: false,
+		draggable: false,
 		routeWayPoints: [],
 		routeOrigin: [],
 		routeDestination: []
@@ -59,6 +60,7 @@ $.fn.gmap = function(options){
 				zoom: options.zoom, // This number can be set to define the initial zoom level of the map
 				center: latlng,
 				scrollwheel: false,
+				draggable: false,
 				mapTypeId: eval('google.maps.MapTypeId.'+ options.mapType)// This value can be set to define the map type ROADMAP/SATELLITE/HYBRID/TERRAIN
 			};
 		var map = new google.maps.Map(document.getElementById($id),mapOptions);
